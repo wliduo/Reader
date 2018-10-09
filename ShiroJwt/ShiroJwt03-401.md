@@ -12,7 +12,9 @@
 * 解决无法直接返回401错误
 * Token刷新(RefreshToken)
 
-我的项目地址：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
+我的项目地址
+* Github：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
+* Gitee(码云)：[https://gitee.com/wang926454/ShiroJwt](https://gitee.com/wang926454/ShiroJwt)
 
 ## 解决无法直接返回401错误
 
@@ -178,4 +180,6 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 }
 ```
 
-#### 我的项目地址：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
+#### 我的项目地址
+* Github：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
+* Gitee(码云)：[https://gitee.com/wang926454/ShiroJwt](https://gitee.com/wang926454/ShiroJwt)

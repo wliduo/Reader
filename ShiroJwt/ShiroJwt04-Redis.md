@@ -12,7 +12,9 @@
 * 解决无法直接返回401错误
 * Token刷新(RefreshToken)
 
-我的项目地址：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
+我的项目地址
+* Github：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
+* Gitee(码云)：[https://gitee.com/wang926454/ShiroJwt](https://gitee.com/wang926454/ShiroJwt)
 
 ## 实现Shiro的Cache(Redis)功能
 
@@ -891,4 +893,6 @@ public DefaultWebSecurityManager getManager(UserRealm userRealm) {
 #### OK，我们现在可以在Realm的doGetAuthorizationInfo()方法打断点看下请求第一次后Redis多了一条缓存数据，下次就不会再调用doGetAuthorizationInfo()方法，除非缓存失效
 ![image text](https://github.com/wang926454/Reader/blob/master/ShiroJwt/image/201810090001.png)
 
-#### 我的项目地址：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
+#### 我的项目地址
+* Github：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
+* Gitee(码云)：[https://gitee.com/wang926454/ShiroJwt](https://gitee.com/wang926454/ShiroJwt)
