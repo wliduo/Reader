@@ -396,7 +396,7 @@ OK，逆向生成entity和mapper及mapper的xml文件，详细查看:[https://gi
 ```
 mvn mybatis-generator:generate
 ```
-![image text](https://github.com/wang926454/Reader/blob/master/ShiroJwt/image/201810080001.png)
+![image text](https://github.com/wang926454/Reader/blob/master/ShiroJwt/image/20181008001.png)
 
 #### 新建DTO
 
@@ -1175,8 +1175,8 @@ public class UserServiceImpl extends BaseServiceImpl<UserDto> implements IUserSe
 
 #### 最后项目结构图
 
-![image text](https://github.com/wang926454/Reader/blob/master/ShiroJwt/image/201810080002.png)
-![image text](https://github.com/wang926454/Reader/blob/master/ShiroJwt/image/201810080003.png)
+![image text](https://github.com/wang926454/Reader/blob/master/ShiroJwt/image/20181008002.png)
+![image text](https://github.com/wang926454/Reader/blob/master/ShiroJwt/image/20181008003.png)
 
 #### 其他文件和SmithCruise文章内一致，地址：[https://www.jianshu.com/p/f37f8c295057](https://www.jianshu.com/p/f37f8c295057)
 
