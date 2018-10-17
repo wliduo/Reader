@@ -12,6 +12,8 @@
 * 解决无法直接返回401错误
 * Token刷新(RefreshToken)
 
+当前博客源码：[https://download.csdn.net/download/wang926454/10726052](https://download.csdn.net/download/wang926454/10726052)
+
 我的项目地址
 * Github：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
 * Gitee(码云)：[https://gitee.com/wang926454/ShiroJwt](https://gitee.com/wang926454/ShiroJwt)
@@ -179,6 +181,8 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     }
 }
 ```
+
+#### 当前博客源码：[https://download.csdn.net/download/wang926454/10726052](https://download.csdn.net/download/wang926454/10726052)
 
 #### 我的项目地址
 * Github：[https://github.com/wang926454/ShiroJwt](https://github.com/wang926454/ShiroJwt)
