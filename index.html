@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>我的音乐台</title>
+  <link rel="shortcut icon" href="https://wang64.cn/static/favicon.ico" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <!-- 垂直居中参考 https://www.cnblogs.com/yugege/p/5246652.html -->
+  <!-- APlayer源码 https://github.com/MoePlayer/APlayer -->
+  <style>
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0; 
+        padding: 0;
+    }
+    body {
+      /* background-image: url(https://res.wang64.cn/Image/201810/normal/12005.png); */
+      background-color: #2e2e31;
+      text-rendering: auto;
+      /* 隐藏滚动条 */
+      overflow: hidden;
+    }
+    .aplayer-wrap {
+      max-width: 700px;
+      margin: 20px auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .sidebar-toggle {
+      z-index: 90;
+    }
+    /* .aplayer {
+      background: none;
+    } */
+    .aplayer.aplayer-fixed .aplayer-lrc {
+      text-shadow: none;
+    }
+    /* .aplayer-body {
+      width: 395px;
+    } */
+    /* .aplayer-list ol li:hover {
+                background:rgba(148,0,211,0.8) none repeat scroll !important;
+    }
+    .aplayer-list ol li {
+        background:rgba(0,0,0,0.5);
+    } */
+  </style>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1826dd4e676f6c917705c5632139f6dd";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+</head>
+
+<body>
+  <div class="aplayer-wrap">
+    <div id="aplayer"></div>
+  </div>
+
+  <div id="aplayer2"></div>
+
+  <script>
+    var list = [{
+      name: 'Waiting For Love',
+      artist: 'Avicii',
+      url: 'https://res.wang64.cn/Music/waitingforlove.mp3',
+      cover: 'https://res.wang64.cn/Music/image/waitingforlove.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/waitingforlove.lrc'
+    },
+    {
+      name: 'Nevada',
+      artist: 'Vicetone/Cozi Zuehlsdorff',
+      url: 'https://res.wang64.cn/Music/nevada.mp3',
+      cover: 'https://res.wang64.cn/Music/image/nevada.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/nevada.lrc'
+    },
+    {
+      name: 'Aeon',
+      artist: 'JJD',
+      url: 'https://res.wang64.cn/Music/aeon.mp3',
+      cover: 'https://res.wang64.cn/Music/image/aeon.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/aeon.lrc'
+    },
+    {
+      name: 'Trip',
+      artist: 'Axero',
+      url: 'https://res.wang64.cn/Music/trip.mp3',
+      cover: 'https://res.wang64.cn/Music/image/trip.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/trip.lrc'
+    },
+    {
+      name: 'Horizon',
+      artist: 'Janji',
+      url: 'https://res.wang64.cn/Music/horizon.mp3',
+      cover: 'https://res.wang64.cn/Music/image/horizon.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/horizon.lrc'
+    },
+    {
+      name: '五月雨变奏电音',
+      artist: '者思范Remix',
+      url: 'https://res.wang64.cn/Music/wuyueyu.mp3',
+      cover: 'https://res.wang64.cn/Music/image/wuyueyu.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/wuyueyu.lrc'
+    },
+    {
+      name: 'Sunburst(亚索台词版)',
+      artist: 'Goi7',
+      url: 'https://res.wang64.cn/Music/sunburst.mp3',
+      cover: 'https://res.wang64.cn/Music/image/sunburst.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/sunburst.lrc'
+    },
+    {
+      name: 'Legends Never Die(Remix)',
+      artist: 'Alan Walker',
+      url: 'https://res.wang64.cn/Music/legendsneverdie.mp3',
+      cover: 'https://res.wang64.cn/Music/image/legendsneverdie.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/legendsneverdie.lrc'
+    },
+    {
+      name: 'RISE 登峰造极境',
+      artist: '英雄联盟',
+      url: 'https://res.wang64.cn/Music/rise.mp3',
+      cover: 'https://res.wang64.cn/Music/image/rise.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/rise.lrc'
+    },
+    {
+      name: '光るなら',
+      artist: 'Goose house',
+      url: 'https://res.wang64.cn/Music/goosehouseguang.mp3',
+      cover: 'https://res.wang64.cn/Music/image/goosehouseguang.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/goosehouseguang.lrc'
+    },
+    {
+      name: '風に薫る夏の記憶',
+      artist: 'AAA',
+      url: 'https://res.wang64.cn/Music/aaa.mp3',
+      cover: 'https://res.wang64.cn/Music/image/aaa.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/aaa.lrc'
+    },
+    {
+      name: '永久指针',
+      artist: '海贼王',
+      url: 'https://res.wang64.cn/Music/yongjiuzhizhen.mp3',
+      cover: 'https://res.wang64.cn/Music/image/yongjiuzhizhen.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/yongjiuzhizhen.lrc'
+    },
+    {
+      name: '一直很安静',
+      artist: '阿桑',
+      url: 'https://res.wang64.cn/Music/yizhihenanjing.mp3',
+      cover: 'https://res.wang64.cn/Music/image/yizhihenanjing.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/yizhihenanjing.lrc'
+    },
+    {
+      name: '侧脸',
+      artist: '于果',
+      url: 'https://res.wang64.cn/Music/celian.mp3',
+      cover: 'https://res.wang64.cn/Music/image/celian.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/celian.lrc'
+    },
+    {
+      name: '从别后(Tvsize)',
+      artist: '流浪的蛙蛙',
+      url: 'https://res.wang64.cn/Music/congbiehou.mp3',
+      cover: 'https://res.wang64.cn/Music/image/congbiehou.png',
+      lrc: 'https://res.wang64.cn/Music/lrc/congbiehou.lrc'
+    }];
+
+    const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      lrcType: 3,
+      order: 'random',
+      theme: '#000000',
+      volume: 2.0,
+      audio: list
+    });
+
+    const ap2 = new APlayer({
+      container: document.getElementById('aplayer2'),
+      fixed: true,
+      lrcType: 3,
+      order: 'random',
+      theme: '#000000',
+      volume: 2.0,
+      audio: list
+    });
+  </script>
+  <script type="text/javascript" src="https://article.wang64.cn/js/src/love.js"></script>
+</body>
+
+</html>
