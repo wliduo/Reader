@@ -1,5 +1,5 @@
 // 我的喜欢
-var love = [{
+var aplove = [{
     name: 'Towers',
     artist: 'Frida',
     url: 'https://res.wang64.cn/Music/towers.mp3',
@@ -232,7 +232,7 @@ var love = [{
 
 
 // 全部列表
-var list = [{
+var aplist = [{
     name: 'Towers',
     artist: 'Frida',
     url: 'https://res.wang64.cn/Music/towers.mp3',
@@ -490,3 +490,12 @@ var list = [{
     cover: 'https://res.wang64.cn/Music/image/congbiehou.png',
     lrc: 'https://res.wang64.cn/Music/lrc/congbiehou.lrc'
   }];
+
+
+function getList(){
+  return aplist;
+}
+
+function getLove(){
+  return aplove;
+}
