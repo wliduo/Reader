@@ -97,13 +97,6 @@ var aplove = [{
     lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
   },
   {
-    name: '飛竜の騎士',
-    artist: '唐沢美帆',
-    url: 'https://res.wang64.cn/Music/feixiangdeqishi.mp3',
-    cover: 'https://res.wang64.cn/Music/image/xxx.png',
-    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
-  },
-  {
     name: '空想フォレスト',
     artist: '伊東歌詞太郎',
     url: 'https://res.wang64.cn/Music/kongxiang.mp3',
@@ -205,20 +198,6 @@ var aplove = [{
     name: '你要的全拿走',
     artist: '胡彦斌',
     url: 'https://res.wang64.cn/Music/niyaodequan.mp3',
-    cover: 'https://res.wang64.cn/Music/image/xxx.png',
-    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
-  },
-  {
-    name: '我们不该这样的',
-    artist: '张赫宣',
-    url: 'https://res.wang64.cn/Music/womenbugai.mp3',
-    cover: 'https://res.wang64.cn/Music/image/xxx.png',
-    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
-  },
-  {
-    name: '走着走着就散了',
-    artist: '庄心妍',
-    url: 'https://res.wang64.cn/Music/zouzhezouzhe.mp3',
     cover: 'https://res.wang64.cn/Music/image/xxx.png',
     lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
   },
@@ -369,6 +348,20 @@ var aplist = [{
     artist: '伊東歌詞太郎',
     url: 'https://res.wang64.cn/Music/kongxiang.mp3',
     cover: 'https://res.wang64.cn/Music/image/xxx.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+  },
+  {
+    name: '夏令时记录(piano.ver)',
+    artist: 'ゆめこ',
+    url: 'http://ou68gv0zg.bkt.clouddn.com/%E3%82%86%E3%82%81%E3%81%93%20-%20%E5%A4%8F%E4%BB%A4%E6%97%B6%E8%AE%B0%E5%BD%95%28piano.ver%29.mp3',
+    cover: 'http://ou68gv0zg.bkt.clouddn.com/%E3%82%86%E3%82%81%E3%81%93%20-%20%E5%A4%8F%E4%BB%A4%E6%97%B6%E8%AE%B0%E5%BD%95%28piano.ver%29.jpg',
+    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+  },
+  {
+    name: 'Cat\'s Dance',
+    artist: 'すーぱーそに子',
+    url: 'http://ou68gv0zg.bkt.clouddn.com/%E3%81%99%E3%83%BC%E3%81%B1%E3%83%BC%E3%81%9D%E3%81%AB%E5%AD%90%20-%20cat%27s%20dance.mp3',
+    cover: 'http://ou68gv0zg.bkt.clouddn.com/%E3%81%99%E3%83%BC%E3%81%B1%E3%83%BC%E3%81%9D%E3%81%AB%E5%AD%90%20-%20cat%27s%20dance.jpg',
     lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
   },
   {
