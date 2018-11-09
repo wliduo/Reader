@@ -12,54 +12,73 @@
   <!-- 垂直居中参考 https://www.cnblogs.com/yugege/p/5246652.html -->
   <!-- APlayer源码 https://github.com/MoePlayer/APlayer -->
   <style>
+    @font-face {
+      font-family: 'Monoton';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Monoton'), local('Monoton-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/01.woff) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Pacifico';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/03.woff) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Audiowide';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Audiowide'), local('Audiowide-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/05.woff) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Vampiro One';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Vampiro One'), local('VampiroOne-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/06.woff) format('woff');
+    }
+
     html, body {
         width: 100%;
         height: 100%;
         margin: 0; 
         padding: 0;
     }
+
     body {
       background-image: url(https://res.wang64.cn/Image/201811/normal/09010.png);
       /* background-color: #2e2e31; */
       /* 隐藏滚动条 */
       overflow: hidden;
     }
+
+    #text {
+      text-align: center;
+      font-size: 2em;
+      color: #FF1177;
+      font-family: Monoton;
+    }
+
     .middle {
       position: relative;
-      top: 15%;
-      transform: translateY(-15%);
+      top: 13%;
+      transform: translateY(-13%);
     }
+
     .col-center-block {
         float: none;
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
+
     .aplayer-wrap {
       max-width: 700px;
       margin: 20px auto;
-      /* position: relative;
-      top: 50%;
-      transform: translateY(-50%); */
     }
-    /* .sidebar-toggle {
-      z-index: 90;
-    } */
-    /* .aplayer {
-      background: none;
-    } */
-    .aplayer.aplayer-fixed .aplayer-lrc {
-      text-shadow: none;
-    }
-    /* .aplayer-body {
-      width: 395px;
-    } */
-    /* .aplayer-list ol li:hover {
-                background:rgba(148,0,211,0.8) none repeat scroll !important;
-    }
-    .aplayer-list ol li {
-        background:rgba(0,0,0,0.5);
-    } */
+    
   </style>
   <script>
     var _hmt = _hmt || [];
@@ -75,6 +94,12 @@
 
 <body>
   <div class="middle">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div style="margin: 0px auto; display: table;">
+            <p id="text">MyMusic</p>
+        </div>
+      </div>
+
       <div id="aplayerDiv1" class="col-md-12 col-sm-12 col-xs-12">
         <div class="aplayer-wrap">
           <div id="aplayer1"></div>
@@ -89,10 +114,10 @@
     
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div style="margin: 0px auto; display: table;">
-            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-default">我的主页</button></a> |  
-            <button id="listBtn" type="button" class="btn btn-primary active" onclick="list()">全部列表</button> |
+            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">我的主页</button></a> |  
+            <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">全部列表</button> |
             <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的喜欢</button> <!-- |
-            <button type="button" class="btn btn-default">切换模式</button>  -->
+            <button type="button" class="btn btn-info">切换模式</button>  -->
         </div>
       </div>
   </div>
@@ -130,6 +155,16 @@
       document.getElementById('aplayerDiv1').style.display = 'none';
       document.getElementById('aplayerDiv2').style.display = 'inline';
     }
+
+    var colors = ['#FF1177','#228DFF','#FFDD1B','#B6FF00','#FF9900','#BA01FF'];
+    var fonts = ['Pacifico','Audiowide','Vampiro One'];
+    var text = document.getElementById("text");
+    // 推荐使用setTimeout
+    setTimeout(function () {
+      text.style.color = colors[Math.floor(colors.length * Math.random())];
+      text.style.fontFamily = fonts[Math.floor(fonts.length * Math.random())];
+      setTimeout(arguments.callee, 1000);
+    }, 1000);
   </script>
   <script type="text/javascript" src="https://res.wang64.cn/JS/love.js"></script>
 </body>
