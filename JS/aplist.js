@@ -135,8 +135,15 @@ var aplove = [{
     name: '風に薫る夏の記憶',
     artist: 'AAA',
     url: 'https://wang926454.gitee.io/reader/Music/aaa.mp3',
-    cover: 'https://wang926454.gitee.io/reader/Music/image/aaa.png',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
     lrc: 'https://res.wang64.cn/Music/lrc/aaa.lrc'
+  },
+  {
+    name: 'Hope',
+    artist: 'Namie Amuro',
+    url: 'https://wang926454.gitee.io/reader/Music/hope.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/hope.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/hope.lrc'
   },
   {
     name: '永久指针',
@@ -396,8 +403,15 @@ var aplist = [{
     name: '風に薫る夏の記憶',
     artist: 'AAA',
     url: 'https://wang926454.gitee.io/reader/Music/aaa.mp3',
-    cover: 'https://wang926454.gitee.io/reader/Music/image/aaa.png',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
     lrc: 'https://res.wang64.cn/Music/lrc/aaa.lrc'
+  },
+  {
+    name: 'Hope',
+    artist: 'Namie Amuro',
+    url: 'https://wang926454.gitee.io/reader/Music/hope.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/hope.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/hope.lrc'
   },
   {
     name: '永久指针',
