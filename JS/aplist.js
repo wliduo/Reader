@@ -209,6 +209,20 @@ var aplove = [{
     lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
   },
   {
+    name: '烟火里的尘埃',
+    artist: '郁欢',
+    url: 'https://wang926454.gitee.io/reader/Music/yanhuolidechenai.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+  },
+  {
+    name: '往后余生',
+    artist: '王贰浪',
+    url: 'https://wang926454.gitee.io/reader/Music/wanghouyusheng.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+  },
+  {
     name: '从别后(Tvsize)',
     artist: '流浪的蛙蛙',
     url: 'https://wang926454.gitee.io/reader/Music/congbiehou.mp3',
@@ -487,6 +501,20 @@ var aplist = [{
     name: '走着走着就散了',
     artist: '庄心妍',
     url: 'https://wang926454.gitee.io/reader/Music/zouzhezouzhe.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+  },
+  {
+    name: '烟火里的尘埃',
+    artist: '郁欢',
+    url: 'https://wang926454.gitee.io/reader/Music/yanhuolidechenai.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+  },
+  {
+    name: '往后余生',
+    artist: '王贰浪',
+    url: 'https://wang926454.gitee.io/reader/Music/wanghouyusheng.mp3',
     cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
     lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
   },

@@ -90,6 +90,8 @@
     })();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.staticfile.org/layer/2.3/layer.js"></script>
 </head>
 
 <body>
@@ -102,22 +104,22 @@
 
       <div id="aplayerDiv1" class="col-md-12 col-sm-12 col-xs-12">
         <div class="aplayer-wrap">
-          <div id="aplayer1"></div>
-        </div>
-      </div>
-
-      <div id="aplayerDiv2" class="col-md-12 col-sm-12 col-xs-12">
-        <div class="aplayer-wrap">
-          <div id="aplayer2"></div>
+          <div id="aplayer"></div>
         </div>
       </div>
     
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div style="margin: 0px auto; display: table;">
-            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">我的主页</button></a> |  
-            <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的喜欢</button> |
-            <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">全部列表</button><!-- |
-            <button type="button" class="btn btn-info">切换模式</button>  -->
+            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">我的主页</button></a> |   
+            <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的喜欢</button> | 
+            <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">全部列表</button>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+        <div style="margin: 0px auto; display: table;">
+            <button id="loveBtn" type="button" class="btn btn-danger" onclick="netease()">我的网易云歌单</button> | 
+            <a href="https://res.wang64.cn/search" target="_blank"><button id="listBtn" type="button" class="btn btn-info">在线搜索</button></a>
         </div>
       </div>
   </div>
@@ -125,35 +127,38 @@
   <!-- <script type="text/javascript" src="https://wang926454.gitee.io/reader/JS/aplist.js"></script> -->
   <script type="text/javascript" src="JS/aplist.js"></script>
   <script>
-    const ap1 = new APlayer({
-      container: document.getElementById('aplayer1'),
+    const ap = new APlayer({
+      container: document.getElementById('aplayer'),
       lrcType: 3,
-      order: 'random',
-      theme: '#000000',
-      volume: 2.0,
-      audio: getList()
-    });
-    
-    const ap2 = new APlayer({
-      container: document.getElementById('aplayer2'),
-      lrcType: 3,
-      autoplay: true,
       order: 'random',
       theme: '#000000',
       volume: 2.0,
       audio: getLove()
     });
-    // 隐藏全部列表
-    document.getElementById('aplayerDiv1').style.display = 'none';
 
     function list(){
-      document.getElementById('aplayerDiv1').style.display = 'inline';
-      document.getElementById('aplayerDiv2').style.display = 'none';
+      ap.list.clear();
+      ap.list.add(getList());
     }
 
     function love(){
-      document.getElementById('aplayerDiv1').style.display = 'none';
-      document.getElementById('aplayerDiv2').style.display = 'inline';
+      ap.list.clear();
+      ap.list.add(getLove());
+    }
+
+    function netease(){
+      $.ajax({
+        url: 'https://api.i-meto.com/api/v1/meting?server=netease&type=playlist&id=26462279',
+        success: function (list) {
+          var array = JSON.parse(list);
+          if(array.length > 0){
+            ap.list.clear();
+            ap.list.add(array);
+          }else{
+            layer.msg('出现错误，请刷新页面');
+          }
+        }
+      });
     }
 
     var colors = ['#FF1177','#228DFF','#FFDD1B','#B6FF00','#FF9900','#BA01FF'];

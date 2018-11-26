@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>在线搜索</title>
+  <link rel="shortcut icon" href="https://wang64.cn/static/favicon.ico" />
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <!-- 垂直居中参考 https://www.cnblogs.com/yugege/p/5246652.html -->
+  <!-- APlayer源码 https://github.com/MoePlayer/APlayer -->
+  <!-- 搜索API https://github.com/metowolf/Meting https://github.com/metowolf/MetingJS -->
+  <style>
+    @font-face {
+      font-family: 'Monoton';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Monoton'), local('Monoton-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/01.woff) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Pacifico';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/03.woff) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Audiowide';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Audiowide'), local('Audiowide-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/05.woff) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Vampiro One';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Vampiro One'), local('VampiroOne-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/06.woff) format('woff');
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0; 
+        padding: 0;
+    }
+
+    body {
+      background-image: url(https://wang926454.gitee.io/reader/Image/201811/normal/09010.png);
+      /* background-color: #2e2e31; */
+      /* 隐藏滚动条 */
+      overflow: hidden;
+    }
+
+    #text {
+      text-align: center;
+      font-size: 2em;
+      color: #FF1177;
+      font-family: Monoton;
+    }
+
+    .middle {
+      position: relative;
+      top: 13%;
+      /* transform: translateY(-13%); */
+    }
+
+    .col-center-block {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .aplayer-wrap {
+      max-width: 700px;
+      margin: 20px auto;
+    }
+    
+  </style>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1826dd4e676f6c917705c5632139f6dd";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.staticfile.org/layer/2.3/layer.js"></script>
+</head>
+
+<body>
+  <div class="middle">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div style="margin: 0px auto; display: table;">
+        <p id="text">Search</p>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div style="margin: 0px auto; display: table;">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <select id="serachType" class="form-control">
+              <option value="netease">网易云音乐</option>
+              <option value="kugou">酷狗音乐</option>
+              <option value="tencent">QQ音乐</option>
+              <option value="xiami">虾米音乐</option>
+              <option value="baidu">百度音乐</option>
+            </select>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <input id="serachText" type="text" class="form-control" placeholder="请输入关键字">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+      <div style="margin: 0px auto; display: table;">
+        <div class="form-inline">
+            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">我的主页</button></a> | 
+            <a href="https://res.wang64.cn" target="_blank"><button id="loveBtn" type="button" class="btn btn-danger">我的音乐</button></a> | 
+            <button id="serachBtn" type="button" class="btn btn-info" onclick="list(this)">点击搜索</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="aplayerDiv1" class="col-md-12 col-sm-12 col-xs-12">
+      <div class="aplayer-wrap">
+        <div id="aplayer"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // 检测是否是手机查看
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+        // 跳转移动端页面
+        var middleArray = document.getElementsByClassName("middle");
+        middleArray[0].style.top = "8%";
+    }
+  </script>
+
+  <script>
+    const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      lrcType: 3,
+      theme: '#000000',
+      volume: 2.0
+    });
+
+    var serachText = document.getElementById("serachText");
+    var serachType = document.getElementById("serachType").value;
+
+    function list(btn) {
+      // 开始执行，先将按钮置为不可用，执行完后设置可用
+      btn.disabled = true;
+      serachType = document.getElementById("serachType").value;
+      serachText = document.getElementById("serachText").value;
+      if(serachText.trim() === ''){
+        layer.msg('关键字为空');
+        btn.disabled = false;
+        return;
+      }
+      var url = "https://api.i-meto.com/api/v1/meting?type=search&server=" + serachType + "&id=" + serachText;
+      $.ajax({
+          url: url,
+          success: function (list) {
+            var array = JSON.parse(list);
+            // console.log(url);
+            // console.log(array);
+            if(array.length > 0){
+              ap.list.clear();
+              ap.list.add(array);
+            }else{
+              layer.msg('没有搜索到任何结果，请切换平台尝试');
+            }
+            btn.disabled = false;
+          }
+      });
+    }
+
+    var colors = ['#FF1177', '#228DFF', '#FFDD1B', '#B6FF00', '#FF9900', '#BA01FF'];
+    var fonts = ['Pacifico', 'Audiowide', 'Vampiro One'];
+    var text = document.getElementById("text");
+    // 推荐使用setTimeout
+    setTimeout(function () {
+      text.style.color = colors[Math.floor(colors.length * Math.random())];
+      text.style.fontFamily = fonts[Math.floor(fonts.length * Math.random())];
+      setTimeout(arguments.callee, 1000);
+    }, 1000);
+
+    $.ajax({
+      url: 'https://api.i-meto.com/api/v1/meting?server=netease&type=search&id=Towers',
+      success: function (list) {
+        serachText.value = "Towers";
+        var array = JSON.parse(list);
+        if(array.length > 0){
+          ap.list.clear();
+          ap.list.add(array);
+        }else{
+          layer.msg('出现错误，请刷新页面');
+        }
+      }
+    });
+  </script>
+  <script type="text/javascript" src="https://wang926454.gitee.io/reader/JS/love.js"></script>
+</body>
+
+</html>
