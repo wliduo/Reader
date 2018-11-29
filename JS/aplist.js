@@ -1,17 +1,16 @@
 // 我的喜欢
 var aplove = [{
-    "name": "Towers",
-    "artist": "Frida Sundemo",
-    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=2639477&auth=af9f2fe5cb9664600e54afba768cf01f7b871f59e7fc8bfba06aa5a6de4eea76",
-    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=944480488315728&auth=1ff8310b2badf1aa31dbe86b7d733ea9e0bbfb10fa2b4b5ae06c44b7d7717b7a",
-    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=2639477&auth=8755dd85b5b7941e79f7e63e2655e4dea0e104cc90c5ebdf15463e1b99e5f90f"
-  },
-  {
     "name": "Cry Wolf",
     "artist": "Luna Shadows",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=404182830&auth=030a13ee8f06d09075e4a51fc924bf63f533641a1f0d9c21fad18e8ecc54adaf",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=1377688071317730&auth=0ef3a43bd5c46396ac8ac3f2df55d00cc3ce843754efab3814163d6d6ce19095",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=404182830&auth=94ed778797d568ffc6e9ca1109cb8e455158135227808b9c662cce20db267886"
+  },{
+    "name": "Towers",
+    "artist": "Frida Sundemo",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=2639477&auth=af9f2fe5cb9664600e54afba768cf01f7b871f59e7fc8bfba06aa5a6de4eea76",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=944480488315728&auth=1ff8310b2badf1aa31dbe86b7d733ea9e0bbfb10fa2b4b5ae06c44b7d7717b7a",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=2639477&auth=8755dd85b5b7941e79f7e63e2655e4dea0e104cc90c5ebdf15463e1b99e5f90f"
   },
   {
     "name": "Waiting For Love",
@@ -77,6 +76,97 @@ var aplove = [{
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=1313107065&auth=c479e7ec0cb3dd44fbbe169d10e50f480be9155321939e669bf886b2f2841dd3"
   },
   {
+    "name": "After the Afterparty(Remix)",
+    "artist": "Charli XCX / Alan Walker",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=455311429&auth=e2e73b9336a0e43ab4d2bea062bbd8b5e0c5fb716a5deeec3f3ba28bd1cdcd7d",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18678503535004897&auth=ce023969a5b383ff2e460ada0462442bde8de3a645a2a615b7a62598aacc736e",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=455311429&auth=1f4ce8782bedfb2215b70d7cdd595c72229ace330c076d8791321854cf0b7364"
+  },
+  {
+    "name": "Break Up in a Small Town",
+    "artist": "Sam Hunt",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=29592100&auth=226325e64848246c739325c84eaab0a71bbace284fa03e0085f654b8b06db2a7",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163168888246&auth=8f11351bfac05d368ec94aead72eefa327a1f21b320212406a04c8174f7d9d08",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=29592100&auth=8673ec2d5906edc5ae7c7e37fbd38a3fb62f36b4e5725c5c59f140dfe0234f7b"
+  },
+  {
+    "name": "Up Till Dawn (On The Move)",
+    "artist": "Lucas & Steve",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=475264010&auth=2c2c3b08f34a69e3abbdf229c95d8e2060fb60444feb5d3403346bd816b56141",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18218907672791484&auth=2c80978aac21bbf1e0ec853e02fd80246fbae58182f7dab82a736f49b9d0e5df",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=475264010&auth=04efbf36b14802e3d3419269d71bc1d0f33357b21c50df23bf936707f4cccac3"
+  },
+  {
+    "name": "Soldier",
+    "artist": "Samantha Jade",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=27969800&auth=88e5bbc1f72806872d1b0a4685e134be6e9ec9317f5f08bab04fea3aa98b9eed",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163451366366&auth=c409af49e3cbc0d36533641491392949df29806d48db5db417e2bfbc23dd175d",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=27969800&auth=46a4e1d0b5b10fb122a4fb11450531645cf06cc790e9e5fa8032533ac3fbe8b7"
+  },
+  {
+    "name": "Didn't Feel A Thing",
+    "artist": "Future Duper / Emilie Adams",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=487434788&auth=ad98f63bed50c2621a1f050b129dfb448f97c9db3ed627110f104810e86b83ae",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=17801093254121637&auth=3e0d3e041afda8d8457a2131a0aef71d1407410ec26958e059e7d6dda219c0e5",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=487434788&auth=694f2fc4b2bf4171106a1d160e89e82341da5c6935c3e068df49e19d8b4376ec"
+  },
+  {
+    "name": "Rising High",
+    "artist": "Shavi / Beatrich",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=452986206&auth=c6667e7c3d1ad37b89e1057d0736d77e47f4c6a9b781b6d2913a1abe3440b72f",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18713687906447804&auth=c6bf01f20cb43fd4389b275ecca77a39e195bcd50ec4cd1f923e5229acf99738",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=452986206&auth=62e1bab5a018cf2054d73e6d0fb4e3685fd84d81bd7ea7bc7b10d5adb2b78281"
+  },
+  {
+    "name": "Tattoo on My Face",
+    "artist": "NLSN",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=463197312&auth=54c89012e1addff5eb7a20bcee4f183e15fb24820c468eda95d8ec873d330297",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=17782401556425788&auth=935106dbbfe6a537e4875e7296a97463d9d946be8c3f751c5468d852d5795bbb",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=463197312&auth=f9cd0a241ae89f35c181515c945c627d95094561000009e2b1eb0045690ab54d"
+  },
+  {
+    "name": "Jar Of Love",
+    "artist": "曲婉婷",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=25713016&auth=f6d4fd339418f2c97434b8c7e5c1b00f4221ad4627c1fcae86d218f8b7637db4",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=573945069746475&auth=5bed621adfc5bce9e2dbfad0bc30d764a560f2fd7614915d3ed25acdca876d1e",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=25713016&auth=02f366227f0bebff369876a7512fc805f28faafbfdc1f89aca75a64fbac801f0"
+  },
+  {
+    "name": "1984",
+    "artist": "Charlie Puth",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=28341474&auth=71a4fbcd2f98160af72ac25b7e44577e69f07c8d3309afe60500acf094284b10",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=5989039836611085&auth=0fb3fddb3833920d6ff96bc3e992e088d0ad089d91ef16d7a531233a2a0f6f67",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=28341474&auth=ff3bfc152c92138bf6d1dd34a579b1bd1962271a6467f524141494c540c0bb81"
+  },
+  {
+    "name": "Wolves",
+    "artist": "Selena Gomez / Marshmello",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=515269424&auth=ac11c9fd6ecc8d0837fffb81379ea91132e9dba292167faffcfd0df196097746",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=17902248323721194&auth=e748698707d3e0706236365a27f4750205e44867bdfb38f5492d439d1c08fa03",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=515269424&auth=af678e1e571a8d0b1788549139a0ed7d7dc297cc3baf5ab03b380dd5f660c7c7"
+  },
+  {
+    "name": "Walk Away",
+    "artist": "Dia Frampton",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=2529311&auth=b5d27762fe9ef176149ed7ba93eee20e51e24a8601ea205ce1d6d61e24394c62",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163240603344&auth=a5dd2ac9702831a25c35ebf913283022932a696b9f6551c8a34df48641e52a74",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=2529311&auth=5d87e5e6ba1b0b3f5e1ddcad2b6416134ff4104d2252957d536ea5e1e5812ea6"
+  },
+  {
+    "name": "Walk Away",
+    "artist": "LVNDSCAPE / Kaptan",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=469243036&auth=2cb5718ec983fb8ec8982f9523597f4ebee2a27d3653b0c090bc9eaf0d73f8af",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=17724127440169524&auth=2005b638faa3a93ae6cc73b8f277015bd1573d11ff072128c1fb9a099138e03d",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=469243036&auth=7dda4180d90e955074da0da9a57b9bec70465e52245a5ddf14b61fb57e9fb8d3"
+  },
+  {
+    "name": "Something Just Like This",
+    "artist": "Alex Goot / Madilyn Bailey",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=470795480&auth=26e657aebadc8553e8494f9f554d01e24c116c80fb383db1f72e4297f603c26b",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18789554208920076&auth=1d758d89fa775992094b714d0d9f73d030e507fe7e2eca8e7422957dec7dadc0",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=470795480&auth=065f8396e3e7481d8900f9d3c9e1e8d24f708b93dfdc09e4e8f863638ad023e6"
+  },
+  {
     "name": "STYX HELIX",
     "artist": "MYTH & ROID",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=413961906&auth=2776b41087b06d73e225c8ec7f8cf1596dcb21af7c3e8db4aca8785ed7e150a1",
@@ -133,18 +223,18 @@ var aplove = [{
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=805197&auth=bc9f06faaeba0c41f6aad007025d57fa2c7e5da6405a35cc8f71a0e401ef75b6"
   },
   {
+    "name": "打上花火",
+    "artist": "DAOKO / 米津玄師",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=496869422&auth=dd20bf86e3ab64c71ecb6e48b1b1a970d63a0577ec0ef253122f6d0a97eb9b5f",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163009282836&auth=0d664b233926dd1cf143fa6a7ae402985bee60ddbc67f1f28b94299ff3b90a48",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=496869422&auth=6ab0079ccf6ca7921195e052a1dda2884dcba39bb9e9afb1d669a3f11710bd21"
+  },
+  {
     name: 'なんでもないや',
     artist: 'RADWIMPS',
     url: 'https://wang926454.gitee.io/reader/Music/RADWIMPS.mp3',
     cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
     lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
-  },
-  {
-    "name": "1年2ヶ月20日",
-    "artist": "BRIGHT",
-    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=22647928&auth=c1015b76a3c79631908b1b0439b5597d5708fd9e9d99dea140a92eed12e3e30e",
-    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18767563976295305&auth=90ce266c063b7c27dc83cf8721820b2fa58fdd9d89f191b56d74e957b69d843d",
-    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=22647928&auth=4942d097f62985b528f4e7dbac0a8bd8f4e45943fe59822c9dbec94bac5baff5"
   },
   {
     "name": "光るなら",
@@ -238,6 +328,13 @@ var aplove = [{
     "lrc": "https://api.i-meto.com/api/v1/meting?server=kugou&type=lrc&id=ea3c81d87e3690ba5f5291f163a92f52&auth=58cf3a357d22f98fd95dabbf6ec3e369c2688250f0021d4465d0ee807e6c4647"
   },
   {
+    "name": "一百万个可能",
+    "artist": "Christine Welch",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=29722582&auth=a99ba6acd5bbebfa5bf709ee3cbff4788aadb0714c6f97fffdfa811719100be1",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=2532175280446455&auth=f69244cf3c2ee623efdd5c8a779ed970cdeec23c9544a338d7a054fe4154ef88",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=29722582&auth=db6bec14559360b16d7326bc4f0e0950011d4810ee7c3d29d55f6d816c290e69"
+  },
+  {
     name: '烟火里的尘埃',
     artist: '郁欢',
     url: 'https://wang926454.gitee.io/reader/Music/yanhuolidechenai.mp3',
@@ -255,18 +352,17 @@ var aplove = [{
 
 // 全部列表
 var aplist = [{
-    "name": "Towers",
-    "artist": "Frida Sundemo",
-    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=2639477&auth=af9f2fe5cb9664600e54afba768cf01f7b871f59e7fc8bfba06aa5a6de4eea76",
-    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=944480488315728&auth=1ff8310b2badf1aa31dbe86b7d733ea9e0bbfb10fa2b4b5ae06c44b7d7717b7a",
-    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=2639477&auth=8755dd85b5b7941e79f7e63e2655e4dea0e104cc90c5ebdf15463e1b99e5f90f"
-  },
-  {
     "name": "Cry Wolf",
     "artist": "Luna Shadows",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=404182830&auth=030a13ee8f06d09075e4a51fc924bf63f533641a1f0d9c21fad18e8ecc54adaf",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=1377688071317730&auth=0ef3a43bd5c46396ac8ac3f2df55d00cc3ce843754efab3814163d6d6ce19095",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=404182830&auth=94ed778797d568ffc6e9ca1109cb8e455158135227808b9c662cce20db267886"
+  },{
+    "name": "Towers",
+    "artist": "Frida Sundemo",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=2639477&auth=af9f2fe5cb9664600e54afba768cf01f7b871f59e7fc8bfba06aa5a6de4eea76",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=944480488315728&auth=1ff8310b2badf1aa31dbe86b7d733ea9e0bbfb10fa2b4b5ae06c44b7d7717b7a",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=2639477&auth=8755dd85b5b7941e79f7e63e2655e4dea0e104cc90c5ebdf15463e1b99e5f90f"
   },
   {
     "name": "Waiting For Love",
@@ -330,6 +426,97 @@ var aplist = [{
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=1313107065&auth=dff454f8af145a5c6f40aa341ce09fbffca8ed0f8bb33a129ea41baf1895e11b",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163573081067&auth=24ae8bfcb0b20c713f3918860225a7f094a913a041d1d290b639c215c414a540",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=1313107065&auth=c479e7ec0cb3dd44fbbe169d10e50f480be9155321939e669bf886b2f2841dd3"
+  },
+  {
+    "name": "After the Afterparty(Remix)",
+    "artist": "Charli XCX / Alan Walker",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=455311429&auth=e2e73b9336a0e43ab4d2bea062bbd8b5e0c5fb716a5deeec3f3ba28bd1cdcd7d",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18678503535004897&auth=ce023969a5b383ff2e460ada0462442bde8de3a645a2a615b7a62598aacc736e",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=455311429&auth=1f4ce8782bedfb2215b70d7cdd595c72229ace330c076d8791321854cf0b7364"
+  },
+  {
+    "name": "Break Up in a Small Town",
+    "artist": "Sam Hunt",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=29592100&auth=226325e64848246c739325c84eaab0a71bbace284fa03e0085f654b8b06db2a7",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163168888246&auth=8f11351bfac05d368ec94aead72eefa327a1f21b320212406a04c8174f7d9d08",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=29592100&auth=8673ec2d5906edc5ae7c7e37fbd38a3fb62f36b4e5725c5c59f140dfe0234f7b"
+  },
+  {
+    "name": "Up Till Dawn (On The Move)",
+    "artist": "Lucas & Steve",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=475264010&auth=2c2c3b08f34a69e3abbdf229c95d8e2060fb60444feb5d3403346bd816b56141",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18218907672791484&auth=2c80978aac21bbf1e0ec853e02fd80246fbae58182f7dab82a736f49b9d0e5df",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=475264010&auth=04efbf36b14802e3d3419269d71bc1d0f33357b21c50df23bf936707f4cccac3"
+  },
+  {
+    "name": "Soldier",
+    "artist": "Samantha Jade",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=27969800&auth=88e5bbc1f72806872d1b0a4685e134be6e9ec9317f5f08bab04fea3aa98b9eed",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163451366366&auth=c409af49e3cbc0d36533641491392949df29806d48db5db417e2bfbc23dd175d",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=27969800&auth=46a4e1d0b5b10fb122a4fb11450531645cf06cc790e9e5fa8032533ac3fbe8b7"
+  },
+  {
+    "name": "Didn't Feel A Thing",
+    "artist": "Future Duper / Emilie Adams",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=487434788&auth=ad98f63bed50c2621a1f050b129dfb448f97c9db3ed627110f104810e86b83ae",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=17801093254121637&auth=3e0d3e041afda8d8457a2131a0aef71d1407410ec26958e059e7d6dda219c0e5",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=487434788&auth=694f2fc4b2bf4171106a1d160e89e82341da5c6935c3e068df49e19d8b4376ec"
+  },
+  {
+    "name": "Rising High",
+    "artist": "Shavi / Beatrich",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=452986206&auth=c6667e7c3d1ad37b89e1057d0736d77e47f4c6a9b781b6d2913a1abe3440b72f",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18713687906447804&auth=c6bf01f20cb43fd4389b275ecca77a39e195bcd50ec4cd1f923e5229acf99738",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=452986206&auth=62e1bab5a018cf2054d73e6d0fb4e3685fd84d81bd7ea7bc7b10d5adb2b78281"
+  },
+  {
+    "name": "Tattoo on My Face",
+    "artist": "NLSN",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=463197312&auth=54c89012e1addff5eb7a20bcee4f183e15fb24820c468eda95d8ec873d330297",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=17782401556425788&auth=935106dbbfe6a537e4875e7296a97463d9d946be8c3f751c5468d852d5795bbb",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=463197312&auth=f9cd0a241ae89f35c181515c945c627d95094561000009e2b1eb0045690ab54d"
+  },
+  {
+    "name": "Jar Of Love",
+    "artist": "曲婉婷",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=25713016&auth=f6d4fd339418f2c97434b8c7e5c1b00f4221ad4627c1fcae86d218f8b7637db4",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=573945069746475&auth=5bed621adfc5bce9e2dbfad0bc30d764a560f2fd7614915d3ed25acdca876d1e",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=25713016&auth=02f366227f0bebff369876a7512fc805f28faafbfdc1f89aca75a64fbac801f0"
+  },
+  {
+    "name": "1984",
+    "artist": "Charlie Puth",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=28341474&auth=71a4fbcd2f98160af72ac25b7e44577e69f07c8d3309afe60500acf094284b10",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=5989039836611085&auth=0fb3fddb3833920d6ff96bc3e992e088d0ad089d91ef16d7a531233a2a0f6f67",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=28341474&auth=ff3bfc152c92138bf6d1dd34a579b1bd1962271a6467f524141494c540c0bb81"
+  },
+  {
+    "name": "Wolves",
+    "artist": "Selena Gomez / Marshmello",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=515269424&auth=ac11c9fd6ecc8d0837fffb81379ea91132e9dba292167faffcfd0df196097746",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=17902248323721194&auth=e748698707d3e0706236365a27f4750205e44867bdfb38f5492d439d1c08fa03",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=515269424&auth=af678e1e571a8d0b1788549139a0ed7d7dc297cc3baf5ab03b380dd5f660c7c7"
+  },
+  {
+    "name": "Walk Away",
+    "artist": "Dia Frampton",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=2529311&auth=b5d27762fe9ef176149ed7ba93eee20e51e24a8601ea205ce1d6d61e24394c62",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163240603344&auth=a5dd2ac9702831a25c35ebf913283022932a696b9f6551c8a34df48641e52a74",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=2529311&auth=5d87e5e6ba1b0b3f5e1ddcad2b6416134ff4104d2252957d536ea5e1e5812ea6"
+  },
+  {
+    "name": "Walk Away",
+    "artist": "LVNDSCAPE / Kaptan",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=469243036&auth=2cb5718ec983fb8ec8982f9523597f4ebee2a27d3653b0c090bc9eaf0d73f8af",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=17724127440169524&auth=2005b638faa3a93ae6cc73b8f277015bd1573d11ff072128c1fb9a099138e03d",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=469243036&auth=7dda4180d90e955074da0da9a57b9bec70465e52245a5ddf14b61fb57e9fb8d3"
+  },
+  {
+    "name": "Something Just Like This",
+    "artist": "Alex Goot / Madilyn Bailey",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=470795480&auth=26e657aebadc8553e8494f9f554d01e24c116c80fb383db1f72e4297f603c26b",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18789554208920076&auth=1d758d89fa775992094b714d0d9f73d030e507fe7e2eca8e7422957dec7dadc0",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=470795480&auth=065f8396e3e7481d8900f9d3c9e1e8d24f708b93dfdc09e4e8f863638ad023e6"
   },
   {
     "name": "STYX HELIX",
@@ -423,6 +610,13 @@ var aplist = [{
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=805197&auth=bc9f06faaeba0c41f6aad007025d57fa2c7e5da6405a35cc8f71a0e401ef75b6"
   },
   {
+    "name": "打上花火",
+    "artist": "DAOKO / 米津玄師",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=496869422&auth=dd20bf86e3ab64c71ecb6e48b1b1a970d63a0577ec0ef253122f6d0a97eb9b5f",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163009282836&auth=0d664b233926dd1cf143fa6a7ae402985bee60ddbc67f1f28b94299ff3b90a48",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=496869422&auth=6ab0079ccf6ca7921195e052a1dda2884dcba39bb9e9afb1d669a3f11710bd21"
+  },
+  {
     name: 'なんでもないや',
     artist: 'RADWIMPS',
     url: 'https://wang926454.gitee.io/reader/Music/RADWIMPS.mp3',
@@ -526,6 +720,13 @@ var aplist = [{
     "url": "https://api.i-meto.com/api/v1/meting?server=kugou&type=url&id=ea3c81d87e3690ba5f5291f163a92f52&auth=83344c619c0a4371dcc930e9efc23e981f468d9a0048810d09dce9a95c5ecf16",
     "cover": "https://api.i-meto.com/api/v1/meting?server=kugou&type=pic&id=ea3c81d87e3690ba5f5291f163a92f52&auth=2f46e3b483ec878899a244b81170c79fddcf4cb9539578819156f8e4eb4a75b9",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=kugou&type=lrc&id=ea3c81d87e3690ba5f5291f163a92f52&auth=58cf3a357d22f98fd95dabbf6ec3e369c2688250f0021d4465d0ee807e6c4647"
+  },
+  {
+    "name": "一百万个可能",
+    "artist": "Christine Welch",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=29722582&auth=a99ba6acd5bbebfa5bf709ee3cbff4788aadb0714c6f97fffdfa811719100be1",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=2532175280446455&auth=f69244cf3c2ee623efdd5c8a779ed970cdeec23c9544a338d7a054fe4154ef88",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=29722582&auth=db6bec14559360b16d7326bc4f0e0950011d4810ee7c3d29d55f6d816c290e69"
   },
   {
     name: '烟火里的尘埃',
