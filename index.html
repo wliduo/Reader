@@ -122,9 +122,9 @@
     
       <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
         <div style="margin: 0px auto; display: table;">
-            <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的喜欢</button> | 
-            <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">全部列表</button> | 
-            <button id="serachBtn" type="button" class="btn btn-info active" onclick="search(this)">点击搜索</button>
+            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">我的主页</button></a> | 
+            <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">云音乐热歌榜(每周四更新)</button> | 
+            <button id="serachBtn" type="button" class="btn btn-info active" onclick="search(this)">搜索</button>
         </div>
       </div>
 
@@ -155,11 +155,10 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div style="margin: 0px auto; display: table;">
             <div class="btn-group">
-              <button id="loveBtn" type="button" class="btn btn-danger active" onclick="netease()">我的网易云歌单</button>
+              <button id="loveBtn" type="button" class="btn btn-danger active" onclick="netease()">我最近喜欢听的歌</button>
               <a href="https://music.163.com/#/playlist?id=26462279" target="_blank"><button type="button" class="btn btn-success active">歌单地址</button></a>
-            </div>
-              | 
-            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">我的主页</button></a>
+            </div> |
+            <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的音乐列表</button>
         </div>
       </div>
   </div>
@@ -200,10 +199,8 @@
     const ap2 = new APlayer({
       container: document.getElementById('aplayer2'),
       lrcType: 3,
-      order: 'random',
       theme: '#000000',
-      volume: 2.0,
-      audio: getList()
+      volume: 2.0
     });
 
     // 网易云
@@ -228,7 +225,21 @@
       document.getElementById('aplayerDiv2').style.display = 'inline';
       document.getElementById('aplayerDiv3').style.display = 'none';
       document.getElementById('aplayerDiv4').style.display = 'none';
-      document.getElementById('text').innerHTML = "List";
+      document.getElementById('text').innerHTML = "HotList";
+      if(ap2.list.audios.length <= 0){
+        $.ajax({
+          url: 'https://api.i-meto.com/api/v1/meting?server=netease&type=playlist&id=3778678',
+          success: function (list) {
+            var array = JSON.parse(list);
+            if(array.length > 0){
+              ap2.list.clear();
+              ap2.list.add(array);
+            }else{
+              layer.msg('出现错误，请刷新页面');
+            }
+          }
+        });
+      }
     }
 
     function love(){
@@ -236,7 +247,7 @@
       document.getElementById('aplayerDiv2').style.display = 'none';
       document.getElementById('aplayerDiv3').style.display = 'none';
       document.getElementById('aplayerDiv4').style.display = 'none';
-      document.getElementById('text').innerHTML = "Love";
+      document.getElementById('text').innerHTML = "MyMusic";
     }
 
     // 初始化显示我的喜欢
@@ -247,7 +258,7 @@
       document.getElementById('aplayerDiv2').style.display = 'none';
       document.getElementById('aplayerDiv3').style.display = 'inline';
       document.getElementById('aplayerDiv4').style.display = 'none';
-      document.getElementById('text').innerHTML = "Netease";
+      document.getElementById('text').innerHTML = "最近听的歌";
       // console.log(ap1);
       // console.log(ap3);
       if(ap3.list.audios.length <= 0){
