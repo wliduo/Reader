@@ -1,6 +1,34 @@
 // 我的音乐列表
 var aplove = [
   {
+    "name": "Without You",
+    "artist": "Avicii / Sandro Cavazza",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=496869523&auth=b2d48670098d0b79fdfcd9ea21aa60cf0edf3b46e74c75dc1803a7b448c56814",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18776360069542158&auth=6c62665fa8796e092fef0470d34817baf07372aa87a537f92214f5591ab6420d",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=496869523&auth=bab055c91bd51acd7ca7f3382f029e94f6ee0e0143c2aa17f4d577f006e67f84"
+  },
+  {
+    "name": "The Nights (Original Mix)",
+    "artist": "Avicii",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=29771146&auth=b4f791d4669f4564624cd42c169beac51fbcfa0474fa7e993a3dffd36fce4d0a",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=3246857838267604&auth=440f90e07ee17ef128a01fd2f8d82c0fbfce76dd64940abfc3de3e533ef945a1",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=29771146&auth=0818a97a8f2831b66b45254d79ffd0fd2b50a446b927b1013ac173f3b559927e"
+  },
+  {
+    "name": "Wake Me Up",
+    "artist": "Avicii / Aloe Blacc",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=27713920&auth=0bcd38b1ad7422d80350a5f47f05bacfe9e8fbb64d9c018d7f1bfa47230a6471",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=2535473814614183&auth=1adb0c5851ba7d2a4e883af5b7ad253f3faeb364863a82aa287f62d760d8c9d9",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=27713920&auth=7b8a64efd730e007575f1ba4d65f8eb81883c4bbf46c1a220c4bc69154fc9134"
+  },
+  {
+    "name": "Waiting For Love",
+    "artist": "Avicii / Martin Garrix / Simon Aldred",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=31356499&auth=43994b78eafdb0f2ae7b96338a73a818c3a8b528b2d74176579113612392d935",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=2932397511504193&auth=72b31aee411c7163f047c0f8d944f5460b871cf31c64ea3b1b61fd3cd9a5ed5e",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=31356499&auth=2a868835e6542dbf27db88a2f9a1bd0bc8c6111cea467c000fa7769662d33d90"
+  },
+  {
     "name": "Alone",
     "artist": "Alan Walker / Noonie Bao",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=444269135&auth=d17662e53371ab6e2e08f270cd9bf9b8e8692d0e6427c40bc844e79373dfd3db",
@@ -20,13 +48,6 @@ var aplove = [
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=2639477&auth=af9f2fe5cb9664600e54afba768cf01f7b871f59e7fc8bfba06aa5a6de4eea76",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=944480488315728&auth=1ff8310b2badf1aa31dbe86b7d733ea9e0bbfb10fa2b4b5ae06c44b7d7717b7a",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=2639477&auth=8755dd85b5b7941e79f7e63e2655e4dea0e104cc90c5ebdf15463e1b99e5f90f"
-  },
-  {
-    "name": "Waiting For Love",
-    "artist": "Avicii / Martin Garrix / Simon Aldred",
-    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=31356499&auth=43994b78eafdb0f2ae7b96338a73a818c3a8b528b2d74176579113612392d935",
-    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=2932397511504193&auth=72b31aee411c7163f047c0f8d944f5460b871cf31c64ea3b1b61fd3cd9a5ed5e",
-    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=31356499&auth=2a868835e6542dbf27db88a2f9a1bd0bc8c6111cea467c000fa7769662d33d90"
   },
   {
     "name": "Nevada",
@@ -71,18 +92,18 @@ var aplove = [
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=450455548&auth=45c2c80736d301daa00d65f089aa6b6feb800b44538d904bdfcf1029fe7ea48d"
   },
   {
-    "name": "Legends Never Die(Remix)",
-    "artist": "Alan Walker",
-    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=517411583&auth=59539864ead77c780f153551ab2c0df6736e3203452c3f5468e531fc49791bec",
-    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163057263049&auth=ee058563b321f1459aa91355868f00dfb27671335401d38568bef2f519150698",
-    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=517411583&auth=edd16c3b28c62090f6901f4c1ddcb39a199c2b78c82cf69f385532899971f9fd"
-  },
-  {
     "name": "RISE",
     "artist": "The Glitch Mob / Mako / The Word Alive",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=1313107065&auth=dff454f8af145a5c6f40aa341ce09fbffca8ed0f8bb33a129ea41baf1895e11b",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163573081067&auth=24ae8bfcb0b20c713f3918860225a7f094a913a041d1d290b639c215c414a540",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=1313107065&auth=c479e7ec0cb3dd44fbbe169d10e50f480be9155321939e669bf886b2f2841dd3"
+  },
+  {
+    "name": "Legends Never Die(Remix)",
+    "artist": "Alan Walker",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=517411583&auth=59539864ead77c780f153551ab2c0df6736e3203452c3f5468e531fc49791bec",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163057263049&auth=ee058563b321f1459aa91355868f00dfb27671335401d38568bef2f519150698",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=517411583&auth=edd16c3b28c62090f6901f4c1ddcb39a199c2b78c82cf69f385532899971f9fd"
   },
   {
     "name": "After the Afterparty(Remix)",
@@ -146,6 +167,48 @@ var aplove = [
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=28341474&auth=71a4fbcd2f98160af72ac25b7e44577e69f07c8d3309afe60500acf094284b10",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=5989039836611085&auth=0fb3fddb3833920d6ff96bc3e992e088d0ad089d91ef16d7a531233a2a0f6f67",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=28341474&auth=ff3bfc152c92138bf6d1dd34a579b1bd1962271a6467f524141494c540c0bb81"
+  },
+  {
+    "name": "Attention",
+    "artist": "Charlie Puth",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=473817398&auth=8c839d1c33b15f1e4f85fa62187f68efc36ad433db85131863a82e3b4d178f9c",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163281594877&auth=01bf76093955048cb2b06ca2439931362fcf6e760fe2579b7c463e673b1f2868",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=473817398&auth=b8a66c725e6817ef28d4d791bff5496b04ef17f8c742fa18d8732bcf3312aa28"
+  },
+  {
+    "name": "Dangerously",
+    "artist": "Charlie Puth",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=401249909&auth=81a4a5ad28da5d86f4795ca01c462e84ba0ce5a2240bd4b9478024bc6ab44c4a",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=3295236348738229&auth=683969f1e160b93ef1205ef048165b25e07b916ad94790a123d4ceb835289279",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=401249909&auth=73d1006a32121b5b1f433cfe2cbf175a1c897df44dd1516996123778723d6800"
+  },
+  {
+    "name": "One Call Away",
+    "artist": "Charlie Puth",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=34072434&auth=ae024279c427ff3bcf3e22c506938691063eda61f6985a79163fb5d65041bf87",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=3295236348738229&auth=683969f1e160b93ef1205ef048165b25e07b916ad94790a123d4ceb835289279",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=34072434&auth=d6754a996b0d5366842deff973fb67d1c7c8e7a9e5a7679351e13fc51aba9481"
+  },
+  {
+    "name": "Look At Me Now",
+    "artist": "Charlie Puth",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=28188171&auth=5fa26b62e417588da1477c2f8ec8fee353c9b49de6625d8afc14ad7b50ddc158",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=2576155743910424&auth=89125239cf2f4838d60c9048740001f849a168dadbf9e6f4bb54e8a578084960",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=28188171&auth=813f6368c05d27bfaeb9d520e8d8ae4b523688a289b446f556088bce1c380969"
+  },
+  {
+    "name": "See You Again",
+    "artist": "Wiz Khalifa / Charlie Puth",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=30953009&auth=63c1d9dd59e021c0bec019c901911c70542a9c54e9ed5d4e420cd224f265f01b",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=7731765766799133&auth=89b955b87afe4567d789b629504cbeb03560612b0a2b78575416ba04c41f7038",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=30953009&auth=d49eea5fee1d0d16e005c84fc9167e45cbe811eb44ae660bb9dbfe2f98408541"
+  },
+  {
+    "name": "We Don't Talk Anymore",
+    "artist": "Charlie Puth / Selena Gomez",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=401249910&auth=24c49252895ea69791f78454c3124032efabed599ba1e1478182a6ab8d3b4f98",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=3295236348738229&auth=683969f1e160b93ef1205ef048165b25e07b916ad94790a123d4ceb835289279",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=401249910&auth=8d927f68b841f0a43f4088362a04074b6b3bdae6e47e3f2107c01722ddbf727d"
   },
   {
     "name": "Wolves",
@@ -258,6 +321,13 @@ var aplove = [
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=805197&auth=d4414cc98a33c184a9157b22cbd07594050b7cf0b12b44210a2c4579d01be274",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=886206371987692&auth=555559bec8ba86cb3e340d87e5ae1b42bc19eda560409ea32ac6c5aea09ec0f5",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=805197&auth=bc9f06faaeba0c41f6aad007025d57fa2c7e5da6405a35cc8f71a0e401ef75b6"
+  },
+  {
+    "name": "Lemon",
+    "artist": "米津玄師",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=536622304&auth=646cded0097e9fe9ba454b1b1f3bd50943b79c9d569df17fc8ace883c4f6e0e7",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163561494000&auth=806e2590502637f6c6bd5c1cb0b4fbea598f19526c289a55bac8b2c9ffdd6c67",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=536622304&auth=4ddf2564074426984d5192562795b06c62219c361eef7aa2f405ba17de456a8a"
   },
   {
     "name": "打上花火",
@@ -382,8 +452,8 @@ var aplove = [
     name: '烟火里的尘埃',
     artist: '郁欢',
     url: 'https://wang926454.gitee.io/reader/Music/yanhuolidechenai.mp3',
-    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
-    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+    cover: 'https://wang926454.gitee.io/reader/Music/image/yanhuolidechenai.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/yanhuolidechenai.lrc'
   },
   {
     "name": "往后余生",
