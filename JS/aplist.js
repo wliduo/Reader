@@ -22,6 +22,13 @@ var aplove = [
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=27713920&auth=7b8a64efd730e007575f1ba4d65f8eb81883c4bbf46c1a220c4bc69154fc9134"
   },
   {
+    "name": "There For You",
+    "artist": "Martin Garrix / Troye Sivan",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=480426313&auth=f691a9ba40cd6165597dc111756836ad885abd5b2ad8346b2714e5aa13633153",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18520173860179248&auth=cb9c11085be79e228ec7c7ac9a80e6649d5c2843463b7578236e0d91dd0876bb",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=480426313&auth=23fcaa2d8c9a26d6a006dfd915eaa1a704a3f7a8a91892e6bdb9b9efcd288d3d"
+  },
+  {
     "name": "Waiting For Love",
     "artist": "Avicii / Martin Garrix / Simon Aldred",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=31356499&auth=43994b78eafdb0f2ae7b96338a73a818c3a8b528b2d74176579113612392d935",
@@ -391,6 +398,20 @@ var aplove = [
     "url": "https://api.i-meto.com/api/v1/meting?server=kugou&type=url&id=5c1bb55ccd20f85aa9816daa7649bdef&auth=cb0d773aac5d78f7d9a582f05ea1130bba5167783e5ef502287d34401073b766",
     "cover": "https://api.i-meto.com/api/v1/meting?server=kugou&type=pic&id=5c1bb55ccd20f85aa9816daa7649bdef&auth=c8dee393170b5764bbe1db8c5b563f766e785b29347b9abb2b2caa0ca93e294c",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=kugou&type=lrc&id=5c1bb55ccd20f85aa9816daa7649bdef&auth=a8f501d55a4512ecb83e898c21f273902b2cf53114f4ec618d1b4a9dc1f7a7a8"
+  },
+  {
+    "name": "说散就散",
+    "artist": "JC陈泳彤",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=468513829&auth=60f2e6fe17ffa263e2f9453ecb62a1ba071bf1f94a9a281955864cd5b67ca98e",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=19095218439644352&auth=04fe6c02073024ebb3dbfca1f71bc7ecd4aea90b88a8f0fb5fba5b027088efb0",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=468513829&auth=fb5ff8303138d99779d1f84a8009a5c9e7a3181a0817a5b16c260650216e1b4e"
+  },
+  {
+    "name": "光年之外",
+    "artist": "G.E.M.邓紫棋",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=449818741&auth=a1a1ccd9e682ab0fbfefd788b5f239a67641c9203929d7750dea9c2a64ded1c6",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18587244069235039&auth=9f2351fdb8985e90f0b1af92da6f9db9bfe007e49cdbb58fd208f77e176f1377",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=449818741&auth=df1f079131c3e8968632018d103906ac7a0038197840da4f8cf58f07cd162a61"
   },
   {
     "name": "侧脸",
