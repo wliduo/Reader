@@ -1,6 +1,13 @@
 // 我的音乐列表
 var aplove = [
   {
+    "name": "The Nights",
+    "artist": "Avicii / RAS",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=35090549&auth=717236cdfba0c9fc8e3b676cd9db41436cb3c079083ec9eea98a3a3b80135389",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=3340316325648166&auth=0d357d2e558522dbe341538e7f68243a53cda923c4e8ddfc6f3292d24801abcd",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=35090549&auth=c34a143bd9280ec55b9baf4d71abc01f78480063dea2f7edf1734b8c12d25955"
+  },
+  {
     "name": "Without You",
     "artist": "Avicii / Sandro Cavazza",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=496869523&auth=b2d48670098d0b79fdfcd9ea21aa60cf0edf3b46e74c75dc1803a7b448c56814",
@@ -8,18 +15,32 @@ var aplove = [
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=496869523&auth=bab055c91bd51acd7ca7f3382f029e94f6ee0e0143c2aa17f4d577f006e67f84"
   },
   {
-    "name": "The Nights (Original Mix)",
-    "artist": "Avicii",
-    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=29771146&auth=b4f791d4669f4564624cd42c169beac51fbcfa0474fa7e993a3dffd36fce4d0a",
-    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=3246857838267604&auth=440f90e07ee17ef128a01fd2f8d82c0fbfce76dd64940abfc3de3e533ef945a1",
-    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=29771146&auth=0818a97a8f2831b66b45254d79ffd0fd2b50a446b927b1013ac173f3b559927e"
-  },
-  {
     "name": "Wake Me Up",
     "artist": "Avicii / Aloe Blacc",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=27713920&auth=0bcd38b1ad7422d80350a5f47f05bacfe9e8fbb64d9c018d7f1bfa47230a6471",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=2535473814614183&auth=1adb0c5851ba7d2a4e883af5b7ad253f3faeb364863a82aa287f62d760d8c9d9",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=27713920&auth=7b8a64efd730e007575f1ba4d65f8eb81883c4bbf46c1a220c4bc69154fc9134"
+  },
+  {
+    "name": "Friend of Mine",
+    "artist": "Avicii / Vargas & Lagola",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=496869519&auth=10af44c9e78a26cdd488ca1115ef6f9132dd7c690464fb65adb7b7958b51fc08",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18776360069542158&auth=6c62665fa8796e092fef0470d34817baf07372aa87a537f92214f5591ab6420d",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=496869519&auth=2163817d93b6ac14bc4ae64fc4c5f3befda4a6de50e370d622972cd9187d5df6"
+  },
+  {
+    "name": "Lonely Together",
+    "artist": "Avicii / Rita Ora",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=496869520&auth=5e5daee2d4eecd65f95a3ff964713408ac30feb30be21ebca166e6ea1059f14d",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18776360069542158&auth=6c62665fa8796e092fef0470d34817baf07372aa87a537f92214f5591ab6420d",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=496869520&auth=5cce35bcb8f4cd7413b8fd2d8baa88c1d0d895425caf3a417f06073bfd6f4d44"
+  },
+  {
+    "name": "Girl Gone Wild(UMF Mix)",
+    "artist": "Madonna / Avicii",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=21231534&auth=2cfe75e7e8288c2a5373c4df776ba9cb47747ab09f7ee5ef234e830cba292184",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=2531075768362896&auth=9ce5acbdc6932f48548feed51d181a8b5a69eda2e33ae6d7f00301db0fdad734",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=21231534&auth=48cd72ca3defc8674706c81a480dda13573fb34b441e639471cb0e6ef30f4ade"
   },
   {
     "name": "There For You",
@@ -118,6 +139,13 @@ var aplove = [
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=455311429&auth=e2e73b9336a0e43ab4d2bea062bbd8b5e0c5fb716a5deeec3f3ba28bd1cdcd7d",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18678503535004897&auth=ce023969a5b383ff2e460ada0462442bde8de3a645a2a615b7a62598aacc736e",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=455311429&auth=1f4ce8782bedfb2215b70d7cdd595c72229ace330c076d8791321854cf0b7364"
+  },
+  {
+    "name": "Move Your Body(Remix)",
+    "artist": "Sia / Alan Walker",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=436487129&auth=ab8d79bee246be91c5e09cb6d7dd8a58aa1cf277d35528beccc84947a507217d",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=18162832579997237&auth=b1e58db488cd50e0305e79f2ee5e13d2ff72dfa3b684b52c58064c23677e3990",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=436487129&auth=f617ca3a8cd3b178a583215eb3bfc50c5eb359a7da4dd6ebe73d9f7c26368914"
   },
   {
     "name": "Break Up in a Small Town",
@@ -239,6 +267,13 @@ var aplove = [
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=469243036&auth=7dda4180d90e955074da0da9a57b9bec70465e52245a5ddf14b61fb57e9fb8d3"
   },
   {
+    "name": "I Just Wanna Run",
+    "artist": "The Downtown Fiction",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=4386589&auth=102f7f074932f8ae16ff137059155e0eed002c7f750aaba60453b2864240a576",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=564049465093755&auth=b3e6575a748dcfa2042f19f5475ff9d31523d889a309e1cd4aea90b29efd1dd0",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=4386589&auth=103eaf27b919b720c2139311ebbaecbfdf7b6118008ae4e27c722328776f656b"
+  },
+  {
     "name": "Something Just Like This",
     "artist": "Alex Goot / Madilyn Bailey",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=470795480&auth=26e657aebadc8553e8494f9f554d01e24c116c80fb383db1f72e4297f603c26b",
@@ -302,13 +337,6 @@ var aplove = [
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=534065323&auth=373f7822b9d9b05ee6316b98fdad413705535522c436305d155e852dacb6de3a"
   },
   {
-    "name": "飛竜の騎士",
-    "artist": "唐沢美帆",
-    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=402070932&auth=7c4165c795004ac5b884c69a3b521749ec9dcb9de17887ac0251edfecb7807ed",
-    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=1426066581780458&auth=5c0edb03aeea4ae99f79721edd44f7a1b2a7fd2d15a61dae902e0d872ed6b7f6",
-    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=402070932&auth=fa45908d941c735c3d322100e90d6121fcebf2e553493ad1b283e5d36c6ca10b"
-  },
-  {
     "name": "空想フォレスト",
     "artist": "伊東歌詞太郎",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=28524471&auth=3d59fd602407ad47d59a341e80778d0ee3f4062a8815daf9be4a8cdf71d98be7",
@@ -316,7 +344,7 @@ var aplove = [
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=28524471&auth=42f052d335e9c4f7acf6d03629ad4027a9369ac8fda0c0c18e11f2e58ad27cbf"
   },
   {
-    "name": "夏令时记录(piano.ver)",
+    "name": "夏令时记录",
     "artist": "ゆめこ",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=28757341&auth=0b1dca7e1a4864ee02f7faac97d4e29fad51e7c6861f3283561fb4afd3790eba",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=3294136838291294&auth=286611b9fbb7d0da36fe6ae3a7284d79cef1ae4954fec58a7250a5ed899755de",
@@ -421,6 +449,20 @@ var aplove = [
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=534542079&auth=9338726635f1d92c9f29af3af357e2c4f53113c8436fa32f4bd26db181a24edb"
   },
   {
+    "name": "初见",
+    "artist": "泡沫",
+    "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=33510447&auth=195c84c699145df01c6dc776f4a0d04addd1ec39f2b45114e2d5a3af750b03d0",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=7951668093633384&auth=30c426217613d30df041a3a7d1ea3d0e9f39533bdb96f71b93a6fc60642f8d5f",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=33510447&auth=58a9cad260cf5fc8d22daafabdd50bc67e633015a94b91fdede88a3859132385"
+  },
+  {
+    "name": "从别后",
+    "artist": "流浪的蛙蛙",
+    "url": "https://api.i-meto.com/api/v1/meting?server=kugou&type=url&id=502937beb2c86b9676f9576126a01ce7&auth=120a02726e1cbdcada9d9f50e7bede3d5b91e868ca6b8a6c72b8f3d5cfc123d5",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=kugou&type=pic&id=502937beb2c86b9676f9576126a01ce7&auth=c6b85d1da3b805560dc08f02af65740fac39d230faf178a4cfc8b2ae2d077dcb",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=kugou&type=lrc&id=502937beb2c86b9676f9576126a01ce7&auth=0cf1095c27d5201c9589b8e1c36edbb25f935cd24633ce52e4557595d9272e3c"
+  },
+  {
     "name": "哑巴",
     "artist": "薛之谦",
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=557583281&auth=9e3f423828ed5d835d54aa88ec545efbfe84e214ebebc410c509acce157576e8",
@@ -482,13 +524,6 @@ var aplove = [
     "url": "https://api.i-meto.com/api/v1/meting?server=netease&type=url&id=571338279&auth=be3d1c575723e5b1bc91c7a14bf01704de7840a73fce94bd4f403c2185ddf9b1",
     "cover": "https://api.i-meto.com/api/v1/meting?server=netease&type=pic&id=109951163337847600&auth=ff29461b9b941cdd0032e4d6e0251d356d8e3365ac62566de8f24e6c8ce305a7",
     "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=571338279&auth=021394de7f284fc777ec0cdb409135cd18abb714cad8fef248f9c89f69d263b9"
-  },
-  {
-    "name": "从别后",
-    "artist": "流浪的蛙蛙",
-    "url": "https://api.i-meto.com/api/v1/meting?server=kugou&type=url&id=502937beb2c86b9676f9576126a01ce7&auth=120a02726e1cbdcada9d9f50e7bede3d5b91e868ca6b8a6c72b8f3d5cfc123d5",
-    "cover": "https://api.i-meto.com/api/v1/meting?server=kugou&type=pic&id=502937beb2c86b9676f9576126a01ce7&auth=c6b85d1da3b805560dc08f02af65740fac39d230faf178a4cfc8b2ae2d077dcb",
-    "lrc": "https://api.i-meto.com/api/v1/meting?server=kugou&type=lrc&id=502937beb2c86b9676f9576126a01ce7&auth=0cf1095c27d5201c9589b8e1c36edbb25f935cd24633ce52e4557595d9272e3c"
   }
 ];
 
