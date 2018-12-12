@@ -527,13 +527,122 @@ var aplove = [
   }
 ];
 
+var mylist = [
+  {
+    name: 'Hope',
+    artist: 'Namie Amuro',
+    url: 'https://wang926454.gitee.io/reader/Music/hope.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/hope.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/hope.lrc'
+  },
+  {
+    name: 'unravel',
+    artist: '凛として時雨',
+    url: 'https://wang926454.gitee.io/reader/Music/unravel.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+  },
+  {
+    name: 'unravel - 不插电版',
+    artist: '凛として時雨',
+    url: 'https://wang926454.gitee.io/reader/Music/unravelno.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+  },
+  {
+    name: 'なんでもないや',
+    artist: 'RADWIMPS',
+    url: 'https://wang926454.gitee.io/reader/Music/RADWIMPS.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+  },
+  {
+    "name": "永久指针",
+    "artist": "海贼王",
+    "url": "https://api.i-meto.com/api/v1/meting?server=kugou&type=url&id=33b8e34abccbbb5c9a425eff5012812f&auth=7464ba48986d9ce6c47ce0d446fed86ee56c4c5e0d4f64527a0cf6aebed569b4",
+    "cover": "https://wang926454.gitee.io/reader/Music/image/yongjiuzhizhen.png",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=netease&type=lrc&id=425710117&auth=3393ed488ddb3aefbb60960dd74f76d717333025a35651772f2e4a8db9ba14ce"
+  },
+  {
+    "name": "从别后",
+    "artist": "流浪的蛙蛙",
+    "url": "https://api.i-meto.com/api/v1/meting?server=kugou&type=url&id=502937beb2c86b9676f9576126a01ce7&auth=120a02726e1cbdcada9d9f50e7bede3d5b91e868ca6b8a6c72b8f3d5cfc123d5",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=kugou&type=pic&id=502937beb2c86b9676f9576126a01ce7&auth=c6b85d1da3b805560dc08f02af65740fac39d230faf178a4cfc8b2ae2d077dcb",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=kugou&type=lrc&id=502937beb2c86b9676f9576126a01ce7&auth=0cf1095c27d5201c9589b8e1c36edbb25f935cd24633ce52e4557595d9272e3c"
+  },
+  {
+    "name": "空空如也",
+    "artist": "胡66",
+    "url": "https://api.i-meto.com/api/v1/meting?server=kugou&type=url&id=5c1bb55ccd20f85aa9816daa7649bdef&auth=cb0d773aac5d78f7d9a582f05ea1130bba5167783e5ef502287d34401073b766",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=kugou&type=pic&id=5c1bb55ccd20f85aa9816daa7649bdef&auth=c8dee393170b5764bbe1db8c5b563f766e785b29347b9abb2b2caa0ca93e294c",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=kugou&type=lrc&id=5c1bb55ccd20f85aa9816daa7649bdef&auth=a8f501d55a4512ecb83e898c21f273902b2cf53114f4ec618d1b4a9dc1f7a7a8"
+  },
+  {
+    name: '烟火里的尘埃',
+    artist: '郁欢',
+    url: 'https://wang926454.gitee.io/reader/Music/yanhuolidechenai.mp3',
+    cover: 'https://wang926454.gitee.io/reader/Music/image/yanhuolidechenai.png',
+    lrc: 'https://res.wang64.cn/Music/lrc/yanhuolidechenai.lrc'
+  },
+  {
+    "name": "走着走着就散了",
+    "artist": "庄心妍",
+    "url": "https://api.i-meto.com/api/v1/meting?server=kugou&type=url&id=ea3c81d87e3690ba5f5291f163a92f52&auth=83344c619c0a4371dcc930e9efc23e981f468d9a0048810d09dce9a95c5ecf16",
+    "cover": "https://api.i-meto.com/api/v1/meting?server=kugou&type=pic&id=ea3c81d87e3690ba5f5291f163a92f52&auth=2f46e3b483ec878899a244b81170c79fddcf4cb9539578819156f8e4eb4a75b9",
+    "lrc": "https://api.i-meto.com/api/v1/meting?server=kugou&type=lrc&id=ea3c81d87e3690ba5f5291f163a92f52&auth=58cf3a357d22f98fd95dabbf6ec3e369c2688250f0021d4465d0ee807e6c4647"
+  }
+];
 
 var aplist = [];
+
+// 数组插入方法扩展
+Array.prototype.insert = function (index, item) {
+    this.splice(index, 0, item);
+};
 
 function getList(){
   return aplist;
 }
 
 function getLove(){
-  return aplove;
+    // flag 判断是否异步执行完成
+    var flag = true;
+    try {
+        // 步骤一: 创建异步对象
+        var ajax = new XMLHttpRequest();
+        if (window.XMLHttpRequest) {
+            ajax = new XMLHttpRequest();
+        } else {
+            // IE6及其以下版本浏览器
+            ajax = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
+        // ajax.open('get', 'getStar.php?starName='+name);
+        ajax.open('get', 'https://api.i-meto.com/api/v1/meting?server=netease&type=playlist&id=2553791717', false);
+        // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                // console.log(ajax.responseText);
+                aplist = JSON.parse(ajax.responseText);
+                // aplist.insert(0, mylist[0]);
+                aplist = aplist.concat(mylist);
+            } else {
+                flag = false;
+            }
+        }
+        // 步骤四: 发送请求
+        ajax.send();
+        if(flag) {
+          return aplist;
+        } else {
+          return aplove;
+        }
+    }
+    catch(err) {
+        return aplove;
+    } 
+    finally {
+        
+    }
 }
