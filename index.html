@@ -220,6 +220,8 @@
       volume: 2.0
     });
 
+    var api = 'https://api.i-meto.com/api/v1/meting';
+
     function list(){
       document.getElementById('aplayerDiv1').style.display = 'none';
       document.getElementById('aplayerDiv2').style.display = 'inline';
@@ -228,7 +230,7 @@
       document.getElementById('text').innerHTML = "HotList";
       if(ap2.list.audios.length <= 0){
         $.ajax({
-          url: 'https://api.i-meto.com/api/v1/meting?server=netease&type=playlist&id=3778678',
+          url: api + '?server=netease&type=playlist&id=3778678',
           success: function (list) {
             var array = JSON.parse(list);
             if(array.length > 0){
@@ -263,7 +265,7 @@
       // console.log(ap3);
       if(ap3.list.audios.length <= 0){
         $.ajax({
-          url: 'https://api.i-meto.com/api/v1/meting?server=netease&type=playlist&id=26462279',
+          url: api + '?server=netease&type=playlist&id=26462279',
           success: function (list) {
             var array = JSON.parse(list);
             if(array.length > 0){
@@ -287,13 +289,13 @@
         btn.disabled = false;
         return;
       }
-      var url = "https://api.i-meto.com/api/v1/meting?type=search&server=" + serachType + "&id=" + serachText;
+      var url = api + '?type=search&server=' + serachType + '&id=' + serachText;
       $.ajax({
           url: url,
           success: function (list) {
             var array = JSON.parse(list);
-            // console.log(url);
-            // console.log(array);
+            console.log(url);
+            console.log(array);
             if(array.length > 0){
               document.getElementById('aplayerDiv1').style.display = 'none';
               document.getElementById('aplayerDiv2').style.display = 'none';
