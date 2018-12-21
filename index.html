@@ -99,7 +99,7 @@
   <div class="middle">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div style="margin: 0px auto; display: table;">
-            <p id="text">MyMusic</p>
+            <a href="https://www.fczbl.vip/musicplayer" target="_blank"><p id="text">MyMusic</p></a>
         </div>
       </div>
 
@@ -122,8 +122,8 @@
     
       <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
         <div style="margin: 0px auto; display: table;">
-            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">我的主页</button></a> | 
-            <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">云音乐热歌榜(每周四更新)</button> | 
+            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">主页</button></a> | 
+            <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button> | 
             <button id="serachBtn" type="button" class="btn btn-info active" onclick="search(this)">搜索</button>
         </div>
       </div>
@@ -155,10 +155,10 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div style="margin: 0px auto; display: table;">
           <div class="btn-group">
-            <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的音乐列表</button>
+            <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的歌单列表</button>
             <a href="https://music.163.com/#/playlist?id=2553791717" target="_blank"><button type="button" class="btn btn-success">歌单地址</button></a>
           </div> |
-          <button id="loveBtn" type="button" class="btn btn-danger active" onclick="netease()">我最近喜欢听的歌</button>
+          <button id="loveBtn" type="button" class="btn btn-danger active" onclick="netease()">最近喜欢听的歌</button>
         </div>
       </div>
   </div>
@@ -221,6 +221,7 @@
     });
 
     var api = 'https://api.i-meto.com/api/v1/meting';
+    var api2 = 'https://api.bzqll.com/music/netease/songList?key=579621905';
 
     function list(){
       document.getElementById('aplayerDiv1').style.display = 'none';
@@ -264,11 +265,30 @@
       // console.log(ap1);
       // console.log(ap3);
       if(ap3.list.audios.length <= 0){
-        $.ajax({
+        /* $.ajax({
           url: api + '?server=netease&type=playlist&id=26462279',
           success: function (list) {
             var array = JSON.parse(list);
             if(array.length > 0){
+              ap3.list.clear();
+              ap3.list.add(array);
+            }else{
+              layer.msg('出现错误，请刷新页面');
+            }
+          }
+        }); */
+        $.ajax({
+          url: api2  + '&id=26462279',
+          success: function (data) {
+            if(data.code == 200){
+              var array = data.data.songs;
+              for (var i = 0, len = data.data.songs.length; i < len; i++) {
+                array[i].id = array[i].id;
+                array[i].name = array[i].name;
+                array[i].artist = array[i].singer;
+                array[i].cover = array[i].pic;
+                array[i].lrc = array[i].lrc;
+              }
               ap3.list.clear();
               ap3.list.add(array);
             }else{
