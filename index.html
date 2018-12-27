@@ -570,6 +570,30 @@
         lrcLoad(lrcurl, 4);
         wenkmTips.show('歌词加载中 - ' + aplist4[index4].artist + ' - ' + aplist4[index4].name);
       });
+
+      ap1.on('pause', function () {
+        clearInterval(lrcTime);
+				$('#wenkmLrc').removeClass('show');
+        wenkmTips.show('暂停播放');
+      });
+
+      ap2.on('pause', function () {
+        clearInterval(lrcTime);
+				$('#wenkmLrc').removeClass('show');
+        wenkmTips.show('暂停播放');
+      });
+
+      ap3.on('pause', function () {
+        clearInterval(lrcTime);
+				$('#wenkmLrc').removeClass('show');
+        wenkmTips.show('暂停播放');
+      });
+
+      ap4.on('pause', function () {
+        clearInterval(lrcTime);
+				$('#wenkmLrc').removeClass('show');
+        wenkmTips.show('暂停播放');
+      });
     }
 
     var api = 'https://api.i-meto.com/api/v1/meting';
