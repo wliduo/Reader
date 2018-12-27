@@ -12,6 +12,10 @@
   <!-- 垂直居中参考 https://www.cnblogs.com/yugege/p/5246652.html -->
   <!-- APlayer源码 https://github.com/MoePlayer/APlayer -->
   <!-- 搜索API https://github.com/metowolf/Meting https://github.com/metowolf/MetingJS -->
+  <!-- wenkmPlayer Start -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://mark.wang64.cn/assets/wenkmPlayer/css/player.css?v=0914">
+  <!-- wenkmPlayer End -->
   <style>
     @font-face {
       font-family: 'Monoton';
@@ -97,94 +101,221 @@
 
 <body>
   <div class="middle">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div style="margin: 0px auto; display: table;">
-            <a href="https://www.fczbl.vip/musicplayer" target="_blank"><p id="text">MyMusic</p></a>
-        </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div style="margin: 0px auto; display: table;">
+        <a href="https://www.fczbl.vip/musicplayer" target="_blank">
+          <p id="text">MyMusic</p>
+        </a>
       </div>
+    </div>
 
-      <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
-        <div style="margin: 0px auto; display: table;">
-          <div class="col-md-6 col-sm-6 col-xs-6" style="margin-left: 8px;">
-              <select id="serachType" class="form-control">
-                <option value="netease">网易云音乐</option>
-                <option value="kugou">酷狗音乐</option>
-                <option value="tencent">QQ音乐</option>
-                <option value="xiami">虾米音乐</option>
-                <option value="baidu">百度音乐</option>
-              </select>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-6" style="margin-left: -16px;">
-              <input id="serachText" type="text" class="form-control" placeholder="请输入关键字">
-          </div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+      <div style="margin: 0px auto; display: table;">
+        <div class="col-md-6 col-sm-6 col-xs-6" style="margin-left: 8px;">
+          <select id="serachType" class="form-control">
+            <option value="netease">网易云音乐</option>
+            <option value="kugou">酷狗音乐</option>
+            <option value="tencent">QQ音乐</option>
+            <option value="xiami">虾米音乐</option>
+            <option value="baidu">百度音乐</option>
+          </select>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6" style="margin-left: -16px;">
+          <input id="serachText" type="text" class="form-control" placeholder="请输入关键字">
         </div>
       </div>
-    
-      <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
-        <div style="margin: 0px auto; display: table;">
-            <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">主页</button></a> | 
-            <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button> | 
-            <button id="serachBtn" type="button" class="btn btn-info active" onclick="search(this)">搜索</button>
-        </div>
-      </div>
+    </div>
 
-      <div id="aplayerDiv1" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
-        <div class="aplayer-wrap">
-          <div id="aplayer1"></div>
-        </div>
+    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+      <div style="margin: 0px auto; display: table;">
+        <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">主页</button></a> |
+        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button> |
+        <button id="serachBtn" type="button" class="btn btn-info active" onclick="search(this)">搜索</button>
       </div>
+    </div>
 
-      <div id="aplayerDiv2" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
-        <div class="aplayer-wrap">
-          <div id="aplayer2"></div>
-        </div>
+    <div id="aplayerDiv1" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
+      <div class="aplayer-wrap">
+        <div id="aplayer1"></div>
       </div>
+    </div>
 
-      <div id="aplayerDiv3" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
-        <div class="aplayer-wrap">
-          <div id="aplayer3"></div>
-        </div>
+    <div id="aplayerDiv2" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
+      <div class="aplayer-wrap">
+        <div id="aplayer2"></div>
       </div>
+    </div>
 
-      <div id="aplayerDiv4" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
-        <div class="aplayer-wrap">
-          <div id="aplayer4"></div>
-        </div>
+    <div id="aplayerDiv3" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
+      <div class="aplayer-wrap">
+        <div id="aplayer3"></div>
       </div>
+    </div>
 
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div style="margin: 0px auto; display: table;">
-          <div class="btn-group">
-            <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的歌单列表</button>
-            <a href="https://music.163.com/#/playlist?id=2553791717" target="_blank"><button type="button" class="btn btn-success">歌单地址</button></a>
-          </div> |
-          <button id="loveBtn" type="button" class="btn btn-danger active" onclick="netease()">最近喜欢听的歌</button>
-        </div>
+    <div id="aplayerDiv4" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
+      <div class="aplayer-wrap">
+        <div id="aplayer4"></div>
       </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div style="margin: 0px auto; display: table;">
+        <div class="btn-group">
+          <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的歌单列表</button>
+          <a href="https://music.163.com/#/playlist?id=2553791717" target="_blank"><button type="button" class="btn btn-success">歌单地址</button></a>
+        </div> |
+        <button id="loveBtn" type="button" class="btn btn-danger active" onclick="netease()">最近喜欢听的歌</button>
+      </div>
+    </div>
   </div>
+
+  <!-- wenkmPlayer Start -->
+  <div id="wenkmPlayer"  style="display: none;">
+    <div class="player">
+      <div class="infos">
+        <div class="songstyle">
+          <i class="fa fa-music">
+          </i>
+          <span class="song">
+          </span>
+        </div>
+        <div class="timestyle">
+          <i class="fa fa-clock-o">
+          </i>
+          <span class="time">
+            00:00 / 00:00
+          </span>
+        </div>
+        <div class="artiststyle">
+          <i class="fa fa-user">
+          </i>
+          <span class="artist">
+          </span>
+          <span class="moshi">
+            <i class="loop fa fa-random current">
+            </i>
+            随机播放
+          </span>
+        </div>
+        <div class="artiststyle">
+          <i class="fa fa-folder">
+          </i>
+          <span class="artist1">
+          </span>
+          <span class="geci">
+          </span>
+        </div>
+      </div>
+      <div class="control">
+        <i class="loop fa fa-retweet" title="顺序播放">
+        </i>
+        <i class="prev fa fa-backward" title="上一首">
+        </i>
+        <div class="status">
+          <b>
+            <i class="play fa fa-play" title="播放">
+            </i>
+            <i class="pause fa fa-pause" title="暂停">
+            </i>
+          </b>
+        </div>
+        <i class="next fa fa-forward" title="下一首">
+        </i>
+        <i class="random fa fa-random current" title="随机播放">
+        </i>
+      </div>
+      <div class="musicbottom">
+        <div class="volume">
+          <i class="mute fa fa-volume-off">
+          </i>
+          <i class="volumeup fa fa-volume-up">
+          </i>
+          <div class="progress">
+            <div class="volume-on ts5">
+              <div class="drag" title="音量">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="switch-playlist">
+          <i class="fa fa-bars" title="播放列表">
+          </i>
+        </div>
+        <div class="switch-ksclrc">
+          <i class="fa fa-toggle-on" title="关闭歌词">
+          </i>
+        </div>
+        <div class="switch-default">
+          <i class="fa fa-refresh" title="切换默认专辑">
+          </i>
+        </div>
+      </div>
+      <div class="cover">
+      </div>
+    </div>
+    <div class="playlist">
+      <div class="playlist-bd">
+        <div class="album-list">
+          <div class="musicheader">
+          </div>
+          <div class="list">
+          </div>
+        </div>
+        <div class="song-list">
+          <div class="musicheader">
+            <span>
+            </span>
+          </div>
+          <div class="list">
+            <ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="switch-player">
+      <i class="fa fa-angle-right" style="margin-top: 20px;">
+      </i>
+    </div>
+  </div>
+  <div id="wenkmTips"></div>
+  <div id="wenkmLrc"></div>
+  <div class="myhk_pjax_loading_frame"></div>
+  <div class="myhk_pjax_loading"></div>
+  <!-- wenkmPlayer End -->
   
   <!-- <script type="text/javascript" src="https://wang926454.gitee.io/reader/JS/aplist.js"></script> -->
   <script type="text/javascript" src="JS/aplist.js"></script>
+  <script src="https://mark.wang64.cn/assets/wenkmPlayer/js/mousewheel.js" type="text/javascript"></script>
+  <script src="https://mark.wang64.cn/assets/wenkmPlayer/js/scrollbar.js" type="text/javascript"></script>
+  <!-- <script src="https://mark.wang64.cn/assets/wenkmPlayer/js/player.js?v=123" type="text/javascript"></script> -->
 
   <script>
-    // 检测是否是手机查看
-    var sUserAgent = navigator.userAgent.toLowerCase();
-    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-    var bIsAndroid = sUserAgent.match(/android/i) == "android";
-    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-        // 跳转移动端页面
-        var middleArray = document.getElementsByClassName("middle");
-        middleArray[0].style.top = "5%";
+    // PC端返回false
+    function isMobile() {
+      var viewType = navigator.userAgent.toLowerCase();
+      console.log(viewType);
+      return viewType.match(/(phone|pad|pod|midp|iphone|ipod|iphone os|ios|ipad|android|mobile|blackberry|iemobile|mqqbrowser|juc|rv:1.2.3.4|ucweb|fennec|wosbrowser|browserng|webos|symbian|windows ce|windows mobile|windows phone)/i);
+    }
+
+    if (isMobile()) {
+      // 隐藏wenkmPlayerc
+      document.getElementById('wenkmPlayer').style.display = 'none';
+      // 设置距离高度
+      var middleArray = document.getElementsByClassName("middle");
+      middleArray[0].style.top = "5%";
+    } else {
+      try {
+        // 加载wenkmPlayerc
+        $.ajax({ url: 'https://mark.wang64.cn/assets/wenkmPlayer/js/player.js?v=123', dataType: "script", cache: true, async: false });
+      } catch (err) {
+        console.log('[Error] JQuery is not defined.')
+      }
     }
   </script>
 
   <script>
+
     // 我的喜欢
     const ap1 = new APlayer({
       container: document.getElementById('aplayer1'),
@@ -220,32 +351,254 @@
       volume: 2.0
     });
 
+    var aplist1 = ap1.list.audios;
+    var aplist2 = [];
+    var aplist3 = [];
+    var aplist4 = [];
+
+    function lrcCurrentAp1() {
+      var timeNow = Math.round(ap1.audio.currentTime);
+      if ($.inArray(timeNow, lrcTimeLine) > 0) {
+        var $lineNow = $('.wenkmLrc' + timeNow);
+        if (!$lineNow.hasClass(cur)) {
+          $lineNow.addClass(cur).siblings().removeClass(cur);
+          $('#wenkmLrc').animate({
+            scrollTop: lrcHeight * $lineNow.index()
+          })
+        }
+      } else {
+        lrcCont = '';
+      }
+    }
+
+    function lrcCurrentAp2() {
+      var timeNow = Math.round(ap2.audio.currentTime);
+      if ($.inArray(timeNow, lrcTimeLine) > 0) {
+        var $lineNow = $('.wenkmLrc' + timeNow);
+        if (!$lineNow.hasClass(cur)) {
+          $lineNow.addClass(cur).siblings().removeClass(cur);
+          $('#wenkmLrc').animate({
+            scrollTop: lrcHeight * $lineNow.index()
+          })
+        }
+      } else {
+        lrcCont = '';
+      }
+    }
+
+    function lrcCurrentAp3() {
+      var timeNow = Math.round(ap3.audio.currentTime);
+      if ($.inArray(timeNow, lrcTimeLine) > 0) {
+        var $lineNow = $('.wenkmLrc' + timeNow);
+        if (!$lineNow.hasClass(cur)) {
+          $lineNow.addClass(cur).siblings().removeClass(cur);
+          $('#wenkmLrc').animate({
+            scrollTop: lrcHeight * $lineNow.index()
+          })
+        }
+      } else {
+        lrcCont = '';
+      }
+    }
+
+    function lrcCurrentAp4() {
+      var timeNow = Math.round(ap4.audio.currentTime);
+      if ($.inArray(timeNow, lrcTimeLine) > 0) {
+        var $lineNow = $('.wenkmLrc' + timeNow);
+        if (!$lineNow.hasClass(cur)) {
+          $lineNow.addClass(cur).siblings().removeClass(cur);
+          $('#wenkmLrc').animate({
+            scrollTop: lrcHeight * $lineNow.index()
+          })
+        }
+      } else {
+        lrcCont = '';
+      }
+    }
+
+    function lrcLoad(lrcTempUrl, typeNo) {
+      wenkmLrc.lrc.hide();
+      hasLrc = false;
+      hasKsc = false;
+      $('#wenkmLrc, #wenkmKsc').html('');
+      setTimeout(function () {
+        if (hasgeci) {
+          $songFrom3.html('<i class="fa fa-check-circle"></i> 歌词' + songFrom33);
+        } else {
+          $songFrom3.html('<i class="fa fa-times-circle"></i> 歌词' + songFrom33);
+        };
+        $(".switch-down").css("right", "65px");
+        $(".switch-default").css("right", "95px");
+        if (hasdefault) {
+          setTimeout(function () {
+            $(".switch-ksclrc").show()
+          }, 300);
+        } else {
+          $(".switch-ksclrc").show()
+        }
+
+        $.ajax({
+          url: lrcTempUrl,
+          success: function (lrctext) {
+            if (typeof (lrctext) == 'undefined') {
+              songFrom44 = ' - 暂无歌词!', $songFrom3.html('<i class="fa fa-times-circle"></i> 暂无歌词');
+              $(".switch-ksclrc").hide();
+              $(".switch-down").css("right", "35px");
+              $(".switch-default").css("right", "65px");
+            } else {
+              if (lrctext.indexOf('[00') >= 0) {
+                setTimeout(function () {
+                  if (!$('#wenkmLrc').hasClass('hide')) {
+                    songFrom44 = ' - Lrc歌词获取成功!'
+                  } else {
+                    songFrom44 = ' - Lrc歌词已关闭！'
+                  };
+
+                  hasLrc = true;
+                  function formatTime(t) {
+                    var sp = t.split(':'),
+                      min = +sp[0],
+                      sec = +sp[1].split('.')[0],
+                      ksec = +sp[1].split('.')[1];
+                    return min * 60 + sec + Math.round(ksec / 1000);
+                  };
+                  var lrcCont = lrctext.replace(/\[[A-Za-z]+:(.*?)]/g, '').replace('\\n', '').split(/[\]\[]/g),
+                    lrcLine = '';
+                  lrcTimeLine = [];
+                  for (var i = 1; i < lrcCont.length; i += 2) {
+                    var timer = formatTime(lrcCont[i]);
+                    lrcTimeLine.push(timer);
+                    if (i == 1) {
+                      lrcLine += '<li class="wenkmLrc' + timer + ' current">' + lrcCont[i + 1] + '</li>'
+                    } else {
+                      lrcLine += '<li class="wenkmLrc' + timer + '">' + lrcCont[i + 1] + '</li>'
+                    }
+                  }
+                  $('#wenkmLrc').html('<ul>' + lrcLine + '</ul>');
+                  setTimeout(function () {
+                    $('#wenkmLrc').addClass('show');
+                  }, 500);
+
+                  console.log(typeNo);
+                  if (typeNo == 1) {
+                    lrcTime = setInterval(lrcCurrentAp1 , 500);
+                  } else if (typeNo == 2) {
+                    lrcTime = setInterval(lrcCurrentAp2 , 500);
+                  } else if (typeNo == 3) {
+                    lrcTime = setInterval(lrcCurrentAp3 , 500);
+                  } else if (typeNo == 4) {
+                    lrcTime = setInterval(lrcCurrentAp4 , 500);
+                  }
+                  
+                }, 500);
+              } else {
+                songFrom44 = ' - 暂无歌词!', $songFrom3.html('<i class="fa fa-times-circle"></i> 暂无歌词');
+                $(".switch-ksclrc").hide();
+                $(".switch-down").css("right", "35px");
+                $(".switch-default").css("right", "65px");
+              }
+            }
+          }
+        });
+      }, 500);
+    }
+
+    // 获取当前路径图片颜色
+    function colorChange(imgUrl) {
+      $.ajax({
+        url: 'https://free.limh.me/api/colorapi.php',
+        type: 'GET',
+        dataType: 'script',
+        data: { url: imgUrl, userurl: location.hostname },
+        success: function () {
+          playercolor()
+        },
+        error: function () {
+          var cont = '0,0,0';
+          playercolor()
+        }
+      });
+    }
+
+    if (isMobile()) {
+
+    } else {
+      ap1.on('play', function () {
+        if(audio){
+          audio.pause();
+        }
+        var index1 = ap1.list.index;
+        colorChange(aplist1[index1].cover);
+        // 给歌词地址赋值
+        lrcurl = aplist1[index1].lrc;
+        lrcLoad(lrcurl, 1);
+        wenkmTips.show('歌词加载中 - ' + aplist1[index1].artist + ' - ' + aplist1[index1].name);
+      });
+
+      ap2.on('play', function () {
+        if(audio){
+          audio.pause();
+        }
+        var index2 = ap2.list.index;
+        colorChange(aplist2[index2].cover);
+        // 给歌词地址赋值
+        lrcurl = aplist2[index2].lrc;
+        lrcLoad(lrcurl, 2);
+        wenkmTips.show('歌词加载中 - ' + aplist2[index2].artist + ' - ' + aplist2[index2].name);
+      });
+
+      ap3.on('play', function () {
+        if(audio){
+          audio.pause();
+        }
+        var index3 = ap3.list.index;
+        colorChange(aplist3[index3].cover);
+        // 给歌词地址赋值
+        lrcurl = aplist3[index3].lrc;
+        lrcLoad(lrcurl, 3);
+        wenkmTips.show('歌词加载中 - ' + aplist3[index3].artist + ' - ' + aplist3[index3].name);
+      });
+
+      ap4.on('play', function () {
+        if(audio){
+          audio.pause();
+        }
+        var index4 = ap4.list.index;
+        colorChange(aplist4[index4].cover);
+        // 给歌词地址赋值
+        lrcurl = aplist4[index4].lrc;
+        lrcLoad(lrcurl, 4);
+        wenkmTips.show('歌词加载中 - ' + aplist4[index4].artist + ' - ' + aplist4[index4].name);
+      });
+    }
+
     var api = 'https://api.i-meto.com/api/v1/meting';
     var api2 = 'https://api.bzqll.com/music/netease/songList?key=579621905';
 
-    function list(){
+    function list() {
       document.getElementById('aplayerDiv1').style.display = 'none';
       document.getElementById('aplayerDiv2').style.display = 'inline';
       document.getElementById('aplayerDiv3').style.display = 'none';
       document.getElementById('aplayerDiv4').style.display = 'none';
       document.getElementById('text').innerHTML = "HotList";
-      if(ap2.list.audios.length <= 0){
+      if (ap2.list.audios.length <= 0) {
         $.ajax({
           url: api + '?server=netease&type=playlist&id=3778678',
           success: function (list) {
             var array = JSON.parse(list);
-            if(array.length > 0){
+            if (array.length > 0) {
               ap2.list.clear();
               ap2.list.add(array);
-            }else{
+            } else {
               layer.msg('出现错误，请刷新页面');
             }
+            aplist2 = array;
           }
         });
       }
     }
 
-    function love(){
+    function love() {
       document.getElementById('aplayerDiv1').style.display = 'inline';
       document.getElementById('aplayerDiv2').style.display = 'none';
       document.getElementById('aplayerDiv3').style.display = 'none';
@@ -256,7 +609,7 @@
     // 初始化显示我的音乐列表
     love();
 
-    function netease(){
+    function netease() {
       document.getElementById('aplayerDiv1').style.display = 'none';
       document.getElementById('aplayerDiv2').style.display = 'none';
       document.getElementById('aplayerDiv3').style.display = 'inline';
@@ -264,8 +617,8 @@
       document.getElementById('text').innerHTML = "◢◤";
       // console.log(ap1);
       // console.log(ap3);
-      if(ap3.list.audios.length <= 0){
-        /* $.ajax({
+      if (ap3.list.audios.length <= 0) {
+        $.ajax({
           url: api + '?server=netease&type=playlist&id=26462279',
           success: function (list) {
             var array = JSON.parse(list);
@@ -275,12 +628,13 @@
             }else{
               layer.msg('出现错误，请刷新页面');
             }
+            aplist3 = array;
           }
-        }); */
-        $.ajax({
-          url: api2  + '&id=26462279',
+        });
+        /* $.ajax({
+          url: api2 + '&id=26462279',
           success: function (data) {
-            if(data.code == 200){
+            if (data.code == 200) {
               var array = data.data.songs;
               for (var i = 0, len = data.data.songs.length; i < len; i++) {
                 array[i].id = array[i].id;
@@ -291,11 +645,11 @@
               }
               ap3.list.clear();
               ap3.list.add(array);
-            }else{
+            } else {
               layer.msg('出现错误，请刷新页面');
             }
           }
-        });
+        }); */
       }
     }
 
@@ -304,37 +658,38 @@
       btn.disabled = true;
       var serachType = document.getElementById("serachType").value;
       var serachText = document.getElementById("serachText").value;
-      if(serachText.trim() === ''){
+      if (serachText.trim() === '') {
         layer.msg('关键字为空');
         btn.disabled = false;
         return;
       }
       var url = api + '?type=search&server=' + serachType + '&id=' + serachText;
       $.ajax({
-          url: url,
-          success: function (list) {
-            var array = JSON.parse(list);
-            console.log(url);
-            console.log(array);
-            if(array.length > 0){
-              document.getElementById('aplayerDiv1').style.display = 'none';
-              document.getElementById('aplayerDiv2').style.display = 'none';
-              document.getElementById('aplayerDiv3').style.display = 'none';
-              document.getElementById('aplayerDiv4').style.display = 'inline';
-              document.getElementById('text').innerHTML = "Search";
-              ap4.list.clear();
-              ap4.list.add(array);
-            }else{
-              layer.msg('没有搜索到任何结果，请切换平台尝试');
-            }
-            btn.disabled = false;
+        url: url,
+        success: function (list) {
+          var array = JSON.parse(list);
+          console.log(url);
+          console.log(array);
+          if (array.length > 0) {
+            document.getElementById('aplayerDiv1').style.display = 'none';
+            document.getElementById('aplayerDiv2').style.display = 'none';
+            document.getElementById('aplayerDiv3').style.display = 'none';
+            document.getElementById('aplayerDiv4').style.display = 'inline';
+            document.getElementById('text').innerHTML = "Search";
+            ap4.list.clear();
+            ap4.list.add(array);
+          } else {
+            layer.msg('没有搜索到任何结果，请切换平台尝试');
           }
+          aplist4 = array;
+          btn.disabled = false;
+        }
       });
     }
 
     // 文字特效
-    var colors = ['#FF1177','#228DFF','#FFDD1B','#B6FF00','#FF9900','#BA01FF'];
-    var fonts = ['Pacifico','Audiowide','Vampiro One'];
+    var colors = ['#FF1177', '#228DFF', '#FFDD1B', '#B6FF00', '#FF9900', '#BA01FF'];
+    var fonts = ['Pacifico', 'Audiowide', 'Vampiro One'];
     var text = document.getElementById("text");
     // 推荐使用setTimeout
     setTimeout(function () {
