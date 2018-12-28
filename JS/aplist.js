@@ -127,3 +127,64 @@ function getLove(){
         
     }
 }
+
+
+
+
+
+// Bing每日壁纸获取
+var pclist = {
+    "date": 20181228,
+    "title": "",
+    "copyright": "",
+    "url": "https://bing.ioliu.cn/v1/rand"
+};
+
+var api = "https://bing.ioliu.cn/v1";
+var api2 = "https://bing.ioliu.cn/v1/rand";
+var api3 = "https://cn.bing.com/cnhp/coverstory";
+var size = "?h=1080&w=1920";
+var d = Math.floor(1000 * Math.random());
+// var url = api + size + "&d=" + d;
+
+// 加速接口
+var api4 = "https://api.i-meto.com/api/v1/bing/random";
+var today = "?new";
+
+function getPic(rand) {
+    // mark 判断是否异步执行完成
+    var mark = true;
+    if (rand) {
+        api4 = api4 + today;
+    }
+    try {
+        // 步骤一: 创建异步对象
+        var ajax = new XMLHttpRequest();
+        if (window.XMLHttpRequest) {
+            ajax = new XMLHttpRequest();
+        } else {
+            // IE6及其以下版本浏览器
+            ajax = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
+        // ajax.open('get', 'getStar.php?starName='+name);
+        ajax.open('get', api4, false);
+        // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                // console.log(ajax.responseText);
+                pclist = JSON.parse(ajax.responseText);
+            }
+        }
+        // 步骤四: 发送请求
+        ajax.send();
+    }
+    catch(err) {
+        
+    } 
+    finally {
+        return pclist;
+    }
+}
+
