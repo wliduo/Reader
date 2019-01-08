@@ -128,8 +128,8 @@
 
     <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
       <div style="margin: 0px auto; display: table;">
-        <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">主页</button></a> |
-        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button> |
+        <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">主页</button></a><span onclick="now()"> | </span>
+        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button> | 
         <button id="serachBtn" type="button" class="btn btn-info active" onclick="search(this)">搜索</button>
       </div>
     </div>
@@ -505,6 +505,7 @@
 
     // 获取当前路径图片颜色
     function colorChange(imgUrl) {
+      debugger
       $.ajax({
         url: 'https://free.limh.me/api/colorapi.php',
         type: 'GET',
@@ -653,27 +654,35 @@
             aplist3 = array;
           }
         });
-        /* $.ajax({
-          url: api2 + '&id=26462279',
-          success: function (data) {
-            if (data.code == 200) {
-              var array = data.data.songs;
-              for (var i = 0, len = data.data.songs.length; i < len; i++) {
-                array[i].id = array[i].id;
-                array[i].name = array[i].name;
-                array[i].artist = array[i].singer;
-                array[i].cover = array[i].pic;
-                array[i].lrc = array[i].lrc;
-              }
-              ap3.list.clear();
-              ap3.list.add(array);
-              aplist3 = array;
-            } else {
-              layer.msg('出现错误，请刷新页面');
-            }
-          }
-        }); */
       }
+    }
+
+    function now() {
+      document.getElementById('aplayerDiv1').style.display = 'none';
+      document.getElementById('aplayerDiv2').style.display = 'none';
+      document.getElementById('aplayerDiv3').style.display = 'inline';
+      document.getElementById('aplayerDiv4').style.display = 'none';
+      document.getElementById('text').innerHTML = "NowList";
+      $.ajax({
+        url: api2 + '&id=26462279',
+        success: function (data) {
+          if (data.code == 200) {
+            var array = data.data.songs;
+            for (var i = 0, len = data.data.songs.length; i < len; i++) {
+              array[i].id = array[i].id;
+              array[i].name = array[i].name;
+              array[i].artist = array[i].singer;
+              array[i].cover = array[i].pic;
+              array[i].lrc = array[i].lrc;
+            }
+            ap3.list.clear();
+            ap3.list.add(array);
+            aplist3 = array;
+          } else {
+            layer.msg('出现错误，请刷新页面');
+          }
+        }
+      });
     }
 
     function search(btn) {
