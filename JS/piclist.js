@@ -436,5 +436,15 @@ var picList = [
     alt: '201901',
     src: 'https://wang926454.gitee.io/reader/Image/201901/normal/11010.png',
     data: 'https://wang926454.gitee.io/reader/Image/201901/normal/11010.png'
+  },
+  {
+    alt: '201901',
+    src: 'https://wang926454.gitee.io/reader/Image/201901/normal/16005.png',
+    data: 'https://wang926454.gitee.io/reader/Image/201901/normal/16005.png'
+  },
+  {
+    alt: '201901',
+    src: 'https://wang926454.gitee.io/reader/Image/201901/normal/16010.png',
+    data: 'https://wang926454.gitee.io/reader/Image/201901/normal/16010.png'
   }
 ];
