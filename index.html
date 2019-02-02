@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -23,41 +23,35 @@
       font-weight: 400;
       src: local('Monoton'), local('Monoton-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/01.woff) format('woff');
     }
-
     @font-face {
       font-family: 'Pacifico';
       font-style: normal;
       font-weight: 400;
       src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/03.woff) format('woff');
     }
-
     @font-face {
       font-family: 'Audiowide';
       font-style: normal;
       font-weight: 400;
       src: local('Audiowide'), local('Audiowide-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/05.woff) format('woff');
     }
-
     @font-face {
       font-family: 'Vampiro One';
       font-style: normal;
       font-weight: 400;
       src: local('Vampiro One'), local('VampiroOne-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/06.woff) format('woff');
     }
-
     html, body {
         width: 100%;
         height: 100%;
         margin: 0; 
         padding: 0;
     }
-
-    body {
-      /* background-color: #2e2e31; */
-      /* 隐藏滚动条 */
+    /* body {
+      background-color: #2e2e31;
+      隐藏滚动条
       overflow: hidden;
-    }
-
+    } */
     #bg {
       background-image: url(https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20171021_172112.jpg);
       position: fixed;
@@ -77,27 +71,27 @@
       -o-background-size: cover;
       background-position: center 0;
     }
-
     #text {
       text-align: center;
       font-size: 2em;
       color: #FF1177;
       font-family: Monoton;
     }
-
     .middle {
-      position: relative;
-      top: 8%;
-      transform: translateY(-8%);
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        width: 100%;
+        /* min-height: 260px; */
+        padding-top: 5px;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
     }
-
-    .col-center-block {
-        float: none;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .aplayer-wrap {
       max-width: 700px;
       margin: 20px auto;
@@ -184,8 +178,8 @@
 
   <!-- wenkmPlayer Start -->
   <div id="wangPlayer"></div>
-  <!-- <script type="text/javascript" src="https://wang926454.gitee.io/reader/JS/aplist.js"></script> -->
-  <script type="text/javascript" src="JS/aplist.js"></script>
+  <script type="text/javascript" src="https://wang926454.gitee.io/reader/JS/aplist.js"></script>
+  <!-- <script type="text/javascript" src="JS/aplist.js"></script> -->
   <script src="https://mark.wang64.cn/assets/wenkmPlayer/js/mousewheel.js" type="text/javascript"></script>
   <script src="https://mark.wang64.cn/assets/wenkmPlayer/js/scrollbar.js" type="text/javascript"></script>
   <!-- <script src="https://mark.wang64.cn/assets/wenkmPlayer/js/player.js?v=123" type="text/javascript"></script> -->
@@ -198,11 +192,10 @@
       // console.log(viewType);
       return viewType.match(/(phone|pad|pod|midp|iphone|ipod|iphone os|ios|ipad|android|mobile|blackberry|iemobile|mqqbrowser|juc|rv:1.2.3.4|ucweb|fennec|wosbrowser|browserng|webos|symbian|windows ce|windows mobile|windows phone)/i);
     }
-
     if (isMobile()) {
       // 设置距离高度
       var middleArray = document.getElementsByClassName("middle");
-      middleArray[0].style.top = "5%";
+      middleArray[0].style.top = "50%";
     } else {
       try {
         // 加载wenkmPlayerc
@@ -214,7 +207,6 @@
   </script>
 
   <script>
-
     // 我的音乐列表
     const ap1 = new APlayer({
       container: document.getElementById('aplayer1'),
@@ -224,7 +216,6 @@
       volume: 2.0,
       audio: getLove()
     });
-
     // 网易云音乐热歌榜
     const ap2 = new APlayer({
       container: document.getElementById('aplayer2'),
@@ -232,7 +223,6 @@
       theme: '#000000',
       volume: 2.0
     });
-
     // 最近喜欢听的歌
     const ap3 = new APlayer({
       container: document.getElementById('aplayer3'),
@@ -241,7 +231,6 @@
       theme: '#000000',
       volume: 2.0
     });
-
     // 搜索
     const ap4 = new APlayer({
       container: document.getElementById('aplayer4'),
@@ -249,12 +238,10 @@
       theme: '#000000',
       volume: 2.0
     });
-
     var aplist1 = ap1.list.audios;
     var aplist2 = [];
     var aplist3 = [];
     var aplist4 = [];
-
     function lrcCurrentAp1() {
       var timeNow = Math.round(ap1.audio.currentTime);
       if ($.inArray(timeNow, lrcTimeLine) > 0) {
@@ -269,7 +256,6 @@
         lrcCont = '';
       }
     }
-
     function lrcCurrentAp2() {
       var timeNow = Math.round(ap2.audio.currentTime);
       if ($.inArray(timeNow, lrcTimeLine) > 0) {
@@ -284,7 +270,6 @@
         lrcCont = '';
       }
     }
-
     function lrcCurrentAp3() {
       var timeNow = Math.round(ap3.audio.currentTime);
       if ($.inArray(timeNow, lrcTimeLine) > 0) {
@@ -299,7 +284,6 @@
         lrcCont = '';
       }
     }
-
     function lrcCurrentAp4() {
       var timeNow = Math.round(ap4.audio.currentTime);
       if ($.inArray(timeNow, lrcTimeLine) > 0) {
@@ -314,7 +298,6 @@
         lrcCont = '';
       }
     }
-
     function lrcLoad(lrcTempUrl, typeNo) {
       wenkmLrc.lrc.hide();
       hasLrc = false;
@@ -335,7 +318,6 @@
         } else {
           $(".switch-ksclrc").show()
         }
-
         $.ajax({
           url: lrcTempUrl,
           success: function (lrctext) {
@@ -352,7 +334,6 @@
                   } else {
                     songFrom44 = ' - Lrc歌词已关闭！'
                   };
-
                   hasLrc = true;
                   function formatTime(t) {
                     var sp = t.split(':'),
@@ -377,7 +358,6 @@
                   setTimeout(function () {
                     $('#wenkmLrc').addClass('show');
                   }, 500);
-
                   // console.log(typeNo);
                   if (typeNo == 1) {
                     lrcTime = setInterval(lrcCurrentAp1 , 500);
@@ -401,7 +381,6 @@
         });
       }, 500);
     }
-
     // 获取当前路径图片颜色
     function colorChange(imgUrl) {
       $.ajax({
@@ -418,7 +397,6 @@
         }
       });
     }
-
     if (!isMobile()) {
       ap1.on('play', function () {
         if(audio){
@@ -431,7 +409,6 @@
         lrcLoad(lrcurl, 1);
         wenkmTips.show('歌词加载中 - ' + aplist1[index1].artist + ' - ' + aplist1[index1].name);
       });
-
       ap2.on('play', function () {
         if(audio){
           audio.pause();
@@ -443,7 +420,6 @@
         lrcLoad(lrcurl, 2);
         wenkmTips.show('歌词加载中 - ' + aplist2[index2].artist + ' - ' + aplist2[index2].name);
       });
-
       ap3.on('play', function () {
         if(audio){
           audio.pause();
@@ -455,7 +431,6 @@
         lrcLoad(lrcurl, 3);
         wenkmTips.show('歌词加载中 - ' + aplist3[index3].artist + ' - ' + aplist3[index3].name);
       });
-
       ap4.on('play', function () {
         if(audio){
           audio.pause();
@@ -467,35 +442,29 @@
         lrcLoad(lrcurl, 4);
         wenkmTips.show('歌词加载中 - ' + aplist4[index4].artist + ' - ' + aplist4[index4].name);
       });
-
       ap1.on('pause', function () {
         clearInterval(lrcTime);
 				$('#wenkmLrc').removeClass('show');
         wenkmTips.show('暂停播放');
       });
-
       ap2.on('pause', function () {
         clearInterval(lrcTime);
 				$('#wenkmLrc').removeClass('show');
         wenkmTips.show('暂停播放');
       });
-
       ap3.on('pause', function () {
         clearInterval(lrcTime);
 				$('#wenkmLrc').removeClass('show');
         wenkmTips.show('暂停播放');
       });
-
       ap4.on('pause', function () {
         clearInterval(lrcTime);
 				$('#wenkmLrc').removeClass('show');
         wenkmTips.show('暂停播放');
       });
     }
-
     var api = 'https://api.i-meto.com/api/v1/meting';
     var api2 = 'https://api.bzqll.com/music/netease/songList?key=579621905';
-
     function love() {
       document.getElementById('aplayerDiv1').style.display = 'inline';
       document.getElementById('aplayerDiv2').style.display = 'none';
@@ -503,7 +472,6 @@
       document.getElementById('aplayerDiv4').style.display = 'none';
       document.getElementById('text').innerHTML = "MyMusic";
     }
-
     // 初始化显示我的音乐列表
     love();
     
@@ -529,7 +497,6 @@
         });
       }
     }
-
     function late() {
       document.getElementById('aplayerDiv1').style.display = 'none';
       document.getElementById('aplayerDiv2').style.display = 'none';
@@ -552,7 +519,6 @@
         });
       }
     }
-
     function now() {
       document.getElementById('aplayerDiv1').style.display = 'none';
       document.getElementById('aplayerDiv2').style.display = 'none';
@@ -580,7 +546,6 @@
         }
       });
     }
-
     function search(btn) {
       // 开始执行，先将按钮置为不可用，执行完后设置可用
       btn.disabled = true;
@@ -614,7 +579,6 @@
         }
       });
     }
-
     // 文字特效
     var colors = ['#FF1177', '#228DFF', '#FFDD1B', '#B6FF00', '#FF9900', '#BA01FF'];
     var fonts = ['Pacifico', 'Audiowide', 'Vampiro One'];
