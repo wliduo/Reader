@@ -169,7 +169,7 @@
       <div style="margin: 0px auto; display: table;">
         <div class="btn-group">
           <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的音乐列表</button>
-          <a href="https://music.163.com/#/playlist?id=2553791717" target="_blank"><button type="button" class="btn btn-success">歌单地址</button></a>
+          <button type="button" class="btn btn-success" onclick="show()">我的歌单</button>
         </div> |
         <button id="loveBtn" type="button" class="btn btn-danger active" onclick="late()">最近喜欢听的歌</button>
       </div>
@@ -608,6 +608,12 @@
           btn.disabled = false;
         }
       });
+    }
+
+    function show() {
+      var neteaseBtn = '<a href="https://music.163.com/#/playlist?id=2553791717" target="_blank"><button type="button" class="btn btn-danger">网易云歌单</button></a>';
+      var QQBtn = '<a href="https://y.qq.com/n/yqq/playlist/6002914459.html" target="_blank"><button type="button" class="btn btn-warning">QQ音乐歌单</button></a>';
+      layer.msg(neteaseBtn + QQBtn);
     }
 
     // 文字特效
