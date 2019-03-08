@@ -2,146 +2,175 @@
 var lifeList = [
   {
     alt: '20170805',
-    src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20170805_191142.jpg',
-    data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20170805_191142.jpg'
-  },
-  {
-    alt: '20170805',
+    desc: '这个是去年实习在上海出差三个月时拍的，去了外滩好几次选的最好的一张',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20170805_202321.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20170805_202321.jpg'
   },
   {
+    alt: '20170805',
+    desc: '还有一张东方明珠近距离的',
+    src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20170805_191142.jpg',
+    data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20170805_191142.jpg'
+  },
+  {
     alt: '20170903',
+    desc: '这是在上海拍的，不记得哪里去啦...',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20170903_151918.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20170903_151918.jpg'
   },
   {
     alt: '20171021',
+    desc: '这是后来回深圳拍的，去了很多次深圳湾，这次去的夕阳最好看了',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20171021_172112.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20171021_172112.jpg'
   },
   {
     alt: '20171028',
+    desc: '这是去年去西充捡的贝壳',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20171028_162135.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20171028_162135.jpg'
   },
   {
     alt: '20171123',
+    desc: '这是回学校去的一次滕王阁，在南昌读书，居然都宅宿舍过了，南昌都没去几个地方，遗憾',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20171123_121922.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20171123_121922.jpg'
   },
   {
     alt: '20171210',
+    desc: '这是有一次去观澜看到的',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20171210_160200.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20171210_160200.jpg'
   },
   {
     alt: '20171217',
+    desc: '这是去惠州爬大南山拍的，景色真不错',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20171217_160531.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20171217_160531.jpg'
   },
   {
     alt: '20171217',
+    desc: '这是去惠州爬大南山拍的，景色真不错',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20171217_171458.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20171217_171458.jpg'
   },
   {
     alt: '20171223',
+    desc: '这是深圳南山人才公园的星光桥',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20171223_183636.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20171223_183636.jpg'
   },
   {
     alt: '20180205',
+    desc: '这是去年过年前还在深圳拍的',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180205_180106.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180205_180106.jpg'
   },
   {
     alt: '20180401',
+    desc: '这是深圳梧桐山的蝴蝶谷',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180401_133922.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180401_133922.jpg'
   },
   {
     alt: '20180405',
+    desc: '这是某一次出去玩看到的',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180405_174643.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180405_174643.jpg'
   },
   {
     alt: '20180422',
+    desc: '这是去海上世界看到的',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180422_145913.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180422_145913.jpg'
   },
   {
     alt: '20180430',
+    desc: '这是五一去广州中山堂拍的',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180430_130318.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180430_130318.jpg'
   },
   {
     alt: '20180519',
+    desc: '这个今年公司旅游去的惠州杨屋外海',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180519_140930.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180519_140930.jpg'
   },
   {
     alt: '20180519',
+    desc: '这个今年公司旅游去的惠州杨屋外海',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180519_142456.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180519_142456.jpg'
   },
   {
     alt: '20180519',
+    desc: '还有海景房的视角',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180519_171413.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180519_171413.jpg'
   },
   {
     alt: '20180520',
+    desc: '还有海景房的视角',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180520_084552.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180520_084552.jpg'
   },
   {
     alt: '20180520',
+    desc: '还有一个冰雪乐园的海绵宝宝',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180520_105936.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180520_105936.jpg'
   },
   {
     alt: '20180520',
+    desc: '这是今年公司旅游惠州拍的水云天',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180520_134539.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180520_134539.jpg'
   },
   {
     alt: '20180616',
+    desc: '这是深圳今年洪湖公园第二十九届荷花展',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180616_154307.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180616_154307.jpg'
   },
   {
     alt: '20180616',
+    desc: '这是深圳今年洪湖公园第二十九届荷花展',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180616_160012.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180616_160012.jpg'
   },
   {
     alt: '20180901',
+    desc: '2018全球游戏潮流盛典',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180901_123048.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180901_123048.jpg'
   },
   {
     alt: '20180901',
+    desc: '2018全球游戏潮流盛典',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20180901_124821.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20180901_124821.jpg'
   },
   {
     alt: '20181002',
+    desc: '这是国庆在珠江坐船拍的',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20181002_190808.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20181002_190808.jpg'
   },
   {
     alt: '20181002',
+    desc: '这个是今年国庆去广州珠江坐船拍的',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20181002_192531.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20181002_192531.jpg'
   },
   {
     alt: '20181002',
+    desc: '还有一张小蛮腰近距离的',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20181002_193859.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20181002_193859.jpg'
   },
   {
     alt: '20181002',
+    desc: '这个是今年国庆去广州珠江坐船拍的',
     src: 'https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20181002_193957.jpg',
     data: 'https://wang926454.gitee.io/reader/Image/Camera/IMG_20181002_193957.jpg'
   }
@@ -416,7 +445,7 @@ var picList = [
     data: 'https://wang926454.gitee.io/reader/Image/201811/normal/09010.png'
   },
   // 201812
-  {
+  /* {
     alt: '20181221',
     src: 'https://wang926454.gitee.io/reader/Image/201812/normal/21005.png',
     data: 'https://wang926454.gitee.io/reader/Image/201812/normal/21005.png'
@@ -425,7 +454,7 @@ var picList = [
     alt: '20181223',
     src: 'https://wang926454.gitee.io/reader/Image/201812/normal/23005.png',
     data: 'https://wang926454.gitee.io/reader/Image/201812/normal/23005.png'
-  },
+  }, */
   // 201901
   {
     alt: '201901',
