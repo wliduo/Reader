@@ -449,12 +449,17 @@ var picList = [
     alt: '20181221',
     src: 'https://wang926454.gitee.io/reader/Image/201812/normal/21005.png',
     data: 'https://wang926454.gitee.io/reader/Image/201812/normal/21005.png'
+  }, */
+  {
+    alt: '20190312',
+    src: 'https://wang926454.gitee.io/reader/Image/201903/normal/12005.png',
+    data: 'https://wang926454.gitee.io/reader/Image/201903/normal/12005.png'
   },
   {
     alt: '20181223',
     src: 'https://wang926454.gitee.io/reader/Image/201812/normal/23005.png',
     data: 'https://wang926454.gitee.io/reader/Image/201812/normal/23005.png'
-  }, */
+  },
   // 201901
   {
     alt: '201901',
