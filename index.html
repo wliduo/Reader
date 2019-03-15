@@ -403,13 +403,35 @@
         url: 'https://free.limh.me/api/colorapi.php',
         type: 'GET',
         dataType: 'script',
-        data: { url: imgUrl, userurl: location.hostname },
+        data: { url: imgUrl },
         success: function () {
-          playercolor()
+          $player.css({
+            background: 'rgba(' + cont + ',.8)'
+          });
+          $player1.css({
+            background: 'rgba(' + cont + ',.3)'
+          });
+          $tips.css({
+            background: 'rgba(' + cont + ',.6)'
+          });
+          $lk.css({
+            background: 'rgba(' + cont + ',.3)'
+          });
         },
         error: function () {
-          var cont = '0,0,0';
-          playercolor()
+          var contEr = '108, 105, 113';
+          $player.css({
+            background: 'rgba(' + contEr + ',.8)'
+          });
+          $player1.css({
+            background: 'rgba(' + contEr + ',.3)'
+          });
+          $tips.css({
+            background: 'rgba(' + contEr + ',.6)'
+          });
+          $lk.css({
+            background: 'rgba(' + contEr + ',.3)'
+          });
         }
       });
     }
@@ -489,7 +511,7 @@
     }
 
     var api = 'https://api.i-meto.com/api/v1/meting';
-    var api2 = 'https://api.bzqll.com/music/netease/songList?key=579621905';
+    var api2 = 'https://api.bzqll.com/music';
 
     function love() {
       document.getElementById('aplayerDiv1').style.display = 'inline';
@@ -536,13 +558,43 @@
           url: api + '?server=netease&type=playlist&id=26462279',
           success: function (list) {
             var array = JSON.parse(list);
-            if (array.length > 0) {
-              ap3.list.clear();
-              ap3.list.add(array);
-            } else {
+            // 获取QQ音乐我喜欢的音乐列表
+            try {
+              // 步骤一: 创建异步对象
+              var ajax = new XMLHttpRequest();
+              if (window.XMLHttpRequest) {
+                  ajax = new XMLHttpRequest();
+              } else {
+                  // IE6及其以下版本浏览器
+                  ajax = new ActiveXObject('Microsoft.XMLHTTP');
+              }
+              // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
+              // ajax.open('get', 'getStar.php?starName='+name);
+              ajax.open('get', api + '?server=tencent&type=playlist&id=6804330872', false);
+              // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
+              ajax.onreadystatechange = function () {
+                  if (ajax.readyState == 4 && ajax.status == 200) {
+                      // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                      // console.log(ajax.responseText);
+                      if (array.length > 0) {
+                        array = array.concat(JSON.parse(ajax.responseText));
+                        ap3.list.clear();
+                        ap3.list.add(array);
+                      } else {
+                        layer.msg('出现错误，请刷新页面');
+                      }
+                      aplist3 = array;
+                  }
+              }
+              // 步骤四: 发送请求
+              ajax.send();
+            }
+            catch(err) {
               layer.msg('出现错误，请刷新页面');
             }
-            aplist3 = array;
+            finally {
+                
+            }
           }
         });
       }
@@ -555,20 +607,54 @@
       document.getElementById('aplayerDiv4').style.display = 'none';
       document.getElementById('text').innerHTML = "NowList";
       $.ajax({
-        url: api2 + '&id=26462279',
+        url: api2 + '/netease/songList?key=579621905&id=26462279',
         success: function (data) {
           if (data.code == 200) {
             var array = data.data.songs;
-            for (var i = 0, len = data.data.songs.length; i < len; i++) {
-              array[i].id = array[i].id;
-              array[i].name = array[i].name;
-              array[i].artist = array[i].singer;
-              array[i].cover = array[i].pic;
-              array[i].lrc = array[i].lrc;
+            // 获取QQ音乐我喜欢的音乐列表
+            try {
+              // 步骤一: 创建异步对象
+              var ajax = new XMLHttpRequest();
+              if (window.XMLHttpRequest) {
+                  ajax = new XMLHttpRequest();
+              } else {
+                  // IE6及其以下版本浏览器
+                  ajax = new ActiveXObject('Microsoft.XMLHTTP');
+              }
+              // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
+              // ajax.open('get', 'getStar.php?starName='+name);
+              ajax.open('get', api2 + '/tencent/songList?key=579621905&id=6804330872', false);
+              // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
+              ajax.onreadystatechange = function () {
+                  if (ajax.readyState == 4 && ajax.status == 200) {
+                      // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                      // console.log(ajax.responseText);
+                      if (array.length > 0) {
+                        array = array.concat(JSON.parse(ajax.responseText).data.songs);
+                        for (var i = 0, len = array.length; i < len; i++) {
+                          /* array[i].id = array[i].id;
+                          array[i].name = array[i].name; */
+                          array[i].artist = array[i].singer;
+                          array[i].cover = array[i].pic;
+                          /* array[i].lrc = array[i].lrc; */
+                        }
+                        ap3.list.clear();
+                        ap3.list.add(array);
+                      } else {
+                        layer.msg('出现错误，请刷新页面');
+                      }
+                      aplist3 = array;
+                  }
+              }
+              // 步骤四: 发送请求
+              ajax.send();
             }
-            ap3.list.clear();
-            ap3.list.add(array);
-            aplist3 = array;
+            catch(err) {
+              layer.msg('出现错误，请刷新页面');
+            }
+            finally {
+                
+            }
           } else {
             layer.msg('出现错误，请刷新页面');
           }
