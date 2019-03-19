@@ -135,8 +135,8 @@
 
     <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
       <div style="margin: 0px auto; display: table;">
-        <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">主页</button></a><span onclick="now()"> | </span>
-        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button> | 
+        <a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary">主页</button></a><span onclick="nowLove()"> | </span>
+        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button><span onclick="nowLate()"> | </span>
         <button id="serachBtn" type="button" class="btn btn-info active" onclick="search(this)">搜索</button>
       </div>
     </div>
@@ -600,7 +600,69 @@
       }
     }
 
-    function now() {
+    function nowLove() {
+      document.getElementById('aplayerDiv1').style.display = 'inline';
+      document.getElementById('aplayerDiv2').style.display = 'none';
+      document.getElementById('aplayerDiv3').style.display = 'none';
+      document.getElementById('aplayerDiv4').style.display = 'none';
+      document.getElementById('text').innerHTML = "NowList";
+      $.ajax({
+        url: api2 + '/netease/songList?key=579621905&id=2553791717',
+        success: function (data) {
+          if (data.code == 200) {
+            var array = data.data.songs;
+            // 获取QQ音乐我喜欢的音乐列表
+            try {
+              // 步骤一: 创建异步对象
+              var ajax = new XMLHttpRequest();
+              if (window.XMLHttpRequest) {
+                  ajax = new XMLHttpRequest();
+              } else {
+                  // IE6及其以下版本浏览器
+                  ajax = new ActiveXObject('Microsoft.XMLHTTP');
+              }
+              // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
+              // ajax.open('get', 'getStar.php?starName='+name);
+              ajax.open('get', api2 + '/tencent/songList?key=579621905&id=6002914459', false);
+              // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
+              ajax.onreadystatechange = function () {
+                  if (ajax.readyState == 4 && ajax.status == 200) {
+                      // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                      // console.log(ajax.responseText);
+                      if (array.length > 0) {
+                        array = array.concat(JSON.parse(ajax.responseText).data.songs);
+                        for (var i = 0, len = array.length; i < len; i++) {
+                          /* array[i].id = array[i].id;
+                          array[i].name = array[i].name; */
+                          array[i].artist = array[i].singer;
+                          array[i].cover = array[i].pic;
+                          /* array[i].lrc = array[i].lrc; */
+                        }
+                        ap1.list.clear();
+                        ap1.list.add(array);
+                      } else {
+                        layer.msg('出现错误，请刷新页面');
+                      }
+                      aplist1 = array;
+                  }
+              }
+              // 步骤四: 发送请求
+              ajax.send();
+            }
+            catch(err) {
+              layer.msg('出现错误，请刷新页面');
+            }
+            finally {
+                
+            }
+          } else {
+            layer.msg('出现错误，请刷新页面');
+          }
+        }
+      });
+    }
+
+    function nowLate() {
       document.getElementById('aplayerDiv1').style.display = 'none';
       document.getElementById('aplayerDiv2').style.display = 'none';
       document.getElementById('aplayerDiv3').style.display = 'inline';
