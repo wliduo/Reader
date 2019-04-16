@@ -110,9 +110,7 @@
   <div class="middle">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div style="margin: 0px auto; display: table;">
-        <a href="https://www.fczbl.vip/musicplayer" target="_blank">
-          <p id="text">MyMusic</p>
-        </a>
+        <p id="text">MyMusic</p>
       </div>
     </div>
 
@@ -170,7 +168,7 @@
         <div class="btn-group">
           <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的音乐列表</button>
           <button type="button" class="btn btn-success" onclick="show()">我的歌单</button>
-        </div> |
+        </div><span onclick="openNew()"> | </span>
         <button id="loveBtn" type="button" class="btn btn-danger active" onclick="late()">最近喜欢听的歌</button>
       </div>
     </div>
@@ -783,6 +781,10 @@
       }
 
       btn.disabled = false;
+    }
+
+    function openNew() {
+      window.open("https://www.fczbl.vip/musicplayer");
     }
 
     function show() {
