@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <title>音乐台</title>
-  <link rel="shortcut icon" href="https://wang64.cn/static/favicon.ico" />
+  <link rel="shortcut icon" href="https://dolyw.com/static/favicon.ico" />
   <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
   <!-- 垂直居中参考 https://www.cnblogs.com/yugege/p/5246652.html -->
@@ -14,32 +14,32 @@
   <!-- 搜索API https://github.com/metowolf/Meting https://github.com/metowolf/MetingJS -->
   <!-- wenkmPlayer Start -->
   <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://mark.wang64.cn/assets/wenkmPlayer/css/player.css?v=0914">
+  <link rel="stylesheet" href="https://mark.dolyw.com/assets/wenkmPlayer/css/player.css?v=0914">
   <!-- wenkmPlayer End -->
   <style>
     @font-face {
       font-family: 'Monoton';
       font-style: normal;
       font-weight: 400;
-      src: local('Monoton'), local('Monoton-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/01.woff) format('woff');
+      src: local('Monoton'), local('Monoton-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/01.woff) format('woff');
     }
     @font-face {
       font-family: 'Pacifico';
       font-style: normal;
       font-weight: 400;
-      src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/03.woff) format('woff');
+      src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/03.woff) format('woff');
     }
     @font-face {
       font-family: 'Audiowide';
       font-style: normal;
       font-weight: 400;
-      src: local('Audiowide'), local('Audiowide-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/05.woff) format('woff');
+      src: local('Audiowide'), local('Audiowide-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/05.woff) format('woff');
     }
     @font-face {
       font-family: 'Vampiro One';
       font-style: normal;
       font-weight: 400;
-      src: local('Vampiro One'), local('VampiroOne-Regular'), url(https://text.wang64.cn/html5-shine-text/css/font/06.woff) format('woff');
+      src: local('Vampiro One'), local('VampiroOne-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/06.woff) format('woff');
     }
     html, body {
         width: 100%;
@@ -53,7 +53,7 @@
       overflow: hidden;
     } */
     #bg {
-      background-image: url(https://wang926454.gitee.io/reader/Image/CameraThumb/IMG_20171021_172112.jpg);
+      background-image: url(https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20171021_172112.jpg);
       position: fixed;
       top: 0;
       left: 0;
@@ -176,11 +176,11 @@
 
   <!-- wenkmPlayer Start -->
   <div id="wangPlayer" style="display: none;"></div>
-  <!-- <script type="text/javascript" src="https://wang926454.gitee.io/reader/JS/aplist.js"></script> -->
+  <!-- <script type="text/javascript" src="https://dolyw.gitee.io/reader/JS/aplist.js"></script> -->
   <script type="text/javascript" src="JS/aplist.js"></script>
-  <script src="https://mark.wang64.cn/assets/wenkmPlayer/js/mousewheel.js" type="text/javascript"></script>
-  <script src="https://mark.wang64.cn/assets/wenkmPlayer/js/scrollbar.js" type="text/javascript"></script>
-  <!-- <script src="https://mark.wang64.cn/assets/wenkmPlayer/js/player.js?v=123" type="text/javascript"></script> -->
+  <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/mousewheel.js" type="text/javascript"></script>
+  <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/scrollbar.js" type="text/javascript"></script>
+  <!-- <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123" type="text/javascript"></script> -->
   <!-- wenkmPlayer End -->
 
   <script>
@@ -200,7 +200,7 @@
       document.body.style.overflow = 'hidden';
       try {
         // 加载wenkmPlayerc
-        $.ajax({ url: 'https://mark.wang64.cn/assets/wenkmPlayer/js/player.js?v=123', dataType: "script", cache: true, async: false });
+        $.ajax({ url: 'https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123', dataType: "script", cache: true, async: false });
       } catch (err) {
         console.log('[Error] JQuery is not defined.')
       } finally {
@@ -789,7 +789,7 @@
 
     function show() {
       var QQBtn = '<a href="https://y.qq.com/n/yqq/playlist/6002914459.html" target="_blank"><button type="button" class="btn btn-warning">QQ音乐</button></a>';
-      var homeBtn = '<a href="https://wang64.cn" target="_blank"><button type="button" class="btn btn-primary active">我的主页</button></a>';
+      var homeBtn = '<a href="https://dolyw.com" target="_blank"><button type="button" class="btn btn-primary active">我的主页</button></a>';
       var neteaseBtn = '<a href="https://music.163.com/#/playlist?id=2553791717" target="_blank"><button type="button" class="btn btn-danger">网易云音乐</button></a>';
       layer.msg(QQBtn + homeBtn + neteaseBtn);
     }
@@ -806,8 +806,8 @@
     }, 1000);
   </script>
   <!-- 页面点击小红心 -->
-  <script type="text/javascript" src="https://wang926454.gitee.io/reader/JS/love.js"></script>
-  <script type="text/javascript" src="https://wang64.cn/static/count.js"></script>
+  <script type="text/javascript" src="https://dolyw.gitee.io/reader/JS/love.js"></script>
+  <script type="text/javascript" src="https://dolyw.com/static/count.js"></script>
 </body>
 
 </html>

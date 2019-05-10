@@ -7,37 +7,37 @@ var myList = [
     {
         name: 'Hope',
         artist: 'Namie Amuro',
-        url: 'https://wang926454.gitee.io/reader/Music/hope.mp3',
-        cover: 'https://wang926454.gitee.io/reader/Music/image/hope.png',
-        lrc: 'https://res.wang64.cn/Music/lrc/hope.lrc'
+        url: 'https://dolyw.gitee.io/reader/Music/hope.mp3',
+        cover: 'https://dolyw.gitee.io/reader/Music/image/hope.png',
+        lrc: 'https://res.dolyw.com/Music/lrc/hope.lrc'
     },
     {
         name: 'unravel',
         artist: '凛として時雨',
-        url: 'https://wang926454.gitee.io/reader/Music/unravel.mp3',
-        cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
-        lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+        url: 'https://dolyw.gitee.io/reader/Music/unravel.mp3',
+        cover: 'https://dolyw.gitee.io/reader/Music/image/xxx.png',
+        lrc: 'https://res.dolyw.com/Music/lrc/xxx.lrc'
     },
     {
         name: 'unravel - 不插电版',
         artist: '凛として時雨',
-        url: 'https://wang926454.gitee.io/reader/Music/unravelno.mp3',
-        cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
-        lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+        url: 'https://dolyw.gitee.io/reader/Music/unravelno.mp3',
+        cover: 'https://dolyw.gitee.io/reader/Music/image/xxx.png',
+        lrc: 'https://res.dolyw.com/Music/lrc/xxx.lrc'
     },
     {
         name: 'なんでもないや',
         artist: 'RADWIMPS',
-        url: 'https://wang926454.gitee.io/reader/Music/RADWIMPS.mp3',
-        cover: 'https://wang926454.gitee.io/reader/Music/image/xxx.png',
-        lrc: 'https://res.wang64.cn/Music/lrc/xxx.lrc'
+        url: 'https://dolyw.gitee.io/reader/Music/RADWIMPS.mp3',
+        cover: 'https://dolyw.gitee.io/reader/Music/image/xxx.png',
+        lrc: 'https://res.dolyw.com/Music/lrc/xxx.lrc'
     },
     {
         name: '烟火里的尘埃',
         artist: '郁欢',
-        url: 'https://wang926454.gitee.io/reader/Music/yanhuolidechenai.mp3',
-        cover: 'https://wang926454.gitee.io/reader/Music/image/yanhuolidechenai.png',
-        lrc: 'https://res.wang64.cn/Music/lrc/yanhuolidechenai.lrc'
+        url: 'https://dolyw.gitee.io/reader/Music/yanhuolidechenai.mp3',
+        cover: 'https://dolyw.gitee.io/reader/Music/image/yanhuolidechenai.png',
+        lrc: 'https://res.dolyw.com/Music/lrc/yanhuolidechenai.lrc'
     }
 ];
 
