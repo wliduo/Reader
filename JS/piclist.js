@@ -2,7 +2,7 @@
 var lifeList = [
   {
     alt: '20170805',
-    desc: '这个是去年实习在上海出差三个月时拍的，去了外滩好几次选的最好的一张',
+    desc: '这个是17年实习在上海出差三个月时拍的，去了外滩好几次选的最好的一张',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20170805_202321.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20170805_202321.jpg'
   },
@@ -20,13 +20,13 @@ var lifeList = [
   },
   {
     alt: '20171021',
-    desc: '这是后来回深圳拍的，去了很多次深圳湾，这次去的夕阳最好看了',
+    desc: '这是后来回深圳后拍的，去了很多次深圳湾，这次去的夕阳最好看了',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20171021_172112.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20171021_172112.jpg'
   },
   {
     alt: '20171028',
-    desc: '这是去年去西充捡的贝壳',
+    desc: '这是17年实习的时候去西充捡的贝壳',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20171028_162135.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20171028_162135.jpg'
   },
@@ -62,7 +62,7 @@ var lifeList = [
   },
   {
     alt: '20180205',
-    desc: '这是去年过年前还在深圳拍的',
+    desc: '这是快过年了回家前一天还在深圳拍的',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20180205_180106.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20180205_180106.jpg'
   },
@@ -92,13 +92,13 @@ var lifeList = [
   },
   {
     alt: '20180519',
-    desc: '这个今年公司旅游去的惠州杨屋外海',
+    desc: '这个是去的惠州杨屋外海',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20180519_140930.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20180519_140930.jpg'
   },
   {
     alt: '20180519',
-    desc: '这个今年公司旅游去的惠州杨屋外海',
+    desc: '这个是去的惠州杨屋外海',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20180519_142456.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20180519_142456.jpg'
   },
@@ -122,19 +122,19 @@ var lifeList = [
   },
   {
     alt: '20180520',
-    desc: '这是今年公司旅游惠州拍的水云天',
+    desc: '这是去的惠州拍的水云天',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20180520_134539.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20180520_134539.jpg'
   },
   {
     alt: '20180616',
-    desc: '这是深圳今年洪湖公园第二十九届荷花展',
+    desc: '这是18年深圳洪湖公园第二十九届荷花展',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20180616_154307.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20180616_154307.jpg'
   },
   {
     alt: '20180616',
-    desc: '这是深圳今年洪湖公园第二十九届荷花展',
+    desc: '这是18年深圳洪湖公园第二十九届荷花展',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20180616_160012.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20180616_160012.jpg'
   },
@@ -152,13 +152,13 @@ var lifeList = [
   },
   {
     alt: '20181002',
-    desc: '这是国庆在珠江坐船拍的',
+    desc: '这个是国庆去广州珠江坐船拍的',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20181002_190808.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20181002_190808.jpg'
   },
   {
     alt: '20181002',
-    desc: '这个是今年国庆去广州珠江坐船拍的',
+    desc: '这个是国庆去广州珠江坐船拍的',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20181002_192531.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20181002_192531.jpg'
   },
@@ -170,7 +170,7 @@ var lifeList = [
   },
   {
     alt: '20181002',
-    desc: '这个是今年国庆去广州珠江坐船拍的',
+    desc: '这个是国庆去广州珠江坐船拍的',
     src: 'https://dolyw.gitee.io/reader/Image/CameraThumb/IMG_20181002_193957.jpg',
     data: 'https://dolyw.gitee.io/reader/Image/Camera/IMG_20181002_193957.jpg'
   }
