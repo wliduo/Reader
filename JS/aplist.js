@@ -41,7 +41,8 @@ var myList = [
     }
 ];
 
-var apApi = 'https://api.i-meto.com/api/v1/meting';
+// var apApi = 'https://api.i-meto.com/api/v1/meting'; API地址切换
+var apApi = 'https://api.i-meto.com/meting/api';
 var apApi2 = 'https://api.bzqll.com/music/netease/songList?key=579621905';
 
 // 数组插入方法扩展
