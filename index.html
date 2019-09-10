@@ -139,8 +139,8 @@
 
     <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
       <div style="margin: 0px auto; display: table;">
-        <button type="button" class="btn btn-primary" onclick="search(this)">搜索</button></a><span onclick="nowLove()"> | </span>
-        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button><span onclick="nowLate()"> | </span>
+        <button type="button" class="btn btn-primary" onclick="search(this)">搜索</button></a><!-- <span onclick="nowLove()"> --> | <!-- </span> -->
+        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button><!-- <span onclick="nowLate()"> --> | <!-- </span> -->
         <button id="serachBtn" type="button" class="btn btn-info active" onclick="cut(this)">切歌</button>
       </div>
     </div>
@@ -174,7 +174,7 @@
         <div class="btn-group">
           <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的音乐列表</button>
           <button type="button" class="btn btn-success" onclick="show()">我的歌单</button>
-        </div><span onclick="openNew()"> | </span>
+        </div><!-- <span onclick="openNew()"> --> | <!-- </span> -->
         <button id="loveBtn" type="button" class="btn btn-danger active" onclick="late()">最近喜欢听的歌</button>
       </div>
     </div>
@@ -186,6 +186,7 @@
   <script type="text/javascript" src="JS/aplist.js"></script>
   <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/mousewheel.js" type="text/javascript"></script>
   <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/scrollbar.js" type="text/javascript"></script>
+  <script src="https://cdn.staticfile.org/color-thief/2.3.0/color-thief.umd.js" type="text/javascript"></script>
   <!-- <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123" type="text/javascript"></script> -->
   <!-- wenkmPlayer End -->
 
@@ -411,27 +412,55 @@
 
     // 获取当前路径图片颜色
     function colorChange(imgUrl) {
-      $.ajax({
-        url: 'https://free.limh.me/api/colorapi.php',
-        type: 'GET',
-        dataType: 'script',
-        data: { url: imgUrl },
-        success: function () {
-          $player.css({
-            background: 'rgba(' + cont + ',.8)'
-          });
-          $player1.css({
-            background: 'rgba(' + cont + ',.3)'
-          });
-          $tips.css({
-            background: 'rgba(' + cont + ',.6)'
-          });
-          $lk.css({
-            background: 'rgba(' + cont + ',.3)'
-          });
-        },
-        error: function () {
-          var contEr = '108, 105, 113';
+      // 封面图案
+      var coverImg = new Image();
+      coverImg.src = imgUrl;
+      coverImg.onload = function () {
+        var coverImgTemp = new Image();
+        // 跨域
+        coverImgTemp.crossOrigin = 'Anonymous';
+        coverImgTemp.src = 'https://cors-anywhere.herokuapp.com/' + imgUrl;
+        coverImgTemp.onload = function () {
+          try {
+            var cont = '108, 105, 113';
+            var colorThief = new ColorThief();
+            // 获取主颜色
+            var colorArray = colorThief.getColor(coverImgTemp);
+            cont = colorArray.join(',');
+            // console.log(cont);
+            $player.css({
+              background: 'rgba(' + cont + ',.8)'
+            });
+            $player1.css({
+              background: 'rgba(' + cont + ',.3)'
+            });
+            $tips.css({
+              background: 'rgba(' + cont + ',.6)'
+            });
+            $lk.css({
+              background: 'rgba(' + cont + ',.3)'
+            });
+          } catch(e) {
+            console.log(e);
+            // var contEr = '108, 105, 113';
+            var contEr = Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256);
+            $player.css({
+              background: 'rgba(' + contEr + ',.8)'
+            });
+            $player1.css({
+              background: 'rgba(' + contEr + ',.3)'
+            });
+            $tips.css({
+              background: 'rgba(' + contEr + ',.6)'
+            });
+            $lk.css({
+              background: 'rgba(' + contEr + ',.3)'
+            });
+          }
+        }
+        coverImgTemp.error = function () {
+          // var contEr = '108, 105, 113';
+          var contEr = Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256);
           $player.css({
             background: 'rgba(' + contEr + ',.8)'
           });
@@ -445,7 +474,7 @@
             background: 'rgba(' + contEr + ',.3)'
           });
         }
-      });
+      };
     }
 
     if (!isMobile()) {
@@ -524,7 +553,7 @@
 
     // var api = 'https://api.i-meto.com/api/v1/meting'; API地址切换
     var api = 'https://api.i-meto.com/meting/api';
-    var api2 = 'https://api.bzqll.com/music';
+    var api2 = 'https://api.bzqll.com/music'; // 已失效
 
     function love() {
       document.getElementById('aplayerDiv1').style.display = 'inline';
@@ -800,6 +829,7 @@
 
     function openNew() {
       window.open("https://www.fczbl.vip/musicplayer");
+      window.open("https://moedog.org/musicplayer/");
     }
 
     function show() {
