@@ -12,6 +12,9 @@
   <!-- 垂直居中参考 https://www.cnblogs.com/yugege/p/5246652.html -->
   <!-- APlayer源码 https://github.com/MoePlayer/APlayer -->
   <!-- 搜索API https://github.com/metowolf/Meting https://github.com/metowolf/MetingJS -->
+  <!-- Live2D Start -->
+  <link rel="stylesheet" type="text/css" href="https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu.min.css" />
+  <!-- Live2D End -->
   <!-- wenkmPlayer Start -->
   <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://mark.dolyw.com/assets/wenkmPlayer/css/player.css?v=0914">
@@ -190,6 +193,11 @@
   <!-- <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123" type="text/javascript"></script> -->
   <!-- wenkmPlayer End -->
 
+  <!-- Live2D Start -->
+  <script src="https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu-tips.min.js?v=1.4.2-fix3"></script>
+  <script src="https://www.fghrsh.net/zb_users/plugin/live2d/assets/live2d.min.js?v=1.0.5"></script>
+  <!-- Live2D End -->
+
   <script>
     // PC端返回false
     function isMobile() {
@@ -205,11 +213,22 @@
     } else {
       // 隐藏滚动条
       document.body.style.overflow = 'hidden';
+      // 加载Live2D
       try {
-        // 加载wenkmPlayerc
-        $.ajax({ url: 'https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123', dataType: "script", cache: true, async: false });
-      } catch (err) {
-        console.log('[Error] JQuery is not defined.')
+          $('body').append('<style>.waifu-tool span{display:block;cursor:pointer;color:#f3f9f1;transition:.2s}</style><div class="waifu"><div class="waifu-tips"></div><canvas id="live2d" class="live2d"></canvas><div class="waifu-tool"><span class="fui-home"></span> <span class="fui-chat"></span> <span class="fui-eye"></span> <span class="fui-user"></span> <span class="fui-photo"></span> <span class="fui-info-circle"></span> <span class="fui-cross"></span></div></div>');
+          /* 可直接修改部分参数 */
+          live2d_settings['modelId'] = 3;                  // 默认模型 ID
+          live2d_settings['modelTexturesId'] = 0;         // 默认材质 ID
+          live2d_settings['modelStorage'] = false;         // 不储存模型 ID
+          live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
+          live2d_settings['waifuEdgeSide'] = 'right:30';   // 看板娘贴边方向
+          live2d_settings['aboutPageUrl'] = 'https://github.com/fghrsh/live2d_demo';   // 关于页地址
+          /* 在 initModel 前添加 */
+          initModel("https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu-tips.json?v=1.4.2");
+          // 加载wenkmPlayerc
+          $.ajax({url: 'https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123', dataType:"script", cache: true, async: false});
+      } catch(err) {
+          console.log('[Error] JQuery is not defined.')
       } finally {
         $(window).load(function() {
           wenkmTips.show('欢迎访问我的音乐台');
