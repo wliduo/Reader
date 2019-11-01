@@ -13,7 +13,7 @@
   <!-- APlayer源码 https://github.com/MoePlayer/APlayer -->
   <!-- 搜索API https://github.com/metowolf/Meting https://github.com/metowolf/MetingJS -->
   <!-- Live2D Start -->
-  <link rel="stylesheet" type="text/css" href="https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu.min.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu.min.css" /> -->
   <!-- Live2D End -->
   <!-- wenkmPlayer Start -->
   <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,35 +26,42 @@
       font-weight: 400;
       src: local('Monoton'), local('Monoton-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/01.woff) format('woff');
     }
+
     @font-face {
       font-family: 'Pacifico';
       font-style: normal;
       font-weight: 400;
       src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/03.woff) format('woff');
     }
+
     @font-face {
       font-family: 'Audiowide';
       font-style: normal;
       font-weight: 400;
       src: local('Audiowide'), local('Audiowide-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/05.woff) format('woff');
     }
+
     @font-face {
       font-family: 'Vampiro One';
       font-style: normal;
       font-weight: 400;
       src: local('Vampiro One'), local('VampiroOne-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/06.woff) format('woff');
     }
-    html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0; 
-        padding: 0;
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
     }
+
     body {
       background-color: #3d3b4f;
       /* 隐藏滚动条
       overflow: hidden; */
     }
+
     #bg {
       /* background-image: url(https://dolyw.gitee.io/reader/Image/201908/normal/20015.jpg); */
       /* background-image: url(E://BaiduNetdiskDownload//20015.jpg); */
@@ -73,39 +80,43 @@
       -o-background-size: cover;
       background-position: center 0;
       opacity: 0.8;
-      filter: alpha(opacity = 80);
+      filter: alpha(opacity=80);
     }
+
     #text {
       text-align: center;
       font-size: 2em;
       color: #FF1177;
       font-family: Monoton;
     }
+
     .middle {
-        position: absolute;
-        top: 45%;
-        left: 0;
-        right: 0;
-        z-index: 2;
-        width: 100%;
-        /* min-height: 260px; */
-        padding-top: 5px;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
+      position: absolute;
+      top: 45%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      width: 100%;
+      /* min-height: 260px; */
+      padding-top: 5px;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
+
     .aplayer-wrap {
       max-width: 700px;
       margin: 20px auto;
       opacity: 0.79;
     }
 
-    input, select, button {
+    input,
+    select,
+    button {
       opacity: 0.79;
     }
-    
   </style>
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
   <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
@@ -142,8 +153,12 @@
 
     <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
       <div style="margin: 0px auto; display: table;">
-        <button type="button" class="btn btn-primary" onclick="search(this)">搜索</button></a><!-- <span onclick="nowLove()"> --> | <!-- </span> -->
-        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button><!-- <span onclick="nowLate()"> --> | <!-- </span> -->
+        <button type="button" class="btn btn-primary" onclick="search(this)">搜索</button></a>
+        <!-- <span onclick="nowLove()"> --> |
+        <!-- </span> -->
+        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button>
+        <!-- <span onclick="nowLate()"> --> |
+        <!-- </span> -->
         <button id="serachBtn" type="button" class="btn btn-info active" onclick="cut(this)">切歌</button>
       </div>
     </div>
@@ -177,7 +192,8 @@
         <div class="btn-group">
           <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的音乐列表</button>
           <button type="button" class="btn btn-success" onclick="show()">我的歌单</button>
-        </div><!-- <span onclick="openNew()"> --> | <!-- </span> -->
+        </div><!-- <span onclick="openNew()"> --> |
+        <!-- </span> -->
         <button id="loveBtn" type="button" class="btn btn-danger active" onclick="late()">最近喜欢听的歌</button>
       </div>
     </div>
@@ -194,8 +210,8 @@
   <!-- wenkmPlayer End -->
 
   <!-- Live2D Start -->
-  <script src="https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu-tips.min.js?v=1.4.2-fix3"></script>
-  <script src="https://www.fghrsh.net/zb_users/plugin/live2d/assets/live2d.min.js?v=1.0.5"></script>
+  <!-- <script src="https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu-tips.min.js?v=1.4.2-fix3"></script>
+  <script src="https://www.fghrsh.net/zb_users/plugin/live2d/assets/live2d.min.js?v=1.0.5"></script> -->
   <!-- Live2D End -->
 
   <script>
@@ -213,24 +229,22 @@
     } else {
       // 隐藏滚动条
       document.body.style.overflow = 'hidden';
-      // 加载Live2D
       try {
-          $('body').append('<style>.waifu-tool span{display:block;cursor:pointer;color:#f3f9f1;transition:.2s}</style><div class="waifu"><div class="waifu-tips"></div><canvas id="live2d" class="live2d"></canvas><div class="waifu-tool"><span class="fui-home"></span> <span class="fui-chat"></span> <span class="fui-eye"></span> <span class="fui-user"></span> <span class="fui-photo"></span> <span class="fui-info-circle"></span> <span class="fui-cross"></span></div></div>');
-          /* 可直接修改部分参数 */
-          live2d_settings['modelId'] = 3;                  // 默认模型 ID
-          live2d_settings['modelTexturesId'] = 0;         // 默认材质 ID
-          live2d_settings['modelStorage'] = false;         // 不储存模型 ID
-          live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
-          live2d_settings['waifuEdgeSide'] = 'right:30';   // 看板娘贴边方向
-          live2d_settings['aboutPageUrl'] = 'https://github.com/fghrsh/live2d_demo';   // 关于页地址
-          /* 在 initModel 前添加 */
-          initModel("https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu-tips.json?v=1.4.2");
-          // 加载wenkmPlayerc
-          $.ajax({url: 'https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123', dataType:"script", cache: true, async: false});
-      } catch(err) {
-          console.log('[Error] JQuery is not defined.')
+        // 加载Live2D
+        /* $('body').append('<style>.waifu-tool span{display:block;cursor:pointer;color:#f3f9f1;transition:.2s}</style><div class="waifu"><div class="waifu-tips"></div><canvas id="live2d" class="live2d"></canvas><div class="waifu-tool"><span class="fui-home"></span> <span class="fui-chat"></span> <span class="fui-eye"></span> <span class="fui-user"></span> <span class="fui-photo"></span> <span class="fui-info-circle"></span> <span class="fui-cross"></span></div></div>');
+        live2d_settings['modelId'] = 3;                  // 默认模型 ID
+        live2d_settings['modelTexturesId'] = 0;         // 默认材质 ID
+        live2d_settings['modelStorage'] = false;         // 不储存模型 ID
+        live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
+        live2d_settings['waifuEdgeSide'] = 'right:30';   // 看板娘贴边方向
+        live2d_settings['aboutPageUrl'] = 'https://github.com/fghrsh/live2d_demo';   // 关于页地址
+        initModel("https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu-tips.json?v=1.4.2"); */
+        // 加载wenkmPlayerc
+        $.ajax({ url: 'https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123', dataType: "script", cache: true, async: false });
+      } catch (err) {
+        console.log('[Error] JQuery is not defined.')
       } finally {
-        $(window).load(function() {
+        $(window).load(function () {
           wenkmTips.show('欢迎访问我的音乐台');
           // 显示歌词和提示
           document.getElementById('wenkmPlayer').style.display = 'none';
@@ -243,8 +257,8 @@
     var img = new Image();
     img.src = url;
     img.onload = function () {
-        $("#bg").css('backgroundImage', "url(" + url + ")");
-        $("#bg").hide().fadeIn(1000);
+      $("#bg").css('backgroundImage', "url(" + url + ")");
+      $("#bg").hide().fadeIn(1000);
     };
   </script>
 
@@ -345,6 +359,65 @@
       }
     }
 
+    function loadLrc(lrctext, typeNo) {
+      if (typeof (lrctext) == 'undefined') {
+        songFrom44 = ' - 暂无歌词!', $songFrom3.html('<i class="fa fa-times-circle"></i> 暂无歌词');
+        $(".switch-ksclrc").hide();
+        $(".switch-down").css("right", "35px");
+        $(".switch-default").css("right", "65px");
+      } else {
+        if (lrctext.indexOf('[00') >= 0) {
+          setTimeout(function () {
+            if (!$('#wenkmLrc').hasClass('hide')) {
+              songFrom44 = ' - Lrc歌词获取成功!'
+            } else {
+              songFrom44 = ' - Lrc歌词已关闭！'
+            };
+            hasLrc = true;
+            function formatTime(t) {
+              var sp = t.split(':'),
+                min = +sp[0],
+                sec = +sp[1].split('.')[0],
+                ksec = +sp[1].split('.')[1];
+              return min * 60 + sec + Math.round(ksec / 1000);
+            };
+            var lrcCont = lrctext.replace(/\[[A-Za-z]+:(.*?)]/g, '').replace('\\n', '').split(/[\]\[]/g),
+              lrcLine = '';
+            lrcTimeLine = [];
+            for (var i = 1; i < lrcCont.length; i += 2) {
+              var timer = formatTime(lrcCont[i]);
+              lrcTimeLine.push(timer);
+              if (i == 1) {
+                lrcLine += '<li class="wenkmLrc' + timer + ' current">' + lrcCont[i + 1] + '</li>'
+              } else {
+                lrcLine += '<li class="wenkmLrc' + timer + '">' + lrcCont[i + 1] + '</li>'
+              }
+            }
+            $('#wenkmLrc').html('<ul>' + lrcLine + '</ul>');
+            setTimeout(function () {
+              $('#wenkmLrc').addClass('show');
+            }, 500);
+            // console.log(typeNo);
+            if (typeNo == 1) {
+              lrcTime = setInterval(lrcCurrentAp1, 500);
+            } else if (typeNo == 2) {
+              lrcTime = setInterval(lrcCurrentAp2, 500);
+            } else if (typeNo == 3) {
+              lrcTime = setInterval(lrcCurrentAp3, 500);
+            } else if (typeNo == 4) {
+              lrcTime = setInterval(lrcCurrentAp4, 500);
+            }
+
+          }, 500);
+        } else {
+          songFrom44 = ' - 暂无歌词!', $songFrom3.html('<i class="fa fa-times-circle"></i> 暂无歌词');
+          $(".switch-ksclrc").hide();
+          $(".switch-down").css("right", "35px");
+          $(".switch-default").css("right", "65px");
+        }
+      }
+    }
+
     function lrcLoad(lrcTempUrl, typeNo) {
       wenkmLrc.lrc.hide();
       hasLrc = false;
@@ -368,62 +441,10 @@
         $.ajax({
           url: lrcTempUrl,
           success: function (lrctext) {
-            if (typeof (lrctext) == 'undefined') {
-              songFrom44 = ' - 暂无歌词!', $songFrom3.html('<i class="fa fa-times-circle"></i> 暂无歌词');
-              $(".switch-ksclrc").hide();
-              $(".switch-down").css("right", "35px");
-              $(".switch-default").css("right", "65px");
-            } else {
-              if (lrctext.indexOf('[00') >= 0) {
-                setTimeout(function () {
-                  if (!$('#wenkmLrc').hasClass('hide')) {
-                    songFrom44 = ' - Lrc歌词获取成功!'
-                  } else {
-                    songFrom44 = ' - Lrc歌词已关闭！'
-                  };
-                  hasLrc = true;
-                  function formatTime(t) {
-                    var sp = t.split(':'),
-                      min = +sp[0],
-                      sec = +sp[1].split('.')[0],
-                      ksec = +sp[1].split('.')[1];
-                    return min * 60 + sec + Math.round(ksec / 1000);
-                  };
-                  var lrcCont = lrctext.replace(/\[[A-Za-z]+:(.*?)]/g, '').replace('\\n', '').split(/[\]\[]/g),
-                    lrcLine = '';
-                  lrcTimeLine = [];
-                  for (var i = 1; i < lrcCont.length; i += 2) {
-                    var timer = formatTime(lrcCont[i]);
-                    lrcTimeLine.push(timer);
-                    if (i == 1) {
-                      lrcLine += '<li class="wenkmLrc' + timer + ' current">' + lrcCont[i + 1] + '</li>'
-                    } else {
-                      lrcLine += '<li class="wenkmLrc' + timer + '">' + lrcCont[i + 1] + '</li>'
-                    }
-                  }
-                  $('#wenkmLrc').html('<ul>' + lrcLine + '</ul>');
-                  setTimeout(function () {
-                    $('#wenkmLrc').addClass('show');
-                  }, 500);
-                  // console.log(typeNo);
-                  if (typeNo == 1) {
-                    lrcTime = setInterval(lrcCurrentAp1 , 500);
-                  } else if (typeNo == 2) {
-                    lrcTime = setInterval(lrcCurrentAp2 , 500);
-                  } else if (typeNo == 3) {
-                    lrcTime = setInterval(lrcCurrentAp3 , 500);
-                  } else if (typeNo == 4) {
-                    lrcTime = setInterval(lrcCurrentAp4 , 500);
-                  }
-                  
-                }, 500);
-              } else {
-                songFrom44 = ' - 暂无歌词!', $songFrom3.html('<i class="fa fa-times-circle"></i> 暂无歌词');
-                $(".switch-ksclrc").hide();
-                $(".switch-down").css("right", "35px");
-                $(".switch-default").css("right", "65px");
-              }
-            }
+            loadLrc(lrctext, typeNo);
+          },
+          error: function (XMLHttpRequest, textStatus, errorThrown) {
+            loadLrc(XMLHttpRequest.responseText, typeNo);
           }
         });
       }, 500);
@@ -435,70 +456,27 @@
       var coverImg = new Image();
       coverImg.src = imgUrl;
       coverImg.onload = function () {
-        var coverImgTemp = new Image();
-        // 跨域
-        coverImgTemp.crossOrigin = 'Anonymous';
-        coverImgTemp.src = 'https://cors-anywhere.herokuapp.com/' + imgUrl;
-        coverImgTemp.onload = function () {
-          try {
-            var cont = '108, 105, 113';
-            var colorThief = new ColorThief();
-            // 获取主颜色
-            var colorArray = colorThief.getColor(coverImgTemp);
-            cont = colorArray.join(',');
-            // console.log(cont);
-            $player.css({
-              background: 'rgba(' + cont + ',.8)'
-            });
-            $player1.css({
-              background: 'rgba(' + cont + ',.3)'
-            });
-            $tips.css({
-              background: 'rgba(' + cont + ',.6)'
-            });
-            $lk.css({
-              background: 'rgba(' + cont + ',.3)'
-            });
-          } catch(e) {
-            console.log(e);
-            // var contEr = '108, 105, 113';
-            var contEr = Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256);
-            $player.css({
-              background: 'rgba(' + contEr + ',.8)'
-            });
-            $player1.css({
-              background: 'rgba(' + contEr + ',.3)'
-            });
-            $tips.css({
-              background: 'rgba(' + contEr + ',.6)'
-            });
-            $lk.css({
-              background: 'rgba(' + contEr + ',.3)'
-            });
-          }
-        }
-        coverImgTemp.error = function () {
-          // var contEr = '108, 105, 113';
-          var contEr = Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256);
-          $player.css({
-            background: 'rgba(' + contEr + ',.8)'
-          });
-          $player1.css({
-            background: 'rgba(' + contEr + ',.3)'
-          });
-          $tips.css({
-            background: 'rgba(' + contEr + ',.6)'
-          });
-          $lk.css({
-            background: 'rgba(' + contEr + ',.3)'
-          });
-        }
+        // 刷新随机数
+        randomColorIndex();
+        var contEr = contErArray[colorIndex];
+        $player.css({
+          background: 'rgba(' + contEr + ',.8)'
+        });
+        $player1.css({
+          background: 'rgba(' + contEr + ',.3)'
+        });
+        $tips.css({
+          background: 'rgba(' + contEr + ',.6)'
+        });
+        $lk.css({
+          background: 'rgba(' + contEr + ',.3)'
+        });
       };
     }
 
     if (!isMobile()) {
       ap1.on('play', function () {
-        if(audio){
+        if (audio) {
           audio.pause();
         }
         var index1 = ap1.list.index;
@@ -510,7 +488,7 @@
       });
 
       ap2.on('play', function () {
-        if(audio){
+        if (audio) {
           audio.pause();
         }
         var index2 = ap2.list.index;
@@ -522,7 +500,7 @@
       });
 
       ap3.on('play', function () {
-        if(audio){
+        if (audio) {
           audio.pause();
         }
         var index3 = ap3.list.index;
@@ -534,7 +512,7 @@
       });
 
       ap4.on('play', function () {
-        if(audio){
+        if (audio) {
           audio.pause();
         }
         var index4 = ap4.list.index;
@@ -547,32 +525,33 @@
 
       ap1.on('pause', function () {
         clearInterval(lrcTime);
-				$('#wenkmLrc').removeClass('show');
+        $('#wenkmLrc').removeClass('show');
         wenkmTips.show('暂停播放');
       });
 
       ap2.on('pause', function () {
         clearInterval(lrcTime);
-				$('#wenkmLrc').removeClass('show');
+        $('#wenkmLrc').removeClass('show');
         wenkmTips.show('暂停播放');
       });
 
       ap3.on('pause', function () {
         clearInterval(lrcTime);
-				$('#wenkmLrc').removeClass('show');
+        $('#wenkmLrc').removeClass('show');
         wenkmTips.show('暂停播放');
       });
 
       ap4.on('pause', function () {
         clearInterval(lrcTime);
-				$('#wenkmLrc').removeClass('show');
+        $('#wenkmLrc').removeClass('show');
         wenkmTips.show('暂停播放');
       });
     }
 
     // var api = 'https://api.i-meto.com/api/v1/meting'; API地址切换
-    var api = 'https://api.i-meto.com/meting/api';
+    // var api = 'https://api.i-meto.com/meting/api'; // 已失效
     var api2 = 'https://api.bzqll.com/music'; // 已失效
+    var api = apApi;
 
     function love() {
       document.getElementById('aplayerDiv1').style.display = 'inline';
@@ -584,7 +563,7 @@
 
     // 初始化显示我的音乐列表
     love();
-    
+
     function list() {
       document.getElementById('aplayerDiv1').style.display = 'none';
       document.getElementById('aplayerDiv2').style.display = 'inline';
@@ -624,37 +603,37 @@
               // 步骤一: 创建异步对象
               var ajax = new XMLHttpRequest();
               if (window.XMLHttpRequest) {
-                  ajax = new XMLHttpRequest();
+                ajax = new XMLHttpRequest();
               } else {
-                  // IE6及其以下版本浏览器
-                  ajax = new ActiveXObject('Microsoft.XMLHTTP');
+                // IE6及其以下版本浏览器
+                ajax = new ActiveXObject('Microsoft.XMLHTTP');
               }
               // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
               // ajax.open('get', 'getStar.php?starName='+name);
               ajax.open('get', api + '?server=tencent&type=playlist&id=6804330872', false);
               // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
               ajax.onreadystatechange = function () {
-                  if (ajax.readyState == 4 && ajax.status == 200) {
-                      // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
-                      // console.log(ajax.responseText);
-                      if (array.length > 0) {
-                        array = array.concat(JSON.parse(ajax.responseText));
-                        ap3.list.clear();
-                        ap3.list.add(array);
-                      } else {
-                        layer.msg('出现错误，请刷新页面');
-                      }
-                      aplist3 = array;
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                  // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                  // console.log(ajax.responseText);
+                  if (array.length > 0) {
+                    array = array.concat(JSON.parse(ajax.responseText));
+                    ap3.list.clear();
+                    ap3.list.add(array);
+                  } else {
+                    layer.msg('出现错误，请刷新页面');
                   }
+                  aplist3 = array;
+                }
               }
               // 步骤四: 发送请求
               ajax.send();
             }
-            catch(err) {
+            catch (err) {
               layer.msg('出现错误，请刷新页面');
             }
             finally {
-                
+
             }
           }
         });
@@ -677,44 +656,44 @@
               // 步骤一: 创建异步对象
               var ajax = new XMLHttpRequest();
               if (window.XMLHttpRequest) {
-                  ajax = new XMLHttpRequest();
+                ajax = new XMLHttpRequest();
               } else {
-                  // IE6及其以下版本浏览器
-                  ajax = new ActiveXObject('Microsoft.XMLHTTP');
+                // IE6及其以下版本浏览器
+                ajax = new ActiveXObject('Microsoft.XMLHTTP');
               }
               // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
               // ajax.open('get', 'getStar.php?starName='+name);
               ajax.open('get', api2 + '/tencent/songList?key=579621905&id=6002914459', false);
               // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
               ajax.onreadystatechange = function () {
-                  if (ajax.readyState == 4 && ajax.status == 200) {
-                      // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
-                      // console.log(ajax.responseText);
-                      if (array.length > 0) {
-                        array = array.concat(JSON.parse(ajax.responseText).data.songs);
-                        for (var i = 0, len = array.length; i < len; i++) {
-                          /* array[i].id = array[i].id;
-                          array[i].name = array[i].name; */
-                          array[i].artist = array[i].singer;
-                          array[i].cover = array[i].pic;
-                          /* array[i].lrc = array[i].lrc; */
-                        }
-                        ap1.list.clear();
-                        ap1.list.add(array);
-                      } else {
-                        layer.msg('出现错误，请刷新页面');
-                      }
-                      aplist1 = array;
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                  // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                  // console.log(ajax.responseText);
+                  if (array.length > 0) {
+                    array = array.concat(JSON.parse(ajax.responseText).data.songs);
+                    for (var i = 0, len = array.length; i < len; i++) {
+                      /* array[i].id = array[i].id;
+                      array[i].name = array[i].name; */
+                      array[i].artist = array[i].singer;
+                      array[i].cover = array[i].pic;
+                      /* array[i].lrc = array[i].lrc; */
+                    }
+                    ap1.list.clear();
+                    ap1.list.add(array);
+                  } else {
+                    layer.msg('出现错误，请刷新页面');
                   }
+                  aplist1 = array;
+                }
               }
               // 步骤四: 发送请求
               ajax.send();
             }
-            catch(err) {
+            catch (err) {
               layer.msg('出现错误，请刷新页面');
             }
             finally {
-                
+
             }
           } else {
             layer.msg('出现错误，请刷新页面');
@@ -739,44 +718,44 @@
               // 步骤一: 创建异步对象
               var ajax = new XMLHttpRequest();
               if (window.XMLHttpRequest) {
-                  ajax = new XMLHttpRequest();
+                ajax = new XMLHttpRequest();
               } else {
-                  // IE6及其以下版本浏览器
-                  ajax = new ActiveXObject('Microsoft.XMLHTTP');
+                // IE6及其以下版本浏览器
+                ajax = new ActiveXObject('Microsoft.XMLHTTP');
               }
               // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
               // ajax.open('get', 'getStar.php?starName='+name);
               ajax.open('get', api2 + '/tencent/songList?key=579621905&id=6804330872', false);
               // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
               ajax.onreadystatechange = function () {
-                  if (ajax.readyState == 4 && ajax.status == 200) {
-                      // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
-                      // console.log(ajax.responseText);
-                      if (array.length > 0) {
-                        array = array.concat(JSON.parse(ajax.responseText).data.songs);
-                        for (var i = 0, len = array.length; i < len; i++) {
-                          /* array[i].id = array[i].id;
-                          array[i].name = array[i].name; */
-                          array[i].artist = array[i].singer;
-                          array[i].cover = array[i].pic;
-                          /* array[i].lrc = array[i].lrc; */
-                        }
-                        ap3.list.clear();
-                        ap3.list.add(array);
-                      } else {
-                        layer.msg('出现错误，请刷新页面');
-                      }
-                      aplist3 = array;
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                  // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                  // console.log(ajax.responseText);
+                  if (array.length > 0) {
+                    array = array.concat(JSON.parse(ajax.responseText).data.songs);
+                    for (var i = 0, len = array.length; i < len; i++) {
+                      /* array[i].id = array[i].id;
+                      array[i].name = array[i].name; */
+                      array[i].artist = array[i].singer;
+                      array[i].cover = array[i].pic;
+                      /* array[i].lrc = array[i].lrc; */
+                    }
+                    ap3.list.clear();
+                    ap3.list.add(array);
+                  } else {
+                    layer.msg('出现错误，请刷新页面');
                   }
+                  aplist3 = array;
+                }
               }
               // 步骤四: 发送请求
               ajax.send();
             }
-            catch(err) {
+            catch (err) {
               layer.msg('出现错误，请刷新页面');
             }
             finally {
-                
+
             }
           } else {
             layer.msg('出现错误，请刷新页面');
