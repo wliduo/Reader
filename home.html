@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://mark.dolyw.com/assets/wenkmPlayer/css/player.css?v=0914">
   <!-- wenkmPlayer End -->
   <style>
+
     html,
     body,
     p,
@@ -50,10 +51,6 @@
     }
 
     a {
-      text-decoration: none
-    }
-
-    a:hover {
       text-decoration: none
     }
 
@@ -140,14 +137,11 @@
       top: 0
     }
 
-    section {
-      opacity: 0.75;
-    }
-
-    input,
-    select,
-    button {
-      opacity: 0.85;
+    #aplayer1,
+    #aplayer2,
+    #aplayer3,
+    #aplayer4 {
+      opacity: 0.89;
     }
 
     main {
@@ -157,7 +151,7 @@
     main .content {
       display: flex;
       margin: 2em 1em;
-      background: hsla(0, 0%, 100%, .2);
+      background: hsla(0, 0%, 100%, .8);
       border-radius: 5px;
       animation: content .5s 2.2s both;
       box-shadow: 0 0 20px rgba(0, 0, 0, .2);
@@ -167,7 +161,7 @@
     }
 
     /* Left Box */
-    .right {
+    .left {
       width: 20%;
       background: rgba(1, 59, 123, 0.6);
       padding: 1em;
@@ -176,49 +170,49 @@
       text-align: center;
     }
 
-    .right .avatar img {
+    .left .avatar img {
       border-radius: 100%;
       border: 5px solid #fff
     }
 
-    .right .menu {
+    .left .menu {
       margin-top: 2em;
       flex: 1
     }
 
-    .right .menu li {
+    .left .menu li {
       margin-top: 1em
     }
 
-    .right .menu li a {
+    .left .menu li a {
       color: #fff;
       cursor: pointer
     }
 
-    .right .menu li a.active {
+    .left .menu li a.active {
       font-size: 1.3em
     }
 
-    .right .copyright {
+    .left .copyright {
       color: #fff;
       font-size: 10pt
     }
 
-    .right .copyright a {
+    .left .copyright a {
       color: #fff
     }
 
     /* Right Box */
-    .left {
+    .right {
       flex: 1;
       padding: 0.5em;
     }
 
-    .left section {
+    .right section {
       display: none
     }
 
-    .left section.active {
+    .right section.active {
       display: block
     }
 
@@ -256,15 +250,12 @@
     @media(max-width:768px) {
 
       /* Main */
-      .left {
+      .right {
         overflow: hidden;
         padding: 0.2em;
-        /* display: table-footer-group; */
-        /* display: table-row-group; */
       }
 
-      .right {
-        display: none;
+      .left {
         padding: 1em;
       }
 
@@ -274,12 +265,11 @@
         width: 100%;
       }
 
-      .right {
-        border-radius: 5px 5px 0 0;
-        /* display: table-header-group; */
+      .left {
+        border-radius: 5px 5px 0 0
       }
 
-      .right .menu {
+      .left .menu {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -288,7 +278,7 @@
         margin-top: 0
       }
 
-      .right .menu li {
+      .left .menu li {
         width: 50%;
         margin-top: .5em;
         display: inline-block
@@ -340,45 +330,8 @@
 <body>
   <div id="bg"></div>
   <main>
-    <div id="content" class="content">
-
-      <div id="left" class="left">
-        <section id="list" class="active">
-          <div id="aplayer1"></div>
-        </section>
-        <section id="love">
-          <div id="aplayer3"></div>
-        </section>
-        <section id="netease">
-          <div id="aplayer2"></div>
-        </section>
-        <section id="serach">
-          <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top: 5px; padding-bottom: 5px; padding-left: 5px;">
-            <div class="col-md-5 col-sm-5 col-xs-5">
-              <select id="serachType" class="form-control">
-                <option value="netease">网易云音乐</option>
-                <option value="kugou">酷狗音乐</option>
-                <option value="tencent">QQ音乐</option>
-                <option value="xiami">虾米音乐</option>
-                <option value="baidu">百度音乐</option>
-              </select>
-            </div>
-            <div class="col-md-5 col-sm-5 col-xs-5" style="padding-left: 3px;">
-              <input id="serachText" type="text" class="form-control" placeholder="请输入关键字" value="Avicii">
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-left: 8px;">
-              <button id="serachBtn" type="button" class="btn btn-primary active" onclick="search(this)">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div id="aplayer4"></div>
-          </div>
-        </section>
-      </div>
-
-      <div id="right" class="right">
+    <div class="content">
+      <div class="left">
         <div class="avatar">
           <img src="https://cdn.dolyw.com/avatar/01_thn.png">
         </div>
@@ -397,16 +350,48 @@
           </li>
         </ul>
         <div class="copyright">
-          <a id="cutMusic" href="javascript:;" onclick="cut(this)"><i class="fa fa-forward fa-lg"
-              aria-hidden="true"></i></a>
-          <a style="padding-left: 5px; padding-right: 5px;" href="javascript:;" onclick="switchPic()"><i
-              class="fa fa-heartbeat fa-lg" aria-hidden="true"></i></a>
-          <a href="javascript:;" onclick="show()"><i class="fa fa-magnet fa-lg" aria-hidden="true"></i></a>
+          <a href="javascript:;" onclick="show()">歌单</a>
+          <a href="javascript:;" onclick="cut(this)">切歌</a>
         </div>
       </div>
+      <div class="right">
+        <section id="list" class="active">
+          <div id="aplayer1"></div>
+        </section>
+        <section id="love">
+          <div id="aplayer3"></div>
+        </section>
+        <section id="netease">
+          <div id="aplayer2"></div>
 
+        </section>
+        <section id="serach">
+          <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top: 5px; padding-bottom: 5px; padding-left: 5px;">
+
+            <div class="col-md-5 col-sm-5 col-xs-5">
+              <select id="serachType" class="form-control">
+                <option value="netease">网易云音乐</option>
+                <option value="kugou">酷狗音乐</option>
+                <option value="tencent">QQ音乐</option>
+                <option value="xiami">虾米音乐</option>
+                <option value="baidu">百度音乐</option>
+              </select>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-5" style="padding-left: 3px;">
+              <input id="serachText" type="text" class="form-control" placeholder="请输入关键字" value="Avicii">
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-left: 8px;">
+              <button id="serachBtn" type="button" class="btn btn-info" onclick="search(this)">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="aplayer4"></div>
+          </div>
+        </section>
+      </div>
     </div>
-
     <footer>
       <p id="hitokoto">Loading...</p>
       <div class="copyright-mobile">
@@ -429,12 +414,24 @@
   <script>
 
     $(document).ready(function () {
-      // 竖屏需要把left移动到right后面
-      if (getElementStyle(document.getElementById('content'), "display") == 'block') {
-        $("#left").insertAfter($("#right"));
-        $("#right").show();
-      }
+      gethitokoto();
     });
+
+    $('.menu a').click(function () {
+      target = $(this).attr('goto');
+      switchTo(target);
+      $('.menu li a').each(function () {
+        $(this).removeClass('active');
+      });
+      $(this).addClass('active');
+    });
+
+    function switchTo(target) {
+      $('.right section').each(function () {
+        $(this).removeClass('active');
+      });
+      $(target).addClass('active');
+    }
 
     // PC端返回false
     function isMobile() {
@@ -443,58 +440,39 @@
       return viewType.match(/(phone|pad|pod|midp|iphone|ipod|iphone os|ios|ipad|android|mobile|blackberry|iemobile|mqqbrowser|juc|rv:1.2.3.4|ucweb|fennec|wosbrowser|browserng|webos|symbian|windows ce|windows mobile|windows phone)/i);
     }
 
-    // 获取外部CSS属性
-    function getElementStyle(obj, attr) {
-      if (obj.currentStyle) {
-        return obj.currentStyle[attr];
-      } else {
-        return getComputedStyle(obj, false)[attr];
-      }
-    }
-
-    var imgUrlArray = [
-      'https://cdn.dolyw.com/wallpaper/201911/20191101005.jpg',
-      'https://cdn.dolyw.com/wallpaper/201911/20191107005.jpg',
-      'https://cdn.dolyw.com/wallpaper/201911/20191107010.jpg',
-      'https://dolyw.gitee.io/reader/Image/201810/normal/20010.png',
-      'https://dolyw.gitee.io/reader/Image/201811/normal/02015.png',
-      'https://dolyw.gitee.io/reader/Image/201810/normal/10005.png',
-      'https://dolyw.gitee.io/reader/Image/201811/normal/01005.png',
-      'https://dolyw.gitee.io/reader/Image/201811/normal/04040.png',
-      'https://dolyw.gitee.io/reader/Image/201811/normal/05010.png',
-      'https://dolyw.gitee.io/reader/Image/201811/normal/05025.png',
-      'https://dolyw.gitee.io/reader/Image/201812/normal/23005.png'
-    ];
-
-    var randomIndex = 10;
-    // 刷新随机数
-    function switchRandomIndex() {
-        // 随机数不会和上一次重复，如果获取和上一次相同就重新获取，直到不同为止
-        var index = Math.floor(imgUrlArray.length * Math.random());
-        while (randomIndex == index) {
-            index = Math.floor(imgUrlArray.length * Math.random());
+    function gethitokoto() {
+      $.ajax({
+        url: "https://v1.hitokoto.cn/",
+        success: function (result) {
+          write(result.hitokoto);
         }
-        randomIndex = index
+      });
     }
 
-    function switchBg() {
-      var img = new Image();
-      var imgUrl = imgUrlArray[randomIndex];
-      img.src = imgUrl;
-      img.onload = function () {
-        $("#bg").hide()
-        document.getElementById('bg').style.backgroundImage = "url(" + imgUrl + ")";
-        $("#bg").fadeIn(1000);
+    function write(text) {
+      if (text.length < 25) {
+        $('#hitokoto').html(text);
+      } else {
+        gethitokoto();
       }
     }
 
-    // 初始化加载背景
-    switchBg();
-
-    function switchPic() {
-      switchRandomIndex();
-      switchBg();
-      wenkmTips.show('切换背景中');
+    // 获取当前时间
+    var date = new Date();
+    var seconds = date.getSeconds();
+    var img = new Image();
+    var imgUrl = 'https://cdn.dolyw.com/wallpaper/201911/20191101005.jpg';
+    if (seconds % 2 == 0) {
+      imgUrl = 'https://cdn.dolyw.com/wallpaper/201911/20191107005.jpg';
+    }
+    if (seconds % 5 == 0) {
+      imgUrl = 'https://cdn.dolyw.com/wallpaper/201911/20191107010.jpg';
+    }
+    img.src = imgUrl;
+    img.onload = function () {
+      $("#bg").hide()
+      document.getElementById('bg').style.backgroundImage = "url(" + imgUrl + ")";
+      $("#bg").fadeIn(1000);
     }
 
     // 播放器列表高度
@@ -863,41 +841,6 @@
       };
     }
 
-    $('.menu a').click(function () {
-      target = $(this).attr('goto');
-      switchTo(target);
-      $('.menu li a').each(function () {
-        $(this).removeClass('active');
-      });
-      $(this).addClass('active');
-    });
-
-    function switchTo(target) {
-      $('.left section').each(function () {
-        $(this).removeClass('active');
-      });
-      $(target).addClass('active');
-    }
-
-    function gethitokoto() {
-      $.ajax({
-        url: "https://v1.hitokoto.cn",
-        success: function (result) {
-          write(result.hitokoto);
-        }
-      });
-    }
-
-    function write(text) {
-      if (text.length < 25) {
-        $('#hitokoto').html(text);
-      } else {
-        gethitokoto();
-      }
-    }
-
-    gethitokoto();
-
     if (!isMobile()) {
       ap1.on('play', function () {
         if (audio) {
@@ -909,8 +852,6 @@
         lrcurl = aplist1[index1].lrc;
         lrcLoad(lrcurl, 1);
         wenkmTips.show('歌词加载中 - ' + aplist1[index1].artist + ' - ' + aplist1[index1].name);
-        // 刷新一言
-        gethitokoto();
       });
 
       ap2.on('play', function () {
@@ -923,8 +864,6 @@
         lrcurl = aplist2[index2].lrc;
         lrcLoad(lrcurl, 2);
         wenkmTips.show('歌词加载中 - ' + aplist2[index2].artist + ' - ' + aplist2[index2].name);
-        // 刷新一言
-        gethitokoto();
       });
 
       ap3.on('play', function () {
@@ -937,8 +876,6 @@
         lrcurl = aplist3[index3].lrc;
         lrcLoad(lrcurl, 3);
         wenkmTips.show('歌词加载中 - ' + aplist3[index3].artist + ' - ' + aplist3[index3].name);
-        // 刷新一言
-        gethitokoto();
       });
 
       ap4.on('play', function () {
@@ -951,8 +888,6 @@
         lrcurl = aplist4[index4].lrc;
         lrcLoad(lrcurl, 4);
         wenkmTips.show('歌词加载中 - ' + aplist4[index4].artist + ' - ' + aplist4[index4].name);
-        // 刷新一言
-        gethitokoto();
       });
 
       ap1.on('pause', function () {
@@ -982,13 +917,13 @@
 
     function show() {
       var QQBtn = '<a href="https://y.qq.com/n/yqq/playlist/6002914459.html" target="_blank"><button type="button" class="btn btn-warning">QQ音乐</button></a>';
-      var homeBtn = '<a href="https://dolyw.com" target="_blank"><button type="button" class="btn btn-info active">我的主页</button></a>';
+      var homeBtn = '<a href="https://dolyw.com" target="_blank"><button type="button" class="btn btn-primary active">我的主页</button></a>';
       var neteaseBtn = '<a href="https://music.163.com/#/playlist?id=2553791717" target="_blank"><button type="button" class="btn btn-danger">网易云音乐</button></a>';
       layer.msg(QQBtn + homeBtn + neteaseBtn);
     }
   </script>
-  <!-- 页面点击七彩颗粒 -->
-  <script type="text/javascript" src="https://dolyw.gitee.io/reader/JS/seed.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="https://dolyw.gitee.io/reader/JS/love.js"></script>
   <script type="text/javascript" src="https://dolyw.com/static/count.js"></script>
 </body>
 

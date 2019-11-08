@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>音乐台</title>
+  <link rel="shortcut icon" href="https://dolyw.com/static/favicon.ico" />
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <!-- 垂直居中参考 https://www.cnblogs.com/yugege/p/5246652.html -->
+  <!-- APlayer源码 https://github.com/MoePlayer/APlayer -->
+  <!-- 搜索API https://github.com/metowolf/Meting https://github.com/metowolf/MetingJS -->
+  <!-- Live2D Start -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu.min.css" /> -->
+  <!-- Live2D End -->
+  <!-- wenkmPlayer Start -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://mark.dolyw.com/assets/wenkmPlayer/css/player.css?v=0914">
+  <!-- wenkmPlayer End -->
+  <style>
+    @font-face {
+      font-family: 'Monoton';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Monoton'), local('Monoton-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/01.woff) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Pacifico';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/03.woff) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Audiowide';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Audiowide'), local('Audiowide-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/05.woff) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Vampiro One';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Vampiro One'), local('VampiroOne-Regular'), url(https://text.dolyw.com/html5-shine-text/css/font/06.woff) format('woff');
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #3d3b4f;
+      /* 隐藏滚动条
+      overflow: hidden; */
+    }
+
+    #bg {
+      /* background-image: url(https://dolyw.gitee.io/reader/Image/201908/normal/20015.jpg); */
+      /* background-image: url(E://BaiduNetdiskDownload//20015.jpg); */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-width: 1000px;
+      z-index: -10;
+      zoom: 1;
+      /* background-color: #000; */
+      background-repeat: no-repeat;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-position: center 0;
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+
+    #text {
+      text-align: center;
+      font-size: 2em;
+      color: #FF1177;
+      font-family: Monoton;
+    }
+
+    .middle {
+      position: absolute;
+      top: 45%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      width: 100%;
+      /* min-height: 260px; */
+      padding-top: 5px;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .aplayer-wrap {
+      max-width: 700px;
+      margin: 20px auto;
+      opacity: 0.79;
+    }
+
+    input,
+    select,
+    button {
+      opacity: 0.79;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/layer/2.3/layer.js"></script>
+</head>
+
+<body>
+  <!--背景图片-->
+  <div id="bg"></div>
+
+  <div class="middle">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div style="margin: 0px auto; display: table;">
+        <p id="text">MyMusic</p>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+      <div style="margin: 0px auto; display: table;">
+        <div class="col-md-6 col-sm-6 col-xs-6" style="margin-left: 8px;">
+          <select id="serachType" class="form-control">
+            <option value="netease">网易云音乐</option>
+            <option value="kugou">酷狗音乐</option>
+            <option value="tencent">QQ音乐</option>
+            <option value="xiami">虾米音乐</option>
+            <option value="baidu">百度音乐</option>
+          </select>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6" style="margin-left: -16px;">
+          <input id="serachText" type="text" class="form-control" placeholder="请输入关键字">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+      <div style="margin: 0px auto; display: table;">
+        <button type="button" class="btn btn-primary" onclick="search(this)">搜索</button></a>
+        <!-- <span onclick="nowLove()"> --> |
+        <!-- </span> -->
+        <button id="listBtn" type="button" class="btn btn-warning active" onclick="list()">网易云音乐热歌榜(周四更新)</button>
+        <!-- <span onclick="nowLate()"> --> |
+        <!-- </span> -->
+        <button id="serachBtn" type="button" class="btn btn-info active" onclick="cut(this)">切歌</button>
+      </div>
+    </div>
+
+    <div id="aplayerDiv1" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
+      <div class="aplayer-wrap">
+        <div id="aplayer1"></div>
+      </div>
+    </div>
+
+    <div id="aplayerDiv2" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
+      <div class="aplayer-wrap">
+        <div id="aplayer2"></div>
+      </div>
+    </div>
+
+    <div id="aplayerDiv3" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
+      <div class="aplayer-wrap">
+        <div id="aplayer3"></div>
+      </div>
+    </div>
+
+    <div id="aplayerDiv4" name="aplayerDiv" class="col-md-12 col-sm-12 col-xs-12">
+      <div class="aplayer-wrap">
+        <div id="aplayer4"></div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div style="margin: 0px auto; display: table;">
+        <div class="btn-group">
+          <button id="loveBtn" type="button" class="btn btn-danger" onclick="love()">我的音乐列表</button>
+          <button type="button" class="btn btn-success" onclick="show()">我的歌单</button>
+        </div><!-- <span onclick="openNew()"> --> |
+        <!-- </span> -->
+        <button id="loveBtn" type="button" class="btn btn-danger active" onclick="late()">最近喜欢听的歌</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- wenkmPlayer Start -->
+  <div id="wangPlayer" style="display: none;"></div>
+  <!-- <script type="text/javascript" src="https://dolyw.gitee.io/reader/JS/aplist.js"></script> -->
+  <script type="text/javascript" src="JS/aplist.js"></script>
+  <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/mousewheel.js" type="text/javascript"></script>
+  <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/scrollbar.js" type="text/javascript"></script>
+  <script src="https://cdn.staticfile.org/color-thief/2.3.0/color-thief.umd.js" type="text/javascript"></script>
+  <!-- <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123" type="text/javascript"></script> -->
+  <!-- wenkmPlayer End -->
+
+  <!-- Live2D Start -->
+  <!-- <script src="https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu-tips.min.js?v=1.4.2-fix3"></script>
+  <script src="https://www.fghrsh.net/zb_users/plugin/live2d/assets/live2d.min.js?v=1.0.5"></script> -->
+  <!-- Live2D End -->
+
+  <script>
+    // PC端返回false
+    function isMobile() {
+      var viewType = navigator.userAgent.toLowerCase();
+      // console.log(viewType);
+      return viewType.match(/(phone|pad|pod|midp|iphone|ipod|iphone os|ios|ipad|android|mobile|blackberry|iemobile|mqqbrowser|juc|rv:1.2.3.4|ucweb|fennec|wosbrowser|browserng|webos|symbian|windows ce|windows mobile|windows phone)/i);
+    }
+
+    if (isMobile()) {
+      // 设置距离高度
+      var middleArray = document.getElementsByClassName("middle");
+      middleArray[0].style.top = "50%";
+    } else {
+      // 隐藏滚动条
+      document.body.style.overflow = 'hidden';
+      try {
+        // 加载Live2D
+        /* $('body').append('<style>.waifu-tool span{display:block;cursor:pointer;color:#f3f9f1;transition:.2s}</style><div class="waifu"><div class="waifu-tips"></div><canvas id="live2d" class="live2d"></canvas><div class="waifu-tool"><span class="fui-home"></span> <span class="fui-chat"></span> <span class="fui-eye"></span> <span class="fui-user"></span> <span class="fui-photo"></span> <span class="fui-info-circle"></span> <span class="fui-cross"></span></div></div>');
+        live2d_settings['modelId'] = 3;                  // 默认模型 ID
+        live2d_settings['modelTexturesId'] = 0;         // 默认材质 ID
+        live2d_settings['modelStorage'] = false;         // 不储存模型 ID
+        live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
+        live2d_settings['waifuEdgeSide'] = 'right:30';   // 看板娘贴边方向
+        live2d_settings['aboutPageUrl'] = 'https://github.com/fghrsh/live2d_demo';   // 关于页地址
+        initModel("https://www.fghrsh.net/zb_users/plugin/live2d/assets/waifu-tips.json?v=1.4.2"); */
+        // 加载wenkmPlayerc
+        $.ajax({ url: 'https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123', dataType: "script", cache: true, async: false });
+      } catch (err) {
+        console.log('[Error] JQuery is not defined.')
+      } finally {
+        $(window).load(function () {
+          wenkmTips.show('欢迎访问我的音乐台');
+          // 显示歌词和提示
+          document.getElementById('wenkmPlayer').style.display = 'none';
+          document.getElementById('wangPlayer').style.display = 'inline';
+        });
+      }
+    }
+
+    var url = "https://dolyw.gitee.io/reader/Image/201908/normal/20015.jpg";
+    var img = new Image();
+    img.src = url;
+    img.onload = function () {
+      $("#bg").css('backgroundImage', "url(" + url + ")");
+      $("#bg").hide().fadeIn(1000);
+    };
+  </script>
+
+  <script>
+    // 我的音乐列表
+    const ap1 = new APlayer({
+      container: document.getElementById('aplayer1'),
+      lrcType: 3,
+      order: 'random',
+      theme: '#000000',
+      audio: getLove()
+    });
+
+    // 网易云音乐热歌榜
+    const ap2 = new APlayer({
+      container: document.getElementById('aplayer2'),
+      lrcType: 3,
+      theme: '#000000',
+    });
+
+    // 最近喜欢听的歌
+    const ap3 = new APlayer({
+      container: document.getElementById('aplayer3'),
+      lrcType: 3,
+      order: 'random',
+      theme: '#000000',
+    });
+
+    // 搜索
+    const ap4 = new APlayer({
+      container: document.getElementById('aplayer4'),
+      lrcType: 3,
+      theme: '#000000',
+    });
+
+    var aplist1 = ap1.list.audios;
+    var aplist2 = [];
+    var aplist3 = [];
+    var aplist4 = [];
+
+    function lrcCurrentAp1() {
+      var timeNow = Math.round(ap1.audio.currentTime);
+      if ($.inArray(timeNow, lrcTimeLine) > 0) {
+        var $lineNow = $('.wenkmLrc' + timeNow);
+        if (!$lineNow.hasClass(cur)) {
+          $lineNow.addClass(cur).siblings().removeClass(cur);
+          $('#wenkmLrc').animate({
+            scrollTop: lrcHeight * $lineNow.index()
+          })
+        }
+      } else {
+        lrcCont = '';
+      }
+    }
+
+    function lrcCurrentAp2() {
+      var timeNow = Math.round(ap2.audio.currentTime);
+      if ($.inArray(timeNow, lrcTimeLine) > 0) {
+        var $lineNow = $('.wenkmLrc' + timeNow);
+        if (!$lineNow.hasClass(cur)) {
+          $lineNow.addClass(cur).siblings().removeClass(cur);
+          $('#wenkmLrc').animate({
+            scrollTop: lrcHeight * $lineNow.index()
+          })
+        }
+      } else {
+        lrcCont = '';
+      }
+    }
+
+    function lrcCurrentAp3() {
+      var timeNow = Math.round(ap3.audio.currentTime);
+      if ($.inArray(timeNow, lrcTimeLine) > 0) {
+        var $lineNow = $('.wenkmLrc' + timeNow);
+        if (!$lineNow.hasClass(cur)) {
+          $lineNow.addClass(cur).siblings().removeClass(cur);
+          $('#wenkmLrc').animate({
+            scrollTop: lrcHeight * $lineNow.index()
+          })
+        }
+      } else {
+        lrcCont = '';
+      }
+    }
+
+    function lrcCurrentAp4() {
+      var timeNow = Math.round(ap4.audio.currentTime);
+      if ($.inArray(timeNow, lrcTimeLine) > 0) {
+        var $lineNow = $('.wenkmLrc' + timeNow);
+        if (!$lineNow.hasClass(cur)) {
+          $lineNow.addClass(cur).siblings().removeClass(cur);
+          $('#wenkmLrc').animate({
+            scrollTop: lrcHeight * $lineNow.index()
+          })
+        }
+      } else {
+        lrcCont = '';
+      }
+    }
+
+    function loadLrc(lrctext, typeNo) {
+      if (typeof (lrctext) == 'undefined') {
+        songFrom44 = ' - 暂无歌词!', $songFrom3.html('<i class="fa fa-times-circle"></i> 暂无歌词');
+        $(".switch-ksclrc").hide();
+        $(".switch-down").css("right", "35px");
+        $(".switch-default").css("right", "65px");
+      } else {
+        if (lrctext.indexOf('[00') >= 0) {
+          setTimeout(function () {
+            if (!$('#wenkmLrc').hasClass('hide')) {
+              songFrom44 = ' - Lrc歌词获取成功!'
+            } else {
+              songFrom44 = ' - Lrc歌词已关闭！'
+            };
+            hasLrc = true;
+            function formatTime(t) {
+              var sp = t.split(':'),
+                min = +sp[0],
+                sec = +sp[1].split('.')[0],
+                ksec = +sp[1].split('.')[1];
+              return min * 60 + sec + Math.round(ksec / 1000);
+            };
+            var lrcCont = lrctext.replace(/\[[A-Za-z]+:(.*?)]/g, '').replace('\\n', '').split(/[\]\[]/g),
+              lrcLine = '';
+            lrcTimeLine = [];
+            for (var i = 1; i < lrcCont.length; i += 2) {
+              var timer = formatTime(lrcCont[i]);
+              lrcTimeLine.push(timer);
+              if (i == 1) {
+                lrcLine += '<li class="wenkmLrc' + timer + ' current">' + lrcCont[i + 1] + '</li>'
+              } else {
+                lrcLine += '<li class="wenkmLrc' + timer + '">' + lrcCont[i + 1] + '</li>'
+              }
+            }
+            $('#wenkmLrc').html('<ul>' + lrcLine + '</ul>');
+            setTimeout(function () {
+              $('#wenkmLrc').addClass('show');
+            }, 500);
+            // console.log(typeNo);
+            if (typeNo == 1) {
+              lrcTime = setInterval(lrcCurrentAp1, 500);
+            } else if (typeNo == 2) {
+              lrcTime = setInterval(lrcCurrentAp2, 500);
+            } else if (typeNo == 3) {
+              lrcTime = setInterval(lrcCurrentAp3, 500);
+            } else if (typeNo == 4) {
+              lrcTime = setInterval(lrcCurrentAp4, 500);
+            }
+
+          }, 500);
+        } else {
+          songFrom44 = ' - 暂无歌词!', $songFrom3.html('<i class="fa fa-times-circle"></i> 暂无歌词');
+          $(".switch-ksclrc").hide();
+          $(".switch-down").css("right", "35px");
+          $(".switch-default").css("right", "65px");
+        }
+      }
+    }
+
+    function lrcLoad(lrcTempUrl, typeNo) {
+      wenkmLrc.lrc.hide();
+      hasLrc = false;
+      hasKsc = false;
+      $('#wenkmLrc, #wenkmKsc').html('');
+      setTimeout(function () {
+        if (hasgeci) {
+          $songFrom3.html('<i class="fa fa-check-circle"></i> 歌词' + songFrom33);
+        } else {
+          $songFrom3.html('<i class="fa fa-times-circle"></i> 歌词' + songFrom33);
+        };
+        $(".switch-down").css("right", "65px");
+        $(".switch-default").css("right", "95px");
+        if (hasdefault) {
+          setTimeout(function () {
+            $(".switch-ksclrc").show()
+          }, 300);
+        } else {
+          $(".switch-ksclrc").show()
+        }
+        $.ajax({
+          url: lrcTempUrl,
+          success: function (lrctext) {
+            loadLrc(lrctext, typeNo);
+          },
+          error: function (XMLHttpRequest, textStatus, errorThrown) {
+            loadLrc(XMLHttpRequest.responseText, typeNo);
+          }
+        });
+      }, 500);
+    }
+
+    // 获取当前路径图片颜色
+    function colorChange(imgUrl) {
+      // 封面图案
+      var coverImg = new Image();
+      coverImg.src = imgUrl;
+      coverImg.onload = function () {
+        // 刷新随机数
+        randomColorIndex();
+        var contEr = contErArray[colorIndex];
+        $player.css({
+          background: 'rgba(' + contEr + ',.8)'
+        });
+        $player1.css({
+          background: 'rgba(' + contEr + ',.3)'
+        });
+        $tips.css({
+          background: 'rgba(' + contEr + ',.6)'
+        });
+        $lk.css({
+          background: 'rgba(' + contEr + ',.3)'
+        });
+      };
+    }
+
+    if (!isMobile()) {
+      ap1.on('play', function () {
+        if (audio) {
+          audio.pause();
+        }
+        var index1 = ap1.list.index;
+        colorChange(aplist1[index1].cover);
+        // 给歌词地址赋值
+        lrcurl = aplist1[index1].lrc;
+        lrcLoad(lrcurl, 1);
+        wenkmTips.show('歌词加载中 - ' + aplist1[index1].artist + ' - ' + aplist1[index1].name);
+      });
+
+      ap2.on('play', function () {
+        if (audio) {
+          audio.pause();
+        }
+        var index2 = ap2.list.index;
+        colorChange(aplist2[index2].cover);
+        // 给歌词地址赋值
+        lrcurl = aplist2[index2].lrc;
+        lrcLoad(lrcurl, 2);
+        wenkmTips.show('歌词加载中 - ' + aplist2[index2].artist + ' - ' + aplist2[index2].name);
+      });
+
+      ap3.on('play', function () {
+        if (audio) {
+          audio.pause();
+        }
+        var index3 = ap3.list.index;
+        colorChange(aplist3[index3].cover);
+        // 给歌词地址赋值
+        lrcurl = aplist3[index3].lrc;
+        lrcLoad(lrcurl, 3);
+        wenkmTips.show('歌词加载中 - ' + aplist3[index3].artist + ' - ' + aplist3[index3].name);
+      });
+
+      ap4.on('play', function () {
+        if (audio) {
+          audio.pause();
+        }
+        var index4 = ap4.list.index;
+        colorChange(aplist4[index4].cover);
+        // 给歌词地址赋值
+        lrcurl = aplist4[index4].lrc;
+        lrcLoad(lrcurl, 4);
+        wenkmTips.show('歌词加载中 - ' + aplist4[index4].artist + ' - ' + aplist4[index4].name);
+      });
+
+      ap1.on('pause', function () {
+        clearInterval(lrcTime);
+        $('#wenkmLrc').removeClass('show');
+        wenkmTips.show('暂停播放');
+      });
+
+      ap2.on('pause', function () {
+        clearInterval(lrcTime);
+        $('#wenkmLrc').removeClass('show');
+        wenkmTips.show('暂停播放');
+      });
+
+      ap3.on('pause', function () {
+        clearInterval(lrcTime);
+        $('#wenkmLrc').removeClass('show');
+        wenkmTips.show('暂停播放');
+      });
+
+      ap4.on('pause', function () {
+        clearInterval(lrcTime);
+        $('#wenkmLrc').removeClass('show');
+        wenkmTips.show('暂停播放');
+      });
+    }
+
+    // var api = 'https://api.i-meto.com/api/v1/meting'; API地址切换
+    // var api = 'https://api.i-meto.com/meting/api'; // 已失效
+    var api2 = 'https://api.bzqll.com/music'; // 已失效
+    var api = apApi;
+
+    function love() {
+      document.getElementById('aplayerDiv1').style.display = 'inline';
+      document.getElementById('aplayerDiv2').style.display = 'none';
+      document.getElementById('aplayerDiv3').style.display = 'none';
+      document.getElementById('aplayerDiv4').style.display = 'none';
+      document.getElementById('text').innerHTML = "MyMusic";
+    }
+
+    // 初始化显示我的音乐列表
+    love();
+
+    function list() {
+      document.getElementById('aplayerDiv1').style.display = 'none';
+      document.getElementById('aplayerDiv2').style.display = 'inline';
+      document.getElementById('aplayerDiv3').style.display = 'none';
+      document.getElementById('aplayerDiv4').style.display = 'none';
+      document.getElementById('text').innerHTML = "HotList";
+      if (ap2.list.audios.length <= 0) {
+        $.ajax({
+          url: api + '?server=netease&type=playlist&id=3778678',
+          success: function (list) {
+            var array = JSON.parse(list);
+            if (array.length > 0) {
+              ap2.list.clear();
+              ap2.list.add(array);
+            } else {
+              layer.msg('出现错误，请刷新页面');
+            }
+            aplist2 = array;
+          }
+        });
+      }
+    }
+
+    function late() {
+      document.getElementById('aplayerDiv1').style.display = 'none';
+      document.getElementById('aplayerDiv2').style.display = 'none';
+      document.getElementById('aplayerDiv3').style.display = 'inline';
+      document.getElementById('aplayerDiv4').style.display = 'none';
+      document.getElementById('text').innerHTML = "◢◤";
+      if (ap3.list.audios.length <= 0) {
+        $.ajax({
+          url: api + '?server=netease&type=playlist&id=26462279',
+          success: function (list) {
+            var array = JSON.parse(list);
+            // 获取QQ音乐我喜欢的音乐列表
+            try {
+              // 步骤一: 创建异步对象
+              var ajax = new XMLHttpRequest();
+              if (window.XMLHttpRequest) {
+                ajax = new XMLHttpRequest();
+              } else {
+                // IE6及其以下版本浏览器
+                ajax = new ActiveXObject('Microsoft.XMLHTTP');
+              }
+              // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
+              // ajax.open('get', 'getStar.php?starName='+name);
+              ajax.open('get', api + '?server=tencent&type=playlist&id=6804330872', false);
+              // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
+              ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                  // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                  // console.log(ajax.responseText);
+                  if (array.length > 0) {
+                    array = array.concat(JSON.parse(ajax.responseText));
+                    ap3.list.clear();
+                    ap3.list.add(array);
+                  } else {
+                    layer.msg('出现错误，请刷新页面');
+                  }
+                  aplist3 = array;
+                }
+              }
+              // 步骤四: 发送请求
+              ajax.send();
+            }
+            catch (err) {
+              layer.msg('出现错误，请刷新页面');
+            }
+            finally {
+
+            }
+          }
+        });
+      }
+    }
+
+    function nowLove() {
+      document.getElementById('aplayerDiv1').style.display = 'inline';
+      document.getElementById('aplayerDiv2').style.display = 'none';
+      document.getElementById('aplayerDiv3').style.display = 'none';
+      document.getElementById('aplayerDiv4').style.display = 'none';
+      document.getElementById('text').innerHTML = "NowList";
+      $.ajax({
+        url: api2 + '/netease/songList?key=579621905&id=2553791717',
+        success: function (data) {
+          if (data.code == 200) {
+            var array = data.data.songs;
+            // 获取QQ音乐我喜欢的音乐列表
+            try {
+              // 步骤一: 创建异步对象
+              var ajax = new XMLHttpRequest();
+              if (window.XMLHttpRequest) {
+                ajax = new XMLHttpRequest();
+              } else {
+                // IE6及其以下版本浏览器
+                ajax = new ActiveXObject('Microsoft.XMLHTTP');
+              }
+              // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
+              // ajax.open('get', 'getStar.php?starName='+name);
+              ajax.open('get', api2 + '/tencent/songList?key=579621905&id=6002914459', false);
+              // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
+              ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                  // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                  // console.log(ajax.responseText);
+                  if (array.length > 0) {
+                    array = array.concat(JSON.parse(ajax.responseText).data.songs);
+                    for (var i = 0, len = array.length; i < len; i++) {
+                      /* array[i].id = array[i].id;
+                      array[i].name = array[i].name; */
+                      array[i].artist = array[i].singer;
+                      array[i].cover = array[i].pic;
+                      /* array[i].lrc = array[i].lrc; */
+                    }
+                    ap1.list.clear();
+                    ap1.list.add(array);
+                  } else {
+                    layer.msg('出现错误，请刷新页面');
+                  }
+                  aplist1 = array;
+                }
+              }
+              // 步骤四: 发送请求
+              ajax.send();
+            }
+            catch (err) {
+              layer.msg('出现错误，请刷新页面');
+            }
+            finally {
+
+            }
+          } else {
+            layer.msg('出现错误，请刷新页面');
+          }
+        }
+      });
+    }
+
+    function nowLate() {
+      document.getElementById('aplayerDiv1').style.display = 'none';
+      document.getElementById('aplayerDiv2').style.display = 'none';
+      document.getElementById('aplayerDiv3').style.display = 'inline';
+      document.getElementById('aplayerDiv4').style.display = 'none';
+      document.getElementById('text').innerHTML = "NowList";
+      $.ajax({
+        url: api2 + '/netease/songList?key=579621905&id=26462279',
+        success: function (data) {
+          if (data.code == 200) {
+            var array = data.data.songs;
+            // 获取QQ音乐我喜欢的音乐列表
+            try {
+              // 步骤一: 创建异步对象
+              var ajax = new XMLHttpRequest();
+              if (window.XMLHttpRequest) {
+                ajax = new XMLHttpRequest();
+              } else {
+                // IE6及其以下版本浏览器
+                ajax = new ActiveXObject('Microsoft.XMLHTTP');
+              }
+              // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
+              // ajax.open('get', 'getStar.php?starName='+name);
+              ajax.open('get', api2 + '/tencent/songList?key=579621905&id=6804330872', false);
+              // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
+              ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                  // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                  // console.log(ajax.responseText);
+                  if (array.length > 0) {
+                    array = array.concat(JSON.parse(ajax.responseText).data.songs);
+                    for (var i = 0, len = array.length; i < len; i++) {
+                      /* array[i].id = array[i].id;
+                      array[i].name = array[i].name; */
+                      array[i].artist = array[i].singer;
+                      array[i].cover = array[i].pic;
+                      /* array[i].lrc = array[i].lrc; */
+                    }
+                    ap3.list.clear();
+                    ap3.list.add(array);
+                  } else {
+                    layer.msg('出现错误，请刷新页面');
+                  }
+                  aplist3 = array;
+                }
+              }
+              // 步骤四: 发送请求
+              ajax.send();
+            }
+            catch (err) {
+              layer.msg('出现错误，请刷新页面');
+            }
+            finally {
+
+            }
+          } else {
+            layer.msg('出现错误，请刷新页面');
+          }
+        }
+      });
+    }
+
+    function search(btn) {
+      // 开始执行，先将按钮置为不可用，执行完后设置可用
+      btn.disabled = true;
+      var serachType = document.getElementById("serachType").value;
+      var serachText = document.getElementById("serachText").value;
+      if (serachText.trim() === '') {
+        layer.msg('关键字为空');
+        btn.disabled = false;
+        return;
+      }
+      var url = api + '?type=search&server=' + serachType + '&id=' + serachText;
+      $.ajax({
+        url: url,
+        success: function (list) {
+          var array = JSON.parse(list);
+          console.log(url);
+          console.log(array);
+          if (array.length > 0) {
+            document.getElementById('aplayerDiv1').style.display = 'none';
+            document.getElementById('aplayerDiv2').style.display = 'none';
+            document.getElementById('aplayerDiv3').style.display = 'none';
+            document.getElementById('aplayerDiv4').style.display = 'inline';
+            document.getElementById('text').innerHTML = "Search";
+            ap4.list.clear();
+            ap4.list.add(array);
+          } else {
+            layer.msg('没有搜索到任何结果，请切换平台尝试');
+          }
+          aplist4 = array;
+          btn.disabled = false;
+        }
+      });
+    }
+
+    function cut(btn) {
+      // 开始执行，先将按钮置为不可用，执行完后设置可用
+      btn.disabled = true;
+
+      if (document.getElementById('aplayerDiv1').style.display == 'inline') {
+        ap1.skipForward();
+        ap1.play()
+      }
+
+      if (document.getElementById('aplayerDiv2').style.display == 'inline') {
+        ap2.skipForward();
+        ap2.play()
+      }
+
+      if (document.getElementById('aplayerDiv3').style.display == 'inline') {
+        ap3.skipForward();
+        ap3.play()
+      }
+
+      if (document.getElementById('aplayerDiv4').style.display == 'inline') {
+        ap4.skipForward();
+        ap4.play()
+      }
+
+      btn.disabled = false;
+    }
+
+    function openNew() {
+      window.open("https://www.fczbl.vip/musicplayer");
+      window.open("https://moedog.org/musicplayer/");
+    }
+
+    function show() {
+      var QQBtn = '<a href="https://y.qq.com/n/yqq/playlist/6002914459.html" target="_blank"><button type="button" class="btn btn-warning">QQ音乐</button></a>';
+      var homeBtn = '<a href="https://dolyw.com" target="_blank"><button type="button" class="btn btn-primary active">我的主页</button></a>';
+      var neteaseBtn = '<a href="https://music.163.com/#/playlist?id=2553791717" target="_blank"><button type="button" class="btn btn-danger">网易云音乐</button></a>';
+      layer.msg(QQBtn + homeBtn + neteaseBtn);
+    }
+
+    // 文字特效
+    var colors = ['#FF1177', '#228DFF', '#FFDD1B', '#B6FF00', '#FF9900', '#BA01FF'];
+    var fonts = ['Pacifico', 'Audiowide', 'Vampiro One'];
+    var text = document.getElementById("text");
+    // 推荐使用setTimeout
+    setTimeout(function () {
+      text.style.color = colors[Math.floor(colors.length * Math.random())];
+      text.style.fontFamily = fonts[Math.floor(fonts.length * Math.random())];
+      setTimeout(arguments.callee, 1000);
+    }, 1000);
+  </script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="https://dolyw.gitee.io/reader/JS/love.js"></script>
+  <script type="text/javascript" src="https://dolyw.com/static/count.js"></script>
+</body>
+
+</html>
