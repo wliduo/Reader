@@ -130,25 +130,40 @@
     #bg,
     body {
       height: 100%;
-      background-size: cover
+      background-size: cover;
     }
 
     #bg {
+      -webkit-filter: brightness(0.9);
+      -ms-filter: brightness(0.9);
+      -moz-filter: brightness(0.9);
+      filter: brightness(0.9);
       width: 100%;
       position: fixed;
       left: 0;
-      top: 0
+      top: 0;
+      z-index: -10;
+      background-repeat: no-repeat;
+      background-size:cover;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-position: center center;
     }
 
     section {
-      opacity: 0.75;
+      opacity: 0.90;
+      /* filter: brightness(0.9); */
     }
 
     input,
     select,
     button {
-      opacity: 0.85;
+      opacity: 0.95;
     }
+
+    /* #aplayer1, #aplayer2, #aplayer3, #aplayer4 {
+      filter: brightness(0.9);
+    } */
 
     main {
       position: relative
@@ -157,10 +172,10 @@
     main .content {
       display: flex;
       margin: 2em 1em;
-      background: hsla(0, 0%, 100%, .2);
+      background: hsla(0, 0%, 100%, .3);
       border-radius: 5px;
       animation: content .5s 2.2s both;
-      box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+      box-shadow: 0 0 20px rgba(0, 0, 0, .3);
       overflow: hidden;
       width: 50em;
       height: 30em;
@@ -311,7 +326,7 @@
         display: block;
         margin: 5em 0 1em;
         width: 100%;
-        height: 30em;
+        height: 35em;
         overflow: visible
       }
 
@@ -367,7 +382,7 @@
               <input id="serachText" type="text" class="form-control" placeholder="请输入关键字" value="Avicii">
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2" style="padding-left: 8px;">
-              <button id="serachBtn" type="button" class="btn btn-primary active" onclick="search(this)">
+              <button id="serachBtn" type="button" class="btn btn-primary" onclick="search(this)">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
             </div>
@@ -399,7 +414,7 @@
         <div class="copyright">
           <a id="cutMusic" href="javascript:;" onclick="cut(this)"><i class="fa fa-forward fa-lg"
               aria-hidden="true"></i></a>
-          <a style="padding-left: 5px; padding-right: 5px;" href="javascript:;" onclick="switchPic()"><i
+          <a style="padding-left: 5px; padding-right: 5px;" href="javascript:;" onclick="switchBg()"><i
               class="fa fa-heartbeat fa-lg" aria-hidden="true"></i></a>
           <a href="javascript:;" onclick="show()"><i class="fa fa-magnet fa-lg" aria-hidden="true"></i></a>
         </div>
@@ -408,7 +423,9 @@
     </div>
 
     <footer>
-      <p id="hitokoto">Loading...</p>
+      <p id="hitokoto">
+        <!-- Loading... -->
+      </p>
       <div class="copyright-mobile">
 
       </div>
@@ -469,37 +486,65 @@
     var randomIndex = 10;
     // 刷新随机数
     function switchRandomIndex() {
-        // 随机数不会和上一次重复，如果获取和上一次相同就重新获取，直到不同为止
-        var index = Math.floor(imgUrlArray.length * Math.random());
-        while (randomIndex == index) {
-            index = Math.floor(imgUrlArray.length * Math.random());
-        }
-        randomIndex = index
+      // 随机数不会和上一次重复，如果获取和上一次相同就重新获取，直到不同为止
+      var index = Math.floor(imgUrlArray.length * Math.random());
+      while (randomIndex == index) {
+        index = Math.floor(imgUrlArray.length * Math.random());
+      }
+      randomIndex = index
     }
 
+    var switchFlag = true;
+    // 切换背景
     function switchBg() {
+      if (switchFlag) {
+        wenkmTips.show('正在切换请稍后');
+        return false;
+      }
+      switchFlag = true;
+      wenkmTips.show('切换背景');
       var img = new Image();
+      switchRandomIndex();
       var imgUrl = imgUrlArray[randomIndex];
       img.src = imgUrl;
       img.onload = function () {
-        $("#bg").hide()
+        $("#bg").hide();
+        if (imgUrl == "https://dolyw.gitee.io/reader/Image/201812/normal/23005.png") {
+          document.getElementById('bg').style.backgroundPosition = "center center";
+        } else {
+          document.getElementById('bg').style.backgroundPosition = "center 0";
+        }
         document.getElementById('bg').style.backgroundImage = "url(" + imgUrl + ")";
         $("#bg").fadeIn(1000);
+        wenkmTips.show('切换完成');
+        switchFlag = false;
+        // 刷新一言
+        gethitokoto();
       }
     }
 
     // 初始化加载背景
-    switchBg();
-
-    function switchPic() {
-      switchRandomIndex();
-      switchBg();
-      wenkmTips.show('切换背景中');
+    var img = new Image();
+    var imgUrl = imgUrlArray[randomIndex];
+    if (isMobile()) {
+      imgUrl = "https://dolyw.gitee.io/reader/Image/201901/normal/11005.png";
+    }
+    img.src = imgUrl;
+    img.onload = function () {
+      $("#bg").hide();
+      if (imgUrl == "https://dolyw.gitee.io/reader/Image/201812/normal/23005.png") {
+        document.getElementById('bg').style.backgroundPosition = "center center";
+      } else {
+        document.getElementById('bg').style.backgroundPosition = "center 0";
+      }
+      document.getElementById('bg').style.backgroundImage = "url(" + imgUrl + ")";
+      $("#bg").fadeIn(1000);
+      switchFlag = false;
     }
 
     // 播放器列表高度
-    var listMaxHeight = '13em';
-    var listMaxHeightSearch = '10em';
+    var listMaxHeight = '18em';
+    var listMaxHeightSearch = '14.8em';
     if (!isMobile()) {
       listMaxHeight = '22em';
       listMaxHeightSearch = '19em';
