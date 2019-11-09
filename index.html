@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
   <!-- wenkmPlayer Start -->
   <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://mark.dolyw.com/assets/wenkmPlayer/css/player.css?v=0914">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wliduo/Mark@master/assets/wenkmPlayer/css/player.css?v=0914">
   <!-- wenkmPlayer End -->
   <style>
     html,
@@ -144,7 +144,7 @@
       top: 0;
       z-index: -10;
       background-repeat: no-repeat;
-      background-size:cover;
+      background-size: cover;
       -webkit-background-size: cover;
       -o-background-size: cover;
       background-position: center center;
@@ -164,6 +164,17 @@
     /* #aplayer1, #aplayer2, #aplayer3, #aplayer4 {
       filter: brightness(0.9);
     } */
+
+    .aplayer.aplayer-withlist .aplayer-icon-order,
+    .aplayer.aplayer-withlist .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon.aplayer-icon-menu {
+      display: inline;
+    }
+
+    .aplayer.aplayer-arrow .aplayer-icon-loop,
+    .aplayer.aplayer-arrow .aplayer-icon-order,
+    .aplayer.aplayer-mobile .aplayer-icon-volume-down {
+      display: inline;
+    }
 
     main {
       position: relative
@@ -395,7 +406,7 @@
 
       <div id="right" class="right">
         <div class="avatar">
-          <img src="https://cdn.dolyw.com/avatar/01_thn.png">
+          <img src="https://cdn.jsdelivr.net/gh/wliduo/CDN@master/avatar/01_thn.png">
         </div>
         <ul class="menu">
           <li>
@@ -435,10 +446,12 @@
 
   <!-- wenkmPlayer Start -->
   <div id="wangPlayer" style="display: none;"></div>
-  <!-- <script type="text/javascript" src="https://dolyw.gitee.io/reader/JS/aplist.js"></script> -->
-  <script type="text/javascript" src="JS/aplist.js"></script>
-  <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/mousewheel.js" type="text/javascript"></script>
-  <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/scrollbar.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://dolyw.gitee.io/reader/JS/aplist.js"></script>
+  <!-- <script type="text/javascript" src="JS/aplist.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/gh/wliduo/Mark@master/assets/wenkmPlayer/js/mousewheel.js"
+    type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wliduo/Mark@master/assets/wenkmPlayer/js/scrollbar.js"
+    type="text/javascript"></script>
   <script src="https://cdn.staticfile.org/color-thief/2.3.0/color-thief.umd.js" type="text/javascript"></script>
   <!-- <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123" type="text/javascript"></script> -->
   <!-- wenkmPlayer End -->
@@ -470,9 +483,9 @@
     }
 
     var imgUrlArray = [
-      'https://cdn.dolyw.com/wallpaper/201911/20191101005.jpg',
-      'https://cdn.dolyw.com/wallpaper/201911/20191107005.jpg',
-      'https://cdn.dolyw.com/wallpaper/201911/20191107010.jpg',
+      'https://cdn.jsdelivr.net/gh/wliduo/CDN@master/wallpaper/201911/20191101005.jpg',
+      'https://cdn.jsdelivr.net/gh/wliduo/CDN@master/wallpaper/201911/20191107005.jpg',
+      'https://cdn.jsdelivr.net/gh/wliduo/CDN@master/wallpaper/201911/20191107010.jpg',
       'https://dolyw.gitee.io/reader/Image/201810/normal/20010.png',
       'https://dolyw.gitee.io/reader/Image/201811/normal/02015.png',
       'https://dolyw.gitee.io/reader/Image/201810/normal/10005.png',
@@ -480,7 +493,7 @@
       'https://dolyw.gitee.io/reader/Image/201811/normal/04040.png',
       'https://dolyw.gitee.io/reader/Image/201811/normal/05010.png',
       'https://dolyw.gitee.io/reader/Image/201811/normal/05025.png',
-      'https://dolyw.gitee.io/reader/Image/201812/normal/23005.png'
+      'https://cdn.jsdelivr.net/gh/wliduo/CDN@master/wallpaper/201911/20191109005.png'
     ];
 
     var randomIndex = 10;
@@ -509,7 +522,7 @@
       img.src = imgUrl;
       img.onload = function () {
         $("#bg").hide();
-        if (imgUrl == "https://dolyw.gitee.io/reader/Image/201812/normal/23005.png") {
+        if (imgUrl == "https://cdn.jsdelivr.net/gh/wliduo/CDN@master/wallpaper/201911/20191109005.png") {
           document.getElementById('bg').style.backgroundPosition = "center center";
         } else {
           document.getElementById('bg').style.backgroundPosition = "center 0";
@@ -532,7 +545,7 @@
     img.src = imgUrl;
     img.onload = function () {
       $("#bg").hide();
-      if (imgUrl == "https://dolyw.gitee.io/reader/Image/201812/normal/23005.png") {
+      if (imgUrl == "https://cdn.jsdelivr.net/gh/wliduo/CDN@master/wallpaper/201911/20191109005.png") {
         document.getElementById('bg').style.backgroundPosition = "center center";
       } else {
         document.getElementById('bg').style.backgroundPosition = "center 0";
@@ -550,7 +563,7 @@
       listMaxHeightSearch = '19em';
       try {
         // 加载wenkmPlayerc
-        $.ajax({ url: 'https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123', dataType: "script", cache: true, async: false });
+        $.ajax({ url: 'https://cdn.jsdelivr.net/gh/wliduo/Mark@master/assets/wenkmPlayer/js/player.js?v=123', dataType: "script", cache: true, async: false });
       } catch (err) {
         console.log('[Error] JQuery is not defined.')
       } finally {
@@ -569,8 +582,8 @@
       lrcType: 3,
       order: 'random',
       theme: '#000000',
-      listMaxHeight: listMaxHeight,
-      audio: getLove()
+      listMaxHeight: listMaxHeight/* ,
+      audio: getLove() */
     });
 
     // 网易云音乐热歌榜
@@ -578,7 +591,7 @@
       container: document.getElementById('aplayer2'),
       lrcType: 3,
       theme: '#000000',
-      listMaxHeight: listMaxHeight,
+      listMaxHeight: listMaxHeight
     });
 
     // 最近喜欢听的歌
@@ -587,7 +600,7 @@
       lrcType: 3,
       order: 'random',
       theme: '#000000',
-      listMaxHeight: listMaxHeight,
+      listMaxHeight: listMaxHeight
     });
 
     // 搜索
@@ -595,11 +608,11 @@
       container: document.getElementById('aplayer4'),
       lrcType: 3,
       theme: '#000000',
-      listMaxHeight: listMaxHeightSearch,
+      listMaxHeight: listMaxHeightSearch
     });
 
     // 列表存放
-    var aplist1 = ap1.list.audios;
+    var aplist1 = [];
     var aplist2 = [];
     var aplist3 = [];
     var aplist4 = [];
@@ -608,67 +621,73 @@
     var api = apApi;
 
     // 初始化
-
-    if (ap2.list.audios.length <= 0) {
-      $.ajax({
-        url: api + '?server=netease&type=playlist&id=3778678',
-        success: function (list) {
-          var array = JSON.parse(list);
-          if (array.length > 0) {
-            ap2.list.clear();
-            ap2.list.add(array);
-          } else {
-            layer.msg('出现错误，请刷新页面');
+    function ap2Init() {
+      if (ap2.list.audios.length <= 0) {
+        $.ajax({
+          url: api + '?server=netease&type=playlist&id=3778678',
+          success: function (list) {
+            neteaseFlag = false;
+            var array = JSON.parse(list);
+            if (array.length > 0) {
+              ap2.list.clear();
+              ap2.list.add(array);
+            } else {
+              layer.msg('出现错误，请刷新页面');
+            }
+            aplist2 = array;
           }
-          aplist2 = array;
-        }
-      });
+        });
+      }
     }
 
-    if (ap3.list.audios.length <= 0) {
-      $.ajax({
-        url: api + '?server=netease&type=playlist&id=26462279',
-        success: function (list) {
-          var array = JSON.parse(list);
-          // 获取QQ音乐我喜欢的音乐列表
-          try {
-            // 步骤一: 创建异步对象
-            var ajax = new XMLHttpRequest();
-            if (window.XMLHttpRequest) {
-              ajax = new XMLHttpRequest();
-            } else {
-              // IE6及其以下版本浏览器
-              ajax = new ActiveXObject('Microsoft.XMLHTTP');
-            }
-            // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
-            // ajax.open('get', 'getStar.php?starName='+name);
-            ajax.open('get', api + '?server=tencent&type=playlist&id=6804330872', false);
-            // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
-            ajax.onreadystatechange = function () {
-              if (ajax.readyState == 4 && ajax.status == 200) {
-                // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
-                // console.log(ajax.responseText);
-                if (array.length > 0) {
-                  array = array.concat(JSON.parse(ajax.responseText));
-                  ap3.list.clear();
-                  ap3.list.add(array);
-                } else {
-                  layer.msg('出现错误，请刷新页面');
-                }
-                aplist3 = array;
+    // 初始化
+    function ap3Init() {
+      if (ap3.list.audios.length <= 0) {
+        $.ajax({
+          url: api + '?server=netease&type=playlist&id=26462279',
+          success: function (list) {
+            loveFlag = false;
+            var array = JSON.parse(list);
+            // 获取QQ音乐我喜欢的音乐列表
+            try {
+              // 步骤一: 创建异步对象
+              var ajax = new XMLHttpRequest();
+              if (window.XMLHttpRequest) {
+                ajax = new XMLHttpRequest();
+              } else {
+                // IE6及其以下版本浏览器
+                ajax = new ActiveXObject('Microsoft.XMLHTTP');
               }
+              // 步骤二: 设置请求的url参数 参数一是请求的类型 参数二是请求的url 可以带参数 动态的传递参数starName到服务端
+              // ajax.open('get', 'getStar.php?starName='+name);
+              ajax.open('get', api + '?server=tencent&type=playlist&id=6804330872', false);
+              // 步骤三: 注册事件 onreadystatechange 状态改变就会调用 定义返回触发的函数 定义在send之前 不然同步请求就出问题
+              ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                  // 步骤五: 如果能够进到这个判断 说明 数据 完美的回来了 并且请求的页面是存在的
+                  // console.log(ajax.responseText);
+                  if (array.length > 0) {
+                    array = array.concat(JSON.parse(ajax.responseText));
+                    ap3.list.clear();
+                    ap3.list.add(array);
+                  } else {
+                    layer.msg('出现错误，请刷新页面');
+                  }
+                  aplist3 = array;
+                }
+              }
+              // 步骤四: 发送请求
+              ajax.send();
             }
-            // 步骤四: 发送请求
-            ajax.send();
-          }
-          catch (err) {
-            layer.msg('出现错误，请刷新页面');
-          }
-          finally {
+            catch (err) {
+              layer.msg('出现错误，请刷新页面');
+            }
+            finally {
 
+            }
           }
-        }
-      });
+        });
+      }
     }
 
   </script>
@@ -688,6 +707,7 @@
       $.ajax({
         url: url,
         success: function (list) {
+          serachFlag = false;
           var array = JSON.parse(list);
           // console.log(url);
           // console.log(array);
@@ -702,9 +722,6 @@
         }
       });
     }
-
-    // 初始化搜索列表
-    search(document.getElementById("serachBtn"));
 
     function cut(btn) {
       // 开始执行，先将按钮置为不可用，执行完后设置可用
@@ -917,12 +934,36 @@
       $(this).addClass('active');
     });
 
+    var loveFlag = true;
+    var neteaseFlag = true;
+    var serachFlag = true;
     function switchTo(target) {
+      // console.log(target);
+      if (target == '#love' && loveFlag) {
+        // 初始化我的喜欢
+        ap3Init();
+      } else if (target == '#netease' && neteaseFlag) {
+        // 初始化网易云热歌
+        ap2Init();
+      } else if (target == '#serach' && serachFlag) {
+        // 初始化搜索列表
+        search(document.getElementById("serachBtn"));
+      }
       $('.left section').each(function () {
         $(this).removeClass('active');
       });
       $(target).addClass('active');
     }
+
+    // 初始化我的列表
+    var ap1Array = getLove();
+    if (ap1Array.length > 0) {
+      ap1.list.clear();
+      ap1.list.add(ap1Array);
+    } else {
+      layer.msg('出现错误，请刷新页面');
+    }
+    aplist1 = ap1Array;
 
     function gethitokoto() {
       $.ajax({
