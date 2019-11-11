@@ -11,6 +11,7 @@
   <link rel="shortcut icon" href="https://dolyw.com/static/favicon.ico" />
   <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wliduo/CoolText@master/typing/css/typing.css">
   <!-- wenkmPlayer Start -->
   <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wliduo/Mark@master/assets/wenkmPlayer/css/player.css?v=0914">
@@ -434,6 +435,7 @@
     </div>
 
     <footer>
+      <p id="source" style="display: none;"></p>
       <p id="hitokoto">
         <!-- Loading... -->
       </p>
@@ -456,6 +458,7 @@
   <!-- <script src="https://mark.dolyw.com/assets/wenkmPlayer/js/player.js?v=123" type="text/javascript"></script> -->
   <!-- wenkmPlayer End -->
 
+  <script src="https://cdn.jsdelivr.net/gh/wliduo/CoolText@master/typing/js/typing.js"></script>
   <script>
 
     $(document).ready(function () {
@@ -965,6 +968,12 @@
     }
     aplist1 = ap1Array;
 
+    var typing = new Typing({
+      source: document.getElementById('source'),
+      output: document.getElementById('hitokoto'),
+      delay: 120
+    });
+
     function gethitokoto() {
       $.ajax({
         url: "https://v1.hitokoto.cn",
@@ -976,7 +985,9 @@
 
     function write(text) {
       if (text.length < 25) {
-        $('#hitokoto').html(text);
+        $('#hitokoto').html('');
+        $('#source').html(text);
+        typing.start();
       } else {
         gethitokoto();
       }
